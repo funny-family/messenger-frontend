@@ -1,6 +1,7 @@
 <template>
   <div>
-    This is a Sign in page!
+    <Header />
+    <h1>This is a Sign in page!</h1>
   </div>
 </template>
 
@@ -9,7 +10,7 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-div {
+h1 {
   display: flex;
   justify-content: center;
   align-items: center;
