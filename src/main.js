@@ -5,6 +5,8 @@ import store from './store';
 
 Vue.config.productionTip = false;
 
+Vue.component('Header', () => import('./components/Header'));
+
 new Vue({
   router,
   store,
