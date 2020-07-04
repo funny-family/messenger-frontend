@@ -1,20 +1,25 @@
 <template>
   <div>
     <Header />
-    <h1>This is a Sign in page!</h1>
+    <Sign-in class="form" />
   </div>
 </template>
 
 <script>
-export default {};
+import SignIn from '@/components/forms/SignIn.vue';
+
+export default {
+  components: {
+    'Sign-in': SignIn
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-h1 {
+.form {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-size: 100px;
 }
 </style>
