@@ -1,20 +1,25 @@
 <template>
   <div>
     <Header />
-    <h1>This is registartion page!</h1>
+    <Sign-up class="form" />
   </div>
 </template>
 
 <script>
-export default {};
+import SignUp from '@/components/forms/SignUp.vue';
+
+export default {
+  components: {
+    'Sign-up': SignUp
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-h1 {
+.form {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-size: 100px;
 }
 </style>
