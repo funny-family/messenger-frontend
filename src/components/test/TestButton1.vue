@@ -8,12 +8,6 @@
   </button>
 </template>
 
-<script>
-export default {
-  //
-};
-</script>
-
 <style scoped>
 .sunmit-button {
   width: 200px;
