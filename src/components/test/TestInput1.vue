@@ -16,8 +16,8 @@
   </div>
 </template>
 
-<style>
-:root {
+<style scoped>
+* {
   --not-acive: #909090;
   --acive: #4b4b4b;
 }
