@@ -1,10 +1,15 @@
 <template>
   <div>
-    <form>
+    <!-- <form novalidate> -->
+    <form @submit.prevent>
       <Auth-input
         v-model="testVar"
       />
-      <button type="submit">test</button>
+      <hr />
+      <Test-input-2 />
+      <Test-button-1>Test submit</Test-button-1>
+      <!-- <button type="submit" formnovalidate>test</button> -->
+      <!-- <button type="submit">test</button> -->
       <!-- <button type="button" @click="getVat">Get var!</button> -->
     </form>
   </div>
@@ -12,10 +17,14 @@
 
 <script>
 import AuthInput from '@/components/test/TestInput1.vue';
+import TestInput2 from '@/components/test/TestInput2.vue';
+import TestButton1 from '@/components/test/TestButton1.vue';
 
 export default {
   components: {
-    'Auth-input': AuthInput
+    'Auth-input': AuthInput,
+    'Test-input-2': TestInput2,
+    'Test-button-1': TestButton1
   },
   data: () => ({
     testVar: ''
