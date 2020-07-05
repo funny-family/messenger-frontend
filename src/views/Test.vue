@@ -3,6 +3,8 @@
     <!-- <form novalidate> -->
     <form @submit.prevent>
       <Auth-input
+        type="text"
+        placeholder="Test text"
         v-model="testVar"
       />
       <hr />
