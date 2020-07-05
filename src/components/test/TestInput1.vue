@@ -1,20 +1,79 @@
 <template>
   <div class="auth-input">
-    <input class="auth-input__input" name="input" autocomplete="off" type="text" required />
+    <input
+      class="auth-input__input"
+      name="input"
+      ref="input"
+      autocomplete="off"
+      :value="value"
+      :type="type"
+      :disabled="disabled"
+      @input="updateInputValue($event.target.value)"
+      @blur="inFocused = true"
+      @focus="inFocused = false"
+      required
+    />
     <label class="auth-input__container" for="input">
-      <span class="auth-input__name">Test1111</span>
+      <span class="auth-input__name">{{ placeholder }}</span>
     </label>
-    <!-- <svg width="30" height="29" viewBox="0 0 30 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" clip-rule="evenodd" d="M7.92893 21.5711C8.28395 21.9261 8.85956
-        21.9261 9.21458 21.5711L14.6786 16.1071L20.464 21.8925C20.819 22.2475 21.3946 22.2475
-        21.7497 21.8925C22.1047 21.5375 22.1047 20.9619 21.7497 20.6069L15.9642 14.8215L22.0711
-        8.71463C22.4261 8.35961 22.4261 7.784 22.0711 7.42898C21.716 7.07396 21.1404 7.07396
-        20.7854 7.42898L14.6786 13.5358L8.89317 7.75039C8.53815 7.39537 7.96254 7.39537 7.60752
-        7.75039C7.2525 8.10541 7.2525 8.68102 7.60752 9.03604L13.3929 14.8215L7.92893
-        20.2855C7.57391 20.6405 7.57391 21.2161 7.92893 21.5711Z" fill="#161B2B"/>
-    </svg> -->
+    <svg
+      class="auth-input__icon"
+      @click="resetInputValue"
+      v-if="value.length > 0"
+      width="14"
+      height="14"
+      viewBox="0 0 9 9"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M8.38908 0.61084C8.19383 0.415527
+        7.87724 0.415527 7.68199 0.61084L4.49987 3.79297L1.31802 0.611084C1.12275 0.415771
+        0.806179 0.415771 0.610912 0.611084C0.415646 0.806396 0.415646 1.1228 0.610912
+        1.31812L3.79281 4.5L0.610912 7.68188C0.415646 7.8772 0.415646 8.19385 0.610912
+        8.38916C0.806179 8.58423 1.12275 8.58423 1.31802 8.38916L4.49995 5.20703L7.68199
+        8.38916C7.87724 8.58447 8.19383 8.58447 8.3891 8.38916C8.58435 8.19385 8.58435
+        7.87744 8.3891 7.68213L5.207 4.5L8.38908 1.31787C8.58435 1.1228 8.58435 0.806152
+        8.38908 0.61084Z" fill="#909090"/>
+    </svg>
   </div>
 </template>
+
+<script>
+export default {
+  data: () => ({
+    inFocused: false
+  }),
+  props: {
+    value: {
+      type: String,
+      default: ''
+    },
+    type: {
+      type: String,
+      default: 'text',
+      required: true,
+      Validate: (type) => ['text', 'password'].indexOf(type) !== 1
+    },
+    disabled: {
+      type: Boolean,
+      default: false
+    },
+    placeholder: {
+      type: String,
+      default: ''
+    }
+  },
+  methods: {
+    updateInputValue(value) {
+      this.$emit('input', value);
+    },
+    resetInputValue() {
+      this.$emit('input', '');
+      this.$refs.input.focus();
+    }
+  }
+};
+</script>
 
 <style scoped>
 * {
@@ -34,8 +93,10 @@
   height: 100%;
   border: none;
   outline: none;
+  font-size: 20px;
   color: black;
   padding-top: 20px;
+  padding-right: 25px;
 }
 
 .auth-input label {
@@ -63,35 +124,28 @@
 .auth-input__name {
   position: absolute;
   left: 0;
-  bottom: 6px;
+  bottom: 10px;
+  font-size: 20px;
   color: var(--not-acive);
   transition: all 0.2s ease;
 }
 
 .auth-input input:focus + .auth-input__container .auth-input__name,
 .auth-input input:valid + .auth-input__container .auth-input__name {
-  transform: translateY(-150%);
+  transform: translateY(-140%);
   color: var(--acive);
+  font-size: 16px;
 }
 
 .auth-input input:focus + .auth-input__container::after,
 .auth-input input:valid + .auth-input__container::after {
   transform: translateX(0%);
 }
-</style>
 
-<script>
-export default {
-  props: {
-    type: {
-      //
-    },
-    placeholder: {
-      //
-    },
-    inputName: {
-      //
-    }
-  }
-};
-</script>
+.auth-input__icon {
+  position: absolute;
+  right: 5px;
+  bottom: 14px;
+  cursor: pointer;
+}
+</style>
