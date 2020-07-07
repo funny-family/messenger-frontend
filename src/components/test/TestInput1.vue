@@ -79,6 +79,7 @@ export default {
 * {
   --not-acive: #909090;
   --acive: #4b4b4b;
+  --icon-rigt-side-indet: 11px;
 }
 
 .auth-input {
@@ -96,7 +97,7 @@ export default {
   font-size: 20px;
   color: black;
   padding-top: 20px;
-  padding-right: 25px;
+  padding-right: calc(var(--icon-rigt-side-indet) * 3);
 }
 
 .auth-input label {
@@ -144,7 +145,7 @@ export default {
 
 .auth-input__icon {
   position: absolute;
-  right: 5px;
+  right: var(--icon-rigt-side-indet);
   bottom: 14px;
   cursor: pointer;
 }
