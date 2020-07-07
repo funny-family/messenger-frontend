@@ -14,7 +14,7 @@
       required
     />
     <label class="auth-input__container" for="input">
-      <span class="auth-input__name">{{ placeholder }}</span>
+      <span class="auth-input__placeholder">{{ placeholder }}</span>
     </label>
     <svg
       class="auth-input__icon"
@@ -122,7 +122,7 @@ export default {
   transform: translateX(-100%);
 }
 
-.auth-input__name {
+.auth-input__placeholder {
   position: absolute;
   left: 0;
   bottom: 10px;
@@ -131,8 +131,8 @@ export default {
   transition: all 0.2s ease;
 }
 
-.auth-input input:focus + .auth-input__container .auth-input__name,
-.auth-input input:valid + .auth-input__container .auth-input__name {
+.auth-input input:focus + .auth-input__container .auth-input__placeholder,
+.auth-input input:valid + .auth-input__container .auth-input__placeholder {
   transform: translateY(-140%);
   color: var(--acive);
   font-size: 16px;
