@@ -2,11 +2,16 @@
   <div>
     <!-- <form novalidate> -->
     <form @submit.prevent>
-      <Auth-input
-        type="text"
-        placeholder="Test text"
-        v-model="testVar"
-      />
+      <input placeholder="not-password" type="not-password" />
+      <hr>
+      <div>
+        <div><b>Reset input</b></div>
+        <Auth-input
+          type="text"
+          placeholder="Test text"
+          v-model="testVar"
+        />
+      </div>
       <hr />
       <Test-input-2 />
       <Test-button-1>Test submit</Test-button-1>
