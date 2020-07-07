@@ -19,7 +19,7 @@
     <svg
       class="auth-input__icon"
       @click="resetInputValue"
-      v-if="value.length > 0"
+      v-if="value.length > 0 && type === 'text'"
       width="14"
       height="14"
       viewBox="0 0 9 9"
@@ -52,7 +52,7 @@ export default {
       type: String,
       default: 'text',
       required: true,
-      Validate: (type) => ['text', 'password'].indexOf(type) !== 1
+      Validate: (type) => ['text'].indexOf(type) !== 1
     },
     disabled: {
       type: Boolean,
