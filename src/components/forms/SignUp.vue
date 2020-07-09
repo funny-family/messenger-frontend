@@ -1,5 +1,8 @@
 <template>
-  <form class="sign-up-from" @submit.prevent="signUp(userRegistrationData)">
+  <form
+    class="sign-up-from"
+    @submit.prevent="signUp(userRegistrationData)"
+  >
     <div>Sign up</div>
     <input
       class=""
@@ -27,7 +30,7 @@
       type="password"
       autocomplete="off"
       placeholder="Confirm password"
-      v-model="userRegistrationData.passwordConfirmation"
+      v-model="userRegistrationData.password_confirmation"
     />
     <button type="submit">Sign up</button>
   </form>
@@ -42,23 +45,11 @@ export default {
       username: '',
       email: '',
       password: '',
-      passwordConfirmation: ''
+      password_confirmation: ''
     }
   }),
   methods: {
     ...mapActions(['signUp'])
-    // async test() {
-    //   const url = 'http://localhost:3000/auth/signup';
-    //   const response = await fetch(url, {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/x-www-form-urlencoded'
-    //     },
-    //     body: JSON.stringify(this.userRegistrationData)
-    //   });
-    //   const result = await response.json();
-    //   console.log(result);
-    // }
   }
 };
 </script>
