@@ -17,7 +17,7 @@
       <span class="auth-input__placeholder">{{ placeholder }}</span>
     </label>
     <svg
-      class="test"
+      class="visible-password-icon"
       @click="switchPasswordIconVisibility"
       v-if="isPasswordIconVisible === false"
       width="36"
@@ -167,7 +167,7 @@
         21.5767 103.193 29.1666 103.193 38.5293Z" fill="#909090"/>
     </svg>
     <svg
-      class="test2"
+      class="hidden-password-icon"
       @click="switchPasswordIconVisibility"
       v-if="isPasswordIconVisible === true"
       width="44"
@@ -241,20 +241,6 @@ export default {
   --icon-rigt-side-indet: 9px;
 }
 
-.test {
-  position: absolute;
-  right: calc(var(--icon-rigt-side-indet) - 9px);
-  bottom: 15px;
-  cursor: pointer;
-}
-
-.test2 {
-  position: absolute;
-  right: calc(5px - var(--icon-rigt-side-indet));
-  bottom: 11px;
-  cursor: pointer;
-}
-
 .auth-input {
   position: relative;
   width: 280px;
@@ -315,5 +301,19 @@ export default {
 .auth-input input:focus + .auth-input__container::after,
 .auth-input input:valid + .auth-input__container::after {
   transform: translateX(0%);
+}
+
+.visible-password-icon {
+  position: absolute;
+  right: calc(var(--icon-rigt-side-indet) - 9px);
+  bottom: 15px;
+  cursor: pointer;
+}
+
+.hidden-password-icon {
+  position: absolute;
+  right: calc(5px - var(--icon-rigt-side-indet));
+  bottom: 11px;
+  cursor: pointer;
 }
 </style>
