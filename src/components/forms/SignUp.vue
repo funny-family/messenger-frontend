@@ -4,42 +4,43 @@
     @submit.prevent="signUp(userRegistrationData)"
   >
     <div>Sign up</div>
-    <input
-      class=""
+    <Text-input
       type="text"
-      autocomplete="off"
       placeholder="Username"
       v-model="userRegistrationData.username"
     />
-    <input
-      class=""
+    <Text-input
       type="text"
-      autocomplete="off"
       placeholder="Email"
       v-model="userRegistrationData.email"
     />
-    <input
-      class=""
+    <Password-input
       type="password"
-      autocomplete="off"
       placeholder="Password"
       v-model="userRegistrationData.password"
-      >
-    <input
-      class=""
+    />
+    <Password-input
       type="password"
-      autocomplete="off"
-      placeholder="Confirm password"
+      placeholder="Password confirmation"
       v-model="userRegistrationData.password_confirmation"
     />
-    <button type="submit">Sign up</button>
+    <Submit-button>Sign in</Submit-button>
   </form>
 </template>
 
 <script>
+import TextInput from '@/components/inputs/TextInput.vue';
+import PasswordInput from '@/components/inputs/PasswordInput.vue';
+import SubmitButton from '@/components/buttons/SubmitButton.vue';
+
 import { mapActions } from 'vuex';
 
 export default {
+  components: {
+    'Text-input': TextInput,
+    'Password-input': PasswordInput,
+    'Submit-button': SubmitButton
+  },
   data: () => ({
     userRegistrationData: {
       username: '',
