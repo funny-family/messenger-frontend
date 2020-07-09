@@ -4,26 +4,33 @@
     @submit.prevent="signIn(userLoginData)"
   >
     <div>Sign in</div>
-    <input
-      class="sign-in-from__email"
+    <Text-input
       type="text"
       placeholder="Email"
       v-model="userLoginData.email"
     />
-    <input
-      class="sign-in-from__password"
+    <Password-input
       type="password"
       placeholder="Password"
       v-model="userLoginData.password"
     />
-    <button type="submit">Sign in</button>
+    <Submit-button>Sign in</Submit-button>
   </form>
 </template>
 
 <script>
+import TextInput from '@/components/inputs/TextInput.vue';
+import PasswordInput from '@/components/inputs/PasswordInput.vue';
+import SubmitButton from '@/components/buttons/SubmitButton.vue';
+
 import { mapActions } from 'vuex';
 
 export default {
+  components: {
+    'Text-input': TextInput,
+    'Password-input': PasswordInput,
+    'Submit-button': SubmitButton
+  },
   data: () => ({
     userLoginData: {
       email: '',
@@ -36,7 +43,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .sign-in-from {
   min-width: 280px;
   display: flex;
