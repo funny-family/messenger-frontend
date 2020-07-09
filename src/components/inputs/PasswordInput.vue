@@ -229,7 +229,6 @@ export default {
       this.$refs.input.focus();
       this.$data.isPasswordIconVisible = !this.$data.isPasswordIconVisible;
       this.$data.type = this.$data.type === 'password' ? 'text' : 'password'; // not-password elso work!!! insed of text
-      this.$refs.input.setSelectionRange(this.$props.value.length, this.$props.value.length);
     }
   }
 };
