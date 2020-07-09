@@ -12,6 +12,14 @@
           v-model="testVar"
         />
       </div>
+      <div>
+        <div><b></b></div>
+        <Password-input
+          type="password"
+          placeholder="Test password"
+          v-model="testPas"
+        />
+      </div>
       <hr />
       <Test-input-2 />
       <Test-button-1>Test submit</Test-button-1>
@@ -26,15 +34,19 @@
 import AuthInput from '@/components/test/TestInput1.vue';
 import TestInput2 from '@/components/test/TestInput2.vue';
 import TestButton1 from '@/components/test/TestButton1.vue';
+import PasswordInput from '@/components/test/TestPassowrdInput1.vue';
 
 export default {
   components: {
     'Auth-input': AuthInput,
     'Test-input-2': TestInput2,
-    'Test-button-1': TestButton1
+    'Test-button-1': TestButton1,
+    'Password-input': PasswordInput
   },
   data: () => ({
-    testVar: ''
+    testVar: '',
+    testPas: '',
+    mInp: ''
   }),
   methods: {
     getVat() {
