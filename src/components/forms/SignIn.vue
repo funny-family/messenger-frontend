@@ -1,21 +1,25 @@
 <template>
-  <form
-    class="sign-in-from"
-    @submit.prevent="signIn(userLoginData)"
-  >
-    <div>Sign in</div>
-    <Text-input
-      type="text"
-      placeholder="Email"
-      v-model="userLoginData.email"
-    />
-    <Password-input
-      type="password"
-      placeholder="Password"
-      v-model="userLoginData.password"
-    />
-    <Submit-button>Sign in</Submit-button>
-  </form>
+  <div class="sign-in-form-position">
+    <form
+      class="sign-in-from"
+      @submit.prevent="signIn(userLoginData)"
+    >
+      <div>Sign in</div>
+      <Text-input
+        class="sign-in-input"
+        type="text"
+        placeholder="Email"
+        v-model="userLoginData.email"
+      />
+      <Password-input
+        class="sign-in-input"
+        type="password"
+        placeholder="Password"
+        v-model="userLoginData.password"
+      />
+      <Submit-button class="sign-in-button">Sign in</Submit-button>
+    </form>
+  </div>
 </template>
 
 <script>
@@ -45,13 +49,17 @@ export default {
 
 <style scoped>
 .sign-in-from {
-  min-width: 280px;
-  display: flex;
-  flex-direction: column;
+  width: 300px;
+  min-width: 300px;
 }
 
-input {
-  position: relative;
-  padding: 8px 12px;
+.sign-in-input {
+  width: 100%;
+  margin: 12px 0;
+}
+
+.sign-in-button {
+  width: 100%;
+  margin: 20px 0;
 }
 </style>
