@@ -11,11 +11,12 @@
 export default {};
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .title {
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   height: 100vh;
   font-size: 100px;
   word-spacing: 12px;
