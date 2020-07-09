@@ -1,31 +1,37 @@
 <template>
-  <form
-    class="sign-up-from"
-    @submit.prevent="signUp(userRegistrationData)"
-  >
-    <div>Sign up</div>
-    <Text-input
-      type="text"
-      placeholder="Username"
-      v-model="userRegistrationData.username"
-    />
-    <Text-input
-      type="text"
-      placeholder="Email"
-      v-model="userRegistrationData.email"
-    />
-    <Password-input
-      type="password"
-      placeholder="Password"
-      v-model="userRegistrationData.password"
-    />
-    <Password-input
-      type="password"
-      placeholder="Password confirmation"
-      v-model="userRegistrationData.password_confirmation"
-    />
-    <Submit-button>Sign in</Submit-button>
-  </form>
+  <div class="sign-up-form-position">
+    <form
+      class="sign-up-from"
+      @submit.prevent="signUp(userRegistrationData)"
+    >
+      <div>Sign up</div>
+      <Text-input
+        class="sign-up-input"
+        type="text"
+        placeholder="Username"
+        v-model="userRegistrationData.username"
+      />
+      <Text-input
+        class="sign-up-input"
+        type="text"
+        placeholder="Email"
+        v-model="userRegistrationData.email"
+      />
+      <Password-input
+        class="sign-up-input"
+        type="password"
+        placeholder="Password"
+        v-model="userRegistrationData.password"
+      />
+      <Password-input
+        class="sign-up-input"
+        type="password"
+        placeholder="Password confirmation"
+        v-model="userRegistrationData.password_confirmation"
+      />
+      <Submit-button class="sign-up-button">Sign in</Submit-button>
+    </form>
+  </div>
 </template>
 
 <script>
@@ -55,15 +61,19 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped>
 .sign-up-from {
-  min-width: 280px;
-  display: flex;
-  flex-direction: column;
+  width: 300px;
+  min-width: 300px;
 }
 
-input {
-  position: relative;
-  padding: 8px 12px;
+.sign-up-input {
+  width: 100%;
+  margin: 12px 0;
+}
+
+.sign-up-button {
+  width: 100%;
+  margin: 20px 0;
 }
 </style>
