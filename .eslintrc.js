@@ -12,6 +12,7 @@ module.exports = {
   },
   rules: {
     'camelcase': 'off',
+    'func-names': ["off", "never"],
     'comma-dangle': ['error', 'never'],
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
