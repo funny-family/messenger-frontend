@@ -1,10 +1,10 @@
 <template>
   <header class="header">
     <div class="header__logo">Chatus</div>
-    <div class="header__auth">
-      <router-link class="header__auth link" to="/">Home</router-link>
-      <router-link class="header__auth link" to="/signin">Sign in</router-link>
-      <router-link class="header__auth link" to="/signup">Sign up</router-link>
+    <div class="header__page-links">
+      <router-link class="link" to="/">Home</router-link>
+      <router-link class="link" to="/signin">Sign in</router-link>
+      <router-link class="link" to="/signup">Sign up</router-link>
     </div>
   </header>
 </template>
