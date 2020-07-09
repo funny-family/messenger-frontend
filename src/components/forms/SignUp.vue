@@ -5,13 +5,13 @@
       @submit.prevent="signUp(userRegistrationData)"
     >
       <div>Sign up</div>
-      <Text-input
+      <Clearable-input
         class="sign-up-input"
         type="text"
         placeholder="Username"
         v-model="userRegistrationData.username"
       />
-      <Text-input
+      <Clearable-input
         class="sign-up-input"
         type="text"
         placeholder="Email"
@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import TextInput from '@/components/inputs/TextInput.vue';
+import ClearableInput from '@/components/inputs/ClearableInput.vue';
 import PasswordInput from '@/components/inputs/PasswordInput.vue';
 import SubmitButton from '@/components/buttons/SubmitButton.vue';
 
@@ -43,7 +43,7 @@ import { mapActions } from 'vuex';
 
 export default {
   components: {
-    'Text-input': TextInput,
+    'Clearable-input': ClearableInput,
     'Password-input': PasswordInput,
     'Submit-button': SubmitButton
   },
