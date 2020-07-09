@@ -1,25 +1,39 @@
 <template>
   <form
     class="sign-in-from"
-    @submit.prevent=""
+    @submit.prevent="signIn(userLoginData)"
   >
     <div>Sign in</div>
     <input
       class="sign-in-from__email"
       type="text"
       placeholder="Email"
+      v-model="userLoginData.email"
     />
     <input
       class="sign-in-from__password"
       type="password"
       placeholder="Password"
+      v-model="userLoginData.password"
     />
     <button type="submit">Sign in</button>
   </form>
 </template>
 
 <script>
-export default {};
+import { mapActions } from 'vuex';
+
+export default {
+  data: () => ({
+    userLoginData: {
+      email: '',
+      password: ''
+    }
+  }),
+  methods: {
+    ...mapActions(['signIn'])
+  }
+};
 </script>
 
 <style lang="scss" scoped>
