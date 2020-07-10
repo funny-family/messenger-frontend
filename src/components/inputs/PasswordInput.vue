@@ -3,7 +3,7 @@
     <input
       class="auth-input__input"
       name="input"
-      ref="input"
+      ref="passwordInput"
       autocomplete="off"
       :value="value"
       :type="type"
@@ -226,9 +226,11 @@ export default {
       this.$emit('input', value);
     },
     switchPasswordIconVisibility() {
-      this.$refs.input.focus();
+      const valueLength = this.$props.value.length;
       this.$data.isPasswordIconVisible = !this.$data.isPasswordIconVisible;
-      this.$data.type = this.$data.type === 'password' ? 'text' : 'password'; // not-password elso work!!! insed of text
+      this.$data.type = this.$data.type === 'password' ? 'text' : 'password'; // change input type on icon click
+      this.$refs.passwordInput.focus();
+      this.$refs.passwordInput.setSelectionRange(valueLength, valueLength);
     }
   }
 };
