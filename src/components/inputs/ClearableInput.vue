@@ -127,6 +127,7 @@ export default {
   left: 0;
   bottom: 10px;
   font-size: 20px;
+  font-weight: 500;
   color: var(--not-acive);
   transition: all 0.2s ease;
 }
