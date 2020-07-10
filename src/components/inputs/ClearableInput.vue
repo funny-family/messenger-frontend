@@ -3,7 +3,7 @@
     <input
       class="auth-input__input"
       name="input"
-      ref="input"
+      ref="clearableInput"
       autocomplete="off"
       :value="value"
       :type="type"
@@ -69,7 +69,7 @@ export default {
     },
     resetInputValue() {
       this.$emit('input', '');
-      this.$refs.input.focus();
+      this.$refs.clearableInput.focus();
     }
   }
 };
