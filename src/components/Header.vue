@@ -4,13 +4,21 @@
     <div class="header__page-links">
       <router-link class="link" to="/">Home</router-link>
       <router-link class="link" to="/signin">Sign in</router-link>
-      <router-link class="link" to="/signup">Sign up</router-link>
+      <Regular-button>
+        <router-link class="link" to="/signup">Sign up</router-link>
+      </Regular-button>
     </div>
   </header>
 </template>
 
 <script>
-export default {};
+import RegularButton from '@/components/buttons/RegularButton.vue';
+
+export default {
+  components: {
+    'Regular-button': RegularButton
+  }
+};
 </script>
 
 <style scoped>
