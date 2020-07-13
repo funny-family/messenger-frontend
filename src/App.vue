@@ -1,9 +1,23 @@
 <template>
-  <router-view/>
+  <transition
+    name="page-swicher"
+    mode="out-in"
+  >
+    <router-view/>
+  </transition>
 </template>
 
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+.page-swicher-enter, .page-swicher-leave-to {
+  opacity: 0;
+  transform: translateX(3em);
+}
+
+.page-swicher-active, .page-swicher-leave-active {
+  transition: all 0.3s ease-in-out;
+}
 
 :root {
   --selection-color: #f0f0f0;
@@ -15,6 +29,8 @@ body {
   font-family: 'Montserrat', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  width: 100vw;
+  overflow-x:hidden;
 }
 
 input {
