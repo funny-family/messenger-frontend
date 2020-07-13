@@ -27,6 +27,25 @@ button {
   -moz-osx-font-smoothing: grayscale;
 }
 
+button a {
+  color: white;
+  text-decoration: none;
+}
+
+button a:hover {
+  color: white;
+}
+
+a {
+  color: #4b4b4b;
+  text-decoration: none;
+}
+
+a:hover {
+  transition: 0.3s ease-in-out;
+  color: #5f5f5f;
+}
+
 ::-moz-selection { background: var(--selection-color); }
 ::selection { background: var(--selection-color); }
 </style>
