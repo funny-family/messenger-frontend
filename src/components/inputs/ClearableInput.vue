@@ -2,7 +2,6 @@
   <div class="auth-input">
     <input
       class="auth-input__input"
-      name="input"
       ref="clearableInput"
       autocomplete="off"
       :value="value"
