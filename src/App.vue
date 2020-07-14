@@ -2,9 +2,6 @@
   <transition
     name="fade-in-down"
     mode="out-in"
-    @beforeLeave="beforeLeave"
-    @enter="enter"
-    @afterEnter="afterEnter"
   >
     <router-view/>
   </transition>
