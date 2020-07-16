@@ -1,10 +1,10 @@
 export default {
   state: {
-    userIsLoggedIn: false
+    isUserLoggedIn: false
   },
   mutations: {
     SIGN_IN(state) {
-      state.userIsLoggedIn = true;
+      state.isUserLoggedIn = true;
     }
   },
   actions: {
