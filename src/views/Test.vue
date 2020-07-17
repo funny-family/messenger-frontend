@@ -27,6 +27,24 @@
       <!-- <button type="submit">test</button> -->
       <!-- <button type="button" @click="getVat">Get var!</button> -->
     </form>
+    <hr>
+    <form class="test-submit-form" @submit.prevent="getValues">
+      <input
+        type="text"
+        placeholder="First value to test..."
+        v-model="testValues.value1"
+        required
+      />
+      <input
+        type="text"
+        placeholder="Second value to test..."
+        v-model="testValues.value2"
+        required
+      />
+      <button type="submit">Test it!!!</button>
+    </form>
+    <hr>
+    <button @click="getLogState">get log state</button>
   </div>
 </template>
 
@@ -35,6 +53,8 @@ import AuthInput from '@/components/test/TestInput1.vue';
 import TestInput2 from '@/components/test/TestInput2.vue';
 import TestButton1 from '@/components/test/TestButton1.vue';
 import PasswordInput from '@/components/test/TestPassowrdInput1.vue';
+
+// import { mapActions } from 'vuex';
 
 export default {
   components: {
@@ -46,16 +66,31 @@ export default {
   data: () => ({
     testVar: '',
     testPas: '',
-    mInp: ''
+    mInp: '',
+    testValues: {
+      value1: '',
+      value2: ''
+    }
   }),
   methods: {
+    getValues() {
+      console.log('DATA FROM COMPONENT:', this.$data.testValues);
+      // this.$store.dispatch('getValues', this.$data.testValues);
+    },
+    // ...mapActions('getValues'),
     getVat() {
       console.log(this.$data.testVar);
+    },
+    getLogState() {
+      console.log('just sate', this.$store.state);
+      console.log('Is user logged in?', this.$store.state.auth.isUserLoggedIn);
     }
   }
 };
 </script>
 
 <style scoped>
-
+.test-submit-form {
+  border: 1px solid red;
+}
 </style>
