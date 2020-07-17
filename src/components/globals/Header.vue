@@ -2,15 +2,40 @@
   <header class="header">
     <div class="header__logo">Chatus</div>
     <div class="header__page-links">
-      <router-link class="link" to="/">Home</router-link>
-      <router-link class="link" to="/signin">Sign in</router-link>
-      <router-link class="link" to="/signup">Sign up</router-link>
+      <router-link
+        class="link"
+        to="/"
+      >
+        Home
+      </router-link>
+      <router-link
+        class="link"
+        to="/signin"
+        v-if="this.$store.state.auth.isUserLoggedIn === false"
+      >
+        Sign in
+      </router-link>
+      <router-link
+        class="link"
+        to="/signup"
+        v-if="this.$store.state.auth.isUserLoggedIn === false"
+      >
+        <Regular-button>
+          Sign up
+        </Regular-button>
+      </router-link>
     </div>
   </header>
 </template>
 
 <script>
-export default {};
+import RegularButton from '@/components/buttons/RegularButton.vue';
+
+export default {
+  components: {
+    'Regular-button': RegularButton
+  }
+};
 </script>
 
 <style scoped>
