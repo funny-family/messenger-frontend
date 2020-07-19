@@ -5,6 +5,9 @@ export default {
   mutations: {
     SIGN_IN(state) {
       state.isUserLoggedIn = true;
+    },
+    SIGN_OUT(state) {
+      state.isUserLoggedIn = false;
     }
   },
   actions: {
@@ -70,6 +73,7 @@ export default {
           }
         });
         const result = await response.json();
+        commit('SIGN_OUT');
         console.log(result);
       } catch (error) {
         console.log(error);
