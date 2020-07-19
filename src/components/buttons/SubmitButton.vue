@@ -1,6 +1,6 @@
 <template>
   <button
-    class="sunmit-button"
+    class="submit-button"
     type="submit"
     formnovalidate
   >
@@ -9,7 +9,7 @@
 </template>
 
 <style scoped>
-.sunmit-button {
+.submit-button {
   width: 200px;
   height: 40px;
   cursor: pointer;
@@ -24,11 +24,11 @@
   transition: background-color 0.2s ease-out;
 }
 
-.sunmit-button:hover {
+.submit-button:hover {
   background-color: #fa5a45;
 }
 
-.sunmit-button:active {
+.submit-button:active {
   background-color: #fa3218;
 }
 </style>
