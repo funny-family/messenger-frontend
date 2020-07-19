@@ -57,6 +57,23 @@ export default {
       } catch (error) {
         console.log(error);
       }
+    },
+    async signOut({ commit }) {
+      try {
+        console.log(commit);
+        const url = process.env.VUE_APP_SIGN_OUT_URL;
+        const response = await fetch(url, {
+          method: 'POST',
+          headers: {
+            // 'Content-Type': 'application/json'
+            'Content-Type': 'application/x-www-form-urlencoded'
+          }
+        });
+        const result = await response.json();
+        console.log(result);
+      } catch (error) {
+        console.log(error);
+      }
     }
   }
 };
