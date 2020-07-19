@@ -24,16 +24,29 @@
           Sign up
         </Regular-button>
       </router-link>
+      <form
+        class="link"
+        @submit.prevent="signOut"
+      >
+        <Submit-button>Sign out</Submit-button>
+      </form>
     </div>
   </header>
 </template>
 
 <script>
 import RegularButton from '@/components/buttons/RegularButton.vue';
+import SubmitButton from '@/components/buttons/SubmitButton.vue';
+
+import { mapActions } from 'vuex';
 
 export default {
   components: {
-    'Regular-button': RegularButton
+    'Regular-button': RegularButton,
+    'Submit-button': SubmitButton
+  },
+  methods: {
+    ...mapActions(['signOut'])
   }
 };
 </script>
@@ -44,7 +57,7 @@ export default {
   box-sizing: border-box;
   position: fixed;
   width: 100%;
-  height: 48px;
+  height: 60px;
   justify-content: space-between;
   align-items: center;
   background: white;
