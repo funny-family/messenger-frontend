@@ -1,11 +1,11 @@
 <template>
-  <button class="sunmit-button">
+  <button class="regular-button">
     <slot></slot>
   </button>
 </template>
 
 <style scoped>
-.sunmit-button {
+.regular-button {
   width: 200px;
   height: 40px;
   cursor: pointer;
@@ -20,11 +20,11 @@
   transition: background-color 0.2s ease-out;
 }
 
-.sunmit-button:hover {
+.regular-button:hover {
   background-color: #fa5a45;
 }
 
-.sunmit-button:active {
+.regular-button:active {
   background-color: #fa3218;
 }
 </style>
