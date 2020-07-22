@@ -9,6 +9,7 @@
         class="sign-up-input"
         type="text"
         name="username"
+        autocomplete="username"
         placeholder="Username"
         v-model="userRegistrationData.username"
       />
@@ -16,6 +17,7 @@
         class="sign-up-input"
         type="text"
         name="email"
+        autocomplete="email"
         placeholder="Email"
         v-model="userRegistrationData.email"
       />
@@ -23,6 +25,7 @@
         class="sign-up-input"
         type="password"
         name="password"
+        autocomplete="new-password"
         placeholder="Password"
         v-model="userRegistrationData.password"
       />
@@ -30,6 +33,7 @@
         class="sign-up-input"
         type="password"
         name="password_confirmation"
+        autocomplete="off"
         placeholder="Password confirmation"
         v-model="userRegistrationData.password_confirmation"
       />

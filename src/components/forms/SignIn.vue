@@ -9,6 +9,7 @@
         class="sign-in-input"
         type="text"
         name="email"
+        autocomplete="email"
         placeholder="Email"
         v-model="userLoginData.email"
       />
@@ -16,6 +17,7 @@
         class="sign-in-input"
         type="password"
         name="password"
+        autocomplete="current-password"
         placeholder="Password"
         v-model="userLoginData.password"
       />
