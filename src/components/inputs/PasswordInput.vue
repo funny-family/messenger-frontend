@@ -5,6 +5,7 @@
       ref="passwordInput"
       autocomplete="off"
       :value="value"
+      :name="name"
       :type="type"
       :disabled="disabled"
       @input="updateInputValue($event.target.value)"
@@ -211,6 +212,10 @@ export default {
       type: String,
       default: ''
     },
+    name: {
+      type: String,
+      required: true
+    },
     disabled: {
       type: Boolean,
       default: false
@@ -257,7 +262,6 @@ export default {
   font-size: 20px;
   color: black;
   padding-top: 20px;
-  /* padding-right: 25px; */
   padding-right: calc(var(--icon-rigt-side-indet) * 4)
 }
 

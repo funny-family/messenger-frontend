@@ -5,6 +5,7 @@
       ref="clearableInput"
       autocomplete="off"
       :value="value"
+      :name="name"
       :type="type"
       :disabled="disabled"
       @input="updateInputValue($event.target.value)"
@@ -46,6 +47,10 @@ export default {
     value: {
       type: String,
       default: ''
+    },
+    name: {
+      type: String,
+      required: true
     },
     type: {
       type: String,
