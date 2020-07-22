@@ -3,9 +3,9 @@
     <input
       class="auth-input__input"
       ref="passwordInput"
-      autocomplete="off"
       :value="value"
       :name="name"
+      :autocomplete="autocomplete"
       :type="type"
       :disabled="disabled"
       @input="updateInputValue($event.target.value)"
@@ -213,6 +213,10 @@ export default {
       default: ''
     },
     name: {
+      type: String,
+      required: true
+    },
+    autocomplete: {
       type: String,
       required: true
     },
