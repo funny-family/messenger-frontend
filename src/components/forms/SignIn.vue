@@ -8,12 +8,14 @@
       <Clearable-input
         class="sign-in-input"
         type="text"
+        name="email"
         placeholder="Email"
         v-model="userLoginData.email"
       />
       <Password-input
         class="sign-in-input"
         type="password"
+        name="password"
         placeholder="Password"
         v-model="userLoginData.password"
       />

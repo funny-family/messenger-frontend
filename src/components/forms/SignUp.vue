@@ -8,24 +8,28 @@
       <Clearable-input
         class="sign-up-input"
         type="text"
+        name="username"
         placeholder="Username"
         v-model="userRegistrationData.username"
       />
       <Clearable-input
         class="sign-up-input"
         type="text"
+        name="email"
         placeholder="Email"
         v-model="userRegistrationData.email"
       />
       <Password-input
         class="sign-up-input"
         type="password"
+        name="password"
         placeholder="Password"
         v-model="userRegistrationData.password"
       />
       <Password-input
         class="sign-up-input"
         type="password"
+        name="password_confirmation"
         placeholder="Password confirmation"
         v-model="userRegistrationData.password_confirmation"
       />
@@ -57,7 +61,8 @@ export default {
   }),
   methods: {
     ...mapActions(['signUp'])
-  }
+  },
+  mounted() {}
 };
 </script>
 
