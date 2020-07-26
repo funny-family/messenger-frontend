@@ -1,13 +1,12 @@
 <template>
   <header class="header">
-    <div class="header__logo">Chatus</div>
-    <div class="header__page-links">
       <router-link
         class="link"
         to="/"
       >
-        Home
+        <div class="header__logo">Chatus</div>
       </router-link>
+    <div class="header__page-links">
       <router-link
         class="link"
         to="/signin"
