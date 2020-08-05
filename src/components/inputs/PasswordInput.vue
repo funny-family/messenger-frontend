@@ -9,8 +9,8 @@
       :type="type"
       :disabled="disabled"
       @input="updateInputValue($event.target.value)"
-      @blur="inFocused = true"
-      @focus="inFocused = false"
+      @focus="inFocus = true"
+      @blur="inFocus = false"
       required
     />
     <label class="auth-input__container" for="input">
@@ -203,7 +203,7 @@
 <script>
 export default {
   data: () => ({
-    inFocused: false,
+    inFocus: false,
     isPasswordIconVisible: false,
     type: 'password'
   }),
@@ -275,7 +275,7 @@ export default {
   bottom: 0;
   width: 100%;
   height: 100%;
-  border-bottom: 1px solid var(--not-acive);
+  border-bottom: 1px solid var(--not-acive); /* bottom border */
   pointer-events: none;
 }
 
@@ -283,10 +283,10 @@ export default {
   content: '';
   position: absolute;
   left: 0;
-  bottom: 1; /*  */
+  bottom: 1;
   width: 100%;
   height: 100%;
-  border-bottom: 1px solid var(--acive);
+  border-bottom: 1px solid var(--acive); /* bottom border */
   transition: all 0.3s ease-in-out;
   transform: translateX(-100%);
 }
