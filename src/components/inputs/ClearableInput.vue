@@ -8,6 +8,7 @@
       :autocomplete="autocomplete"
       :type="type"
       :disabled="disabled"
+      :autofocus="autofocus"
       @input="updateInputValue($event.target.value)"
       @focus="inFocus = true"
       @blur="inFocus = false"
@@ -63,6 +64,10 @@ export default {
       Validate: (type) => ['text'].indexOf(type) !== 1
     },
     disabled: {
+      type: Boolean,
+      default: false
+    },
+    autofocus: {
       type: Boolean,
       default: false
     },
