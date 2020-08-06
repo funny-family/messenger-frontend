@@ -250,8 +250,10 @@ export default {
 
 <style scoped>
 * {
-  --not-acive: #909090;
-  --acive: #4b4b4b;
+  --Suva-Grey: #909090;
+  --Charcoal: #4b4b4b;
+  --Pink: #FFD2D2;
+  --Free-Speech-Red: #D8000C;
   --icon-rigt-side-indet: 9px;
 }
 
@@ -279,7 +281,7 @@ export default {
   bottom: 0;
   width: 100%;
   height: 100%;
-  border-bottom: 1px solid var(--not-acive); /* bottom border */
+  border-bottom: 1px solid var(--Suva-Grey); /* bottom border */
   pointer-events: none;
 }
 
@@ -290,7 +292,7 @@ export default {
   bottom: 1;
   width: 100%;
   height: 100%;
-  border-bottom: 1px solid var(--acive); /* bottom border */
+  border-bottom: 1px solid var(--Charcoal); /* bottom border */
   transition: all 0.3s ease-in-out;
   transform: translateX(-100%);
 }
@@ -301,14 +303,14 @@ export default {
   bottom: 10px;
   font-size: 20px;
   font-weight: 500;
-  color: var(--not-acive);
+  color: var(--Suva-Grey);
   transition: all 0.2s ease;
 }
 
 .auth-input input:focus + .auth-input__container .auth-input__placeholder,
 .auth-input input:valid + .auth-input__container .auth-input__placeholder {
   transform: translateY(-140%);
-  color: var(--acive);
+  color: var(--Charcoal);
   font-size: 16px;
 }
 
