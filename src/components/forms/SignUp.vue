@@ -11,7 +11,6 @@
         name="username"
         autocomplete="username"
         placeholder="Username"
-        :autofocus="true"
         v-model="userRegistrationData.username"
       />
       <Clearable-input

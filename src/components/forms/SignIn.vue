@@ -11,7 +11,6 @@
         name="email"
         autocomplete="email"
         placeholder="Email"
-        :autofocus="true"
         v-model="userLoginData.email"
       />
       <Password-input
