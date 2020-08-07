@@ -20,15 +20,15 @@
   font-weight: 500;
   padding: 8px 24px;
   border-radius: 4px;
-  background-color: #FF6D59;
+  background-color: var(--Azure);
   transition: background-color 0.2s ease-out;
 }
 
 .submit-button:hover {
-  background-color: #fa5a45;
+  background-color: var(--Bluetiful);
 }
 
 .submit-button:active {
-  background-color: #fa3218;
+  background-color: var(--Flickr-Blue);
 }
 </style>

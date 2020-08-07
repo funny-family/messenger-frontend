@@ -33,7 +33,7 @@
         8.38916C0.806179 8.58423 1.12275 8.58423 1.31802 8.38916L4.49995 5.20703L7.68199
         8.38916C7.87724 8.58447 8.19383 8.58447 8.3891 8.38916C8.58435 8.19385 8.58435
         7.87744 8.3891 7.68213L5.207 4.5L8.38908 1.31787C8.58435 1.1228 8.58435 0.806152
-        8.38908 0.61084Z" fill="#909090"/>
+        8.38908 0.61084Z" fill="#4b4b4b"/>
     </svg>
   </div>
 </template>
@@ -89,10 +89,6 @@ export default {
 
 <style scoped>
 * {
-  --Suva-Grey: #909090;
-  --Charcoal: #4b4b4b;
-  --Pink: #FFD2D2;
-  --Free-Speech-Red: #D8000C;
   --icon-rigt-side-indet: 11px;
 }
 
@@ -120,7 +116,7 @@ export default {
   bottom: 0;
   width: 100%;
   height: 100%;
-  border-bottom: 1px solid var(--Suva-Grey); /* bottom border */
+  border-bottom: 1px solid var(--Charcoal);
   pointer-events: none;
 }
 
@@ -131,7 +127,7 @@ export default {
   bottom: 1;
   width: 100%;
   height: 100%;
-  border-bottom: 1px solid var(--Charcoal); /* bottom border */
+  border-bottom: 1px solid var(--Azure);
   transition: all 0.3s ease-in-out;
   transform: translateX(-100%);
 }
@@ -149,7 +145,7 @@ export default {
 .auth-input input:focus + .auth-input__container .auth-input__placeholder,
 .auth-input input:valid + .auth-input__container .auth-input__placeholder {
   transform: translateY(-140%);
-  color: var(--Charcoal);
+  color: var(--Azure);
   font-size: 16px;
 }
 
