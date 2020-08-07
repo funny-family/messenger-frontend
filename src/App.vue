@@ -39,7 +39,7 @@
 }
 
 :root {
-  --selection-color: #f0f0f0;
+  --White-Smoke: #f0f0f0;
 }
 
 * {
@@ -92,6 +92,6 @@ a:hover {
   color: #5f5f5f;
 }
 
-::-moz-selection { background: var(--selection-color); }
-::selection { background: var(--selection-color); }
+::-moz-selection { background: var(--White-Smoke); }
+::selection { background: var(--White-Smoke); }
 </style>
