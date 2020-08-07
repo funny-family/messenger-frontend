@@ -40,6 +40,10 @@
 
 :root {
   --White-Smoke: #f0f0f0;
+
+  --Azure: #2b80ff;
+  --Bluetiful: #266EF2;
+  --Flickr-Blue: #205BE5;
 }
 
 * {
