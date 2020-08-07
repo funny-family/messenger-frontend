@@ -39,11 +39,15 @@
 }
 
 :root {
-  --White-Smoke: #f0f0f0;
+  --White-Smoke: #f0f0f0; /* selection */
 
-  --Azure: #2b80ff;
-  --Bluetiful: #266EF2;
-  --Flickr-Blue: #205BE5;
+  --Azure: #2b80ff; /* main */
+  --Bluetiful: #266EF2; /* hover */
+  --Flickr-Blue: #205BE5; /* active/click */
+
+  /* input colors */
+  --Suva-Grey: #909090;
+  --Charcoal: #4b4b4b;
 }
 
 * {
