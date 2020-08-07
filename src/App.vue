@@ -48,6 +48,8 @@
   /* input colors */
   --Suva-Grey: #909090;
   --Charcoal: #4b4b4b;
+
+  --Rosso-Corsa: #D50000;
 }
 
 * {
