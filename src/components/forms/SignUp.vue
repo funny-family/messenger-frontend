@@ -72,8 +72,8 @@ export default {
 
 <style scoped>
 .sign-up-from {
-  width: 300px;
-  min-width: 300px;
+  width: 400px;
+  min-width: 400px;
 }
 
 .sign-up-input {

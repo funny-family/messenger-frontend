@@ -53,8 +53,8 @@ export default {
 
 <style scoped>
 .sign-in-from {
-  width: 300px;
-  min-width: 300px;
+  width: 400px;
+  min-width: 400px;
 }
 
 .sign-in-input {
