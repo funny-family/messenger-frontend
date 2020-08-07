@@ -230,9 +230,4 @@ export default {
 .error-container svg {
   margin-right: 6px;
 }
-
-.has-error {
-  color: var(--Rosso-Corsa);
-  /* border-bottom: var(--Rosso-Corsa); */
-}
 </style>
