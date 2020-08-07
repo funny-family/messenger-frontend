@@ -255,7 +255,6 @@ export default {
 
 .auth-input {
   position: relative;
-  width: 280px;
   height: 60px;
   overflow: hidden;
 }
