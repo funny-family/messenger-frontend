@@ -10,7 +10,7 @@
         type="text"
         name="email"
         autocomplete="email"
-        placeholder="Email"
+        placeholder="Email address"
         v-model="userLoginData.email"
       />
       <Password-input

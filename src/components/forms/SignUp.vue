@@ -10,7 +10,7 @@
         type="text"
         name="username"
         autocomplete="username"
-        placeholder="Username"
+        placeholder="Create username"
         v-model="userRegistrationData.username"
       />
       <Clearable-input
@@ -18,7 +18,7 @@
         type="text"
         name="email"
         autocomplete="email"
-        placeholder="Email"
+        placeholder="Enter your email address"
         v-model="userRegistrationData.email"
       />
       <Password-input
@@ -26,7 +26,7 @@
         type="password"
         name="password"
         autocomplete="new-password"
-        placeholder="Password"
+        placeholder="Create password"
         v-model="userRegistrationData.password"
       />
       <Password-input
@@ -34,7 +34,7 @@
         type="password"
         name="password_confirmation"
         autocomplete="off"
-        placeholder="Password confirmation"
+        placeholder="Confirm password"
         v-model="userRegistrationData.password_confirmation"
       />
       <Submit-button class="sign-up-button">Sign in</Submit-button>
