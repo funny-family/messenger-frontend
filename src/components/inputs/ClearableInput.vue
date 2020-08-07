@@ -99,10 +99,6 @@ export default {
       // default: 'Password is required!'
       default: ''
     },
-    autofocus: {
-      type: Boolean,
-      default: false
-    },
     placeholder: {
       type: String,
       default: ''
@@ -193,17 +189,17 @@ export default {
   transition: all 0.2s ease;
 }
 
-.auth-input input:focus + .auth-input__container::after ,
-.auth-input input:valid + .auth-input__container::after  {
-  border-color: var(--border-color-focused);
-  transform: translateX(0%);
-}
-
 .auth-input input:focus + .auth-input__container .auth-input__placeholder,
 .auth-input input:valid + .auth-input__container .auth-input__placeholder {
   transform: translateY(-140%);
   color: var(--placeholder-color-focused);
   font-size: 16px;
+}
+
+.auth-input input:focus + .auth-input__container::after ,
+.auth-input input:valid + .auth-input__container::after  {
+  border-color: var(--border-color-focused);
+  transform: translateX(0%);
 }
 
 .auth-input__icon {
