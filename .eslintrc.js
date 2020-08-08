@@ -11,6 +11,7 @@ module.exports = {
     parser: 'babel-eslint'
   },
   rules: {
+    'operator-linebreak': ['error', 'after'],
     camelcase: 'off',
     'func-names': ['off', 'never'],
     'comma-dangle': ['error', 'never'],
