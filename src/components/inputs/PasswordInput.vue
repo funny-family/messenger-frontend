@@ -254,7 +254,6 @@ export default {
     },
     error: {
       type: String,
-      // default: 'Password is required!'
       default: ''
     },
     placeholder: {
