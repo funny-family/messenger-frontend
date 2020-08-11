@@ -13,6 +13,7 @@
         autocomplete="username"
         placeholder="Create username"
         :error="formFieldError.username"
+        :animated="fieldAnimation.username"
         v-model="userRegistrationData.username"
       />
       <Clearable-input
@@ -23,6 +24,7 @@
         autocomplete="email"
         placeholder="Enter your email address"
         :error="formFieldError.email"
+        :animated="fieldAnimation.email"
         v-model="userRegistrationData.email"
       />
       <Password-input
@@ -33,6 +35,7 @@
         autocomplete="new-password"
         placeholder="Create password"
         :error="formFieldError.password"
+        :animated="fieldAnimation.password"
         v-model="userRegistrationData.password"
       />
       <Password-input
@@ -43,6 +46,7 @@
         autocomplete="off"
         placeholder="Confirm password"
         :error="formFieldError.password_confirmation"
+        :animated="fieldAnimation.password_confirmation"
         v-model="userRegistrationData.password_confirmation"
       />
       <Submit-button class="sign-up-button">Sign in</Submit-button>
@@ -76,9 +80,39 @@ export default {
       email: '',
       password: '',
       password_confirmation: ''
+    },
+    fieldAnimation: {
+      username: false,
+      email: false,
+      password: false,
+      password_confirmation: false
     }
   }),
   methods: {
+    setAnimationToUsernameErrorField() {
+      this.$data.fieldAnimation.username = true;
+      setTimeout(() => {
+        this.$data.fieldAnimation.username = false;
+      }, 500);
+    },
+    setAnimationToEmailErrorField() {
+      this.$data.fieldAnimation.email = true;
+      setTimeout(() => {
+        this.$data.fieldAnimation.email = false;
+      }, 500);
+    },
+    setAnimationToPasswordErrorField() {
+      this.$data.fieldAnimation.password = true;
+      setTimeout(() => {
+        this.$data.fieldAnimation.password = false;
+      }, 500);
+    },
+    setAnimationToPasswordConfirmationErrorField() {
+      this.$data.fieldAnimation.password_confirmation = true;
+      setTimeout(() => {
+        this.$data.fieldAnimation.password_confirmation = false;
+      }, 500);
+    },
     setFocusToUsernameField() {
       this.$refs.username.$el.children[0].firstChild.focus();
     },
@@ -95,33 +129,40 @@ export default {
     errorsChecking() {
       if (this.$data.userRegistrationData.username === '') {
         this.$data.formFieldError.username = 'Username is required!';
+        this.setAnimationToUsernameErrorField();
       } else if (this.$data.userRegistrationData.username.length < usernameLength) {
         this.$data.formFieldError.username = `Username must be at least ${usernameLength} characters!`;
+        this.setAnimationToUsernameErrorField();
       } else {
         this.$data.formFieldError.username = '';
       }
 
       if (this.$data.userRegistrationData.email === '') {
         this.$data.formFieldError.email = 'Email is required!';
+        this.setAnimationToEmailErrorField();
       } else {
         this.$data.formFieldError.email = '';
       }
 
       if (this.$data.userRegistrationData.password === '') {
         this.$data.formFieldError.password = 'Password is required!';
+        this.setAnimationToPasswordErrorField();
       } else if (this.$data.userRegistrationData.password.length < passwordLength) {
         this.$data.formFieldError.password = `Password must be at least ${passwordLength} characters!`;
+        this.setAnimationToPasswordErrorField();
       } else {
         this.$data.formFieldError.password = '';
       }
 
       if (this.$data.userRegistrationData.password_confirmation === '') {
         this.$data.formFieldError.password_confirmation = 'Password should be confirmed!';
+        this.setAnimationToPasswordConfirmationErrorField();
       } else if (
         this.$data.userRegistrationData.password_confirmation !==
         this.$data.userRegistrationData.password
       ) {
         this.$data.formFieldError.password_confirmation = 'Passwords must match!';
+        this.setAnimationToPasswordConfirmationErrorField();
       } else {
         this.$data.formFieldError.password_confirmation = '';
       }
@@ -137,6 +178,7 @@ export default {
         ) {
           await this.$store.dispatch('signUp', this.$data.userRegistrationData);
           this.$data.formFieldError.email = this.$store.state.auth.authError.email.message;
+          this.setAnimationToEmailErrorField();
           // if sign up result successful
           if (await this.$store.state.auth.isUserSiggedUp === true) {
             this.$data.userRegistrationData.username = '';
@@ -191,7 +233,7 @@ export default {
       }
     }
   }
-  // created() {
+  // beforeMount() {
   //   this.setFocusToUsernameField();
   // }
 };
