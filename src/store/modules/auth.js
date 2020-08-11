@@ -1,13 +1,21 @@
 export default {
   state: {
-    isUserLoggedIn: false
+    isUserLoggedIn: false,
+    isUserSiggedUp: false,
+    authError: {}
   },
   mutations: {
     SIGN_IN(state) {
       state.isUserLoggedIn = true;
     },
+    SIGN_UP(state) {
+      state.isUserSiggedUp = true;
+    },
     SIGN_OUT(state) {
       state.isUserLoggedIn = false;
+    },
+    AUTH_ERRORS_SETTER(state, error) {
+      state.authError = error;
     }
   },
   actions: {
@@ -29,9 +37,29 @@ export default {
           },
           body: JSON.stringify(userRegistrationData)
         });
-        const result = await response.json();
-        commit('SIGN_IN');
-        console.log('SIGN UP FETCH RESULT!', result);
+        console.log(response);
+        if (response.ok) {
+          await response.json();
+          commit('SIGN_UP');
+        } else {
+          const result = await response.json();
+          const errors = {
+            username: {
+              message: ''
+            },
+            email: {
+              message: ''
+            },
+            password: {
+              message: ''
+            },
+            password_confirmation: {
+              message: ''
+            }
+          };
+          errors.email.message = result.errors.email.properties.message;
+          commit('AUTH_ERRORS_SETTER', errors);
+        }
       } catch (error) {
         console.log(error);
       }
@@ -44,8 +72,6 @@ export default {
           email,
           password
         };
-        console.log(commit);
-        console.log('userLoginData:', userLoginData);
         const url = process.env.VUE_APP_SIGN_IN_URL;
         const response = await fetch(url, {
           method: 'POST',
@@ -56,14 +82,15 @@ export default {
           body: JSON.stringify(userLoginData)
         });
         const result = await response.json();
+        console.log('response', response);
         console.log('SIGN IN FETCH RESULT!', result);
+        commit('SIGN_IN');
       } catch (error) {
         console.log(error);
       }
     },
     async signOut({ commit }) {
       try {
-        console.log(commit);
         const url = process.env.VUE_APP_SIGN_OUT_URL;
         const response = await fetch(url, {
           method: 'POST',
@@ -72,9 +99,10 @@ export default {
             'Content-Type': 'application/x-www-form-urlencoded'
           }
         });
+        console.log('response', response);
         const result = await response.json();
-        commit('SIGN_OUT');
         console.log(result);
+        commit('SIGN_OUT');
       } catch (error) {
         console.log(error);
       }

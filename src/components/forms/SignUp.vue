@@ -2,39 +2,47 @@
   <div class="sign-up-form-position">
     <form
       class="sign-up-from"
-      @submit.prevent="signUp(userRegistrationData)"
+      @submit.prevent="signUp"
     >
       <div>Sign up</div>
       <Clearable-input
+        ref="username"
         class="sign-up-input"
         type="text"
         name="username"
         autocomplete="username"
         placeholder="Create username"
+        :error="formFieldError.username"
         v-model="userRegistrationData.username"
       />
       <Clearable-input
+        ref="email"
         class="sign-up-input"
         type="text"
         name="email"
         autocomplete="email"
         placeholder="Enter your email address"
+        :error="formFieldError.email"
         v-model="userRegistrationData.email"
       />
       <Password-input
+        ref="password"
         class="sign-up-input"
         type="password"
         name="password"
         autocomplete="new-password"
         placeholder="Create password"
+        :error="formFieldError.password"
         v-model="userRegistrationData.password"
       />
       <Password-input
+        ref="passwordConfirmation"
         class="sign-up-input"
         type="password"
         name="password_confirmation"
         autocomplete="off"
         placeholder="Confirm password"
+        :error="formFieldError.password_confirmation"
         v-model="userRegistrationData.password_confirmation"
       />
       <Submit-button class="sign-up-button">Sign in</Submit-button>
@@ -47,7 +55,8 @@ import ClearableInput from '@/components/inputs/ClearableInput.vue';
 import PasswordInput from '@/components/inputs/PasswordInput.vue';
 import SubmitButton from '@/components/buttons/SubmitButton.vue';
 
-import { mapActions } from 'vuex';
+const usernameLength = 4;
+const passwordLength = 6;
 
 export default {
   components: {
@@ -61,12 +70,130 @@ export default {
       email: '',
       password: '',
       password_confirmation: ''
+    },
+    formFieldError: {
+      username: '',
+      email: '',
+      password: '',
+      password_confirmation: ''
     }
   }),
   methods: {
-    ...mapActions(['signUp'])
+    setFocusToUsernameField() {
+      this.$refs.username.$el.children[0].firstChild.focus();
+    },
+    setFocusToEmailField() {
+      this.$refs.email.$el.children[0].firstChild.focus();
+    },
+    setFocusToPasswordField() {
+      this.$refs.password.$el.children[0].firstChild.focus();
+    },
+    setFocusToPasswordConfirmationField() {
+      this.$refs.passwordConfirmation.$el.children[0].firstChild.focus();
+    },
+    // part of error checks was moved to client side to not load the server
+    errorsChecking() {
+      if (this.$data.userRegistrationData.username === '') {
+        this.$data.formFieldError.username = 'Username is required!';
+      } else if (this.$data.userRegistrationData.username.length < usernameLength) {
+        this.$data.formFieldError.username = `Username must be at least ${usernameLength} characters!`;
+      } else {
+        this.$data.formFieldError.username = '';
+      }
+
+      if (this.$data.userRegistrationData.email === '') {
+        this.$data.formFieldError.email = 'Email is required!';
+      } else {
+        this.$data.formFieldError.email = '';
+      }
+
+      if (this.$data.userRegistrationData.password === '') {
+        this.$data.formFieldError.password = 'Password is required!';
+      } else if (this.$data.userRegistrationData.password.length < passwordLength) {
+        this.$data.formFieldError.password = `Password must be at least ${passwordLength} characters!`;
+      } else {
+        this.$data.formFieldError.password = '';
+      }
+
+      if (this.$data.userRegistrationData.password_confirmation === '') {
+        this.$data.formFieldError.password_confirmation = 'Password should be confirmed!';
+      } else if (
+        this.$data.userRegistrationData.password_confirmation !==
+        this.$data.userRegistrationData.password
+      ) {
+        this.$data.formFieldError.password_confirmation = 'Passwords must match!';
+      } else {
+        this.$data.formFieldError.password_confirmation = '';
+      }
+    },
+    async signUp() {
+      try {
+        await this.errorsChecking();
+        if (
+          this.$data.formFieldError.username === '' &&
+          this.$data.formFieldError.email === '' &&
+          this.$data.formFieldError.password === '' &&
+          this.$data.formFieldError.password_confirmation === ''
+        ) {
+          await this.$store.dispatch('signUp', this.$data.userRegistrationData);
+          this.$data.formFieldError.email = this.$store.state.auth.authError.email.message;
+          // if sign up result successful
+          if (await this.$store.state.auth.isUserSiggedUp === true) {
+            this.$data.userRegistrationData.username = '';
+            this.$data.userRegistrationData.email = '';
+            this.$data.userRegistrationData.password = '';
+            this.$data.userRegistrationData.password_confirmation = '';
+
+            this.$data.formFieldError.username = '';
+            this.$data.formFieldError.email = '';
+            this.$data.formFieldError.password = '';
+            this.$data.formFieldError.password_confirmation = '';
+          }
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    }
   },
-  mounted() {}
+  computed: {
+    usernameFieldValue() {
+      return this.$data.userRegistrationData.username;
+    },
+    emailFieldValue() {
+      return this.$data.userRegistrationData.email;
+    },
+    passwordFieldValue() {
+      return this.$data.userRegistrationData.password;
+    },
+    passwordConfirmationFieldValue() {
+      return this.$data.userRegistrationData.password_confirmation;
+    }
+  },
+  watch: {
+    usernameFieldValue() {
+      if (this.$data.userRegistrationData.username !== '') {
+        this.$data.formFieldError.username = '';
+      }
+    },
+    emailFieldValue() {
+      if (this.$data.userRegistrationData.email !== '') {
+        this.$data.formFieldError.email = '';
+      }
+    },
+    passwordFieldValue() {
+      if (this.$data.userRegistrationData.password !== '') {
+        this.$data.formFieldError.password = '';
+      }
+    },
+    passwordConfirmationFieldValue() {
+      if (this.$data.userRegistrationData.password_confirmation !== '') {
+        this.$data.formFieldError.password_confirmation = '';
+      }
+    }
+  }
+  // created() {
+  //   this.setFocusToUsernameField();
+  // }
 };
 </script>
 
