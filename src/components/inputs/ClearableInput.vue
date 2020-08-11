@@ -70,8 +70,8 @@
 <script>
 export default {
   data: () => ({
-    inFocus: false,
-    animated: true
+    inFocus: false
+    // animated: true
   }),
   props: {
     value: {
@@ -99,6 +99,10 @@ export default {
     error: {
       type: String,
       default: ''
+    },
+    animated: {
+      type: Boolean,
+      default: true
     },
     placeholder: {
       type: String,

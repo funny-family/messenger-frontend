@@ -234,7 +234,7 @@ export default {
   data: () => ({
     inFocus: false,
     isPasswordIconVisible: false,
-    animated: true,
+    // animated: true,
     type: 'password'
   }),
   props: {
@@ -257,6 +257,10 @@ export default {
     error: {
       type: String,
       default: ''
+    },
+    animated: {
+      type: Boolean,
+      default: true
     },
     placeholder: {
       type: String,
