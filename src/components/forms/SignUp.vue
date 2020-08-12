@@ -89,29 +89,29 @@ export default {
     }
   }),
   methods: {
-    setAnimationToUsernameErrorField() {
+    animateUsernameErrorField() {
       this.$data.fieldAnimation.username = true;
       setTimeout(() => {
         this.$data.fieldAnimation.username = false;
-      }, 500);
+      }, 400);
     },
-    setAnimationToEmailErrorField() {
+    animateEmailErrorField() {
       this.$data.fieldAnimation.email = true;
       setTimeout(() => {
         this.$data.fieldAnimation.email = false;
-      }, 500);
+      }, 400);
     },
-    setAnimationToPasswordErrorField() {
+    animatePasswordErrorField() {
       this.$data.fieldAnimation.password = true;
       setTimeout(() => {
         this.$data.fieldAnimation.password = false;
-      }, 500);
+      }, 400);
     },
-    setAnimationToPasswordConfirmationErrorField() {
+    animatePasswordConfirmationErrorField() {
       this.$data.fieldAnimation.password_confirmation = true;
       setTimeout(() => {
         this.$data.fieldAnimation.password_confirmation = false;
-      }, 500);
+      }, 400);
     },
     setFocusToUsernameField() {
       this.$refs.username.$el.children[0].firstChild.focus();
@@ -129,40 +129,40 @@ export default {
     errorsChecking() {
       if (this.$data.userRegistrationData.username === '') {
         this.$data.formFieldError.username = 'Username is required!';
-        this.setAnimationToUsernameErrorField();
+        this.animateUsernameErrorField();
       } else if (this.$data.userRegistrationData.username.length < usernameLength) {
         this.$data.formFieldError.username = `Username must be at least ${usernameLength} characters!`;
-        this.setAnimationToUsernameErrorField();
+        this.animateUsernameErrorField();
       } else {
         this.$data.formFieldError.username = '';
       }
 
       if (this.$data.userRegistrationData.email === '') {
         this.$data.formFieldError.email = 'Email is required!';
-        this.setAnimationToEmailErrorField();
+        this.animateEmailErrorField();
       } else {
         this.$data.formFieldError.email = '';
       }
 
       if (this.$data.userRegistrationData.password === '') {
         this.$data.formFieldError.password = 'Password is required!';
-        this.setAnimationToPasswordErrorField();
+        this.animatePasswordErrorField();
       } else if (this.$data.userRegistrationData.password.length < passwordLength) {
         this.$data.formFieldError.password = `Password must be at least ${passwordLength} characters!`;
-        this.setAnimationToPasswordErrorField();
+        this.animatePasswordErrorField();
       } else {
         this.$data.formFieldError.password = '';
       }
 
       if (this.$data.userRegistrationData.password_confirmation === '') {
         this.$data.formFieldError.password_confirmation = 'Password should be confirmed!';
-        this.setAnimationToPasswordConfirmationErrorField();
+        this.animatePasswordConfirmationErrorField();
       } else if (
         this.$data.userRegistrationData.password_confirmation !==
         this.$data.userRegistrationData.password
       ) {
         this.$data.formFieldError.password_confirmation = 'Passwords must match!';
-        this.setAnimationToPasswordConfirmationErrorField();
+        this.animatePasswordConfirmationErrorField();
       } else {
         this.$data.formFieldError.password_confirmation = '';
       }
@@ -178,7 +178,7 @@ export default {
         ) {
           await this.$store.dispatch('signUp', this.$data.userRegistrationData);
           this.$data.formFieldError.email = this.$store.state.auth.authError.email.message;
-          this.setAnimationToEmailErrorField();
+          this.animateEmailErrorField();
           // if sign up result successful
           if (await this.$store.state.auth.isUserSiggedUp === true) {
             this.$data.userRegistrationData.username = '';
