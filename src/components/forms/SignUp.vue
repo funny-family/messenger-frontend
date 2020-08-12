@@ -113,18 +113,7 @@ export default {
         this.$data.fieldAnimation.password_confirmation = false;
       }, 400);
     },
-    setFocusToUsernameField() {
-      this.$refs.username.$el.children[0].firstChild.focus();
-    },
-    setFocusToEmailField() {
-      this.$refs.email.$el.children[0].firstChild.focus();
-    },
-    setFocusToPasswordField() {
-      this.$refs.password.$el.children[0].firstChild.focus();
-    },
-    setFocusToPasswordConfirmationField() {
-      this.$refs.passwordConfirmation.$el.children[0].firstChild.focus();
-    },
+
     // part of error checks was moved to client side to not load the server
     errorsChecking() {
       if (this.$data.userRegistrationData.username === '') {
@@ -167,6 +156,7 @@ export default {
         this.$data.formFieldError.password_confirmation = '';
       }
     },
+
     async signUp() {
       try {
         await this.errorsChecking();
@@ -234,7 +224,7 @@ export default {
     }
   },
   mounted() {
-    this.setFocusToUsernameField();
+    this.setFocusToField('username');
   }
 };
 </script>
