@@ -232,10 +232,10 @@ export default {
         this.$data.formFieldError.password_confirmation = '';
       }
     }
+  },
+  mounted() {
+    this.setFocusToUsernameField();
   }
-  // beforeMount() {
-  //   this.setFocusToUsernameField();
-  // }
 };
 </script>
 
