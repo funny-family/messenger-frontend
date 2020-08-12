@@ -114,6 +114,10 @@ export default {
       }, 400);
     },
 
+    setFocusToField(fieldName) {
+      this.$refs[fieldName].$el.children[0].firstChild.focus();
+    },
+
     // part of error checks was moved to client side to not load the server
     errorsChecking() {
       if (this.$data.userRegistrationData.username === '') {
