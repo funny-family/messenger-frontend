@@ -144,11 +144,11 @@ export default {
     },
 
     clearObjectData(object) {
-      const iterableObject = this.$data[object];
-      Object.keys(iterableObject).forEach((key) => {
-        iterableObject[key] = '';
+      const clearableObject = this.$data[object];
+      Object.keys(clearableObject).forEach((key) => {
+        clearableObject[key] = '';
       });
-      return iterableObject;
+      return clearableObject;
     },
 
     async signUp() {
