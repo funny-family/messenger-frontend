@@ -151,6 +151,18 @@ export default {
       return clearableObject;
     },
 
+    setFocusToErrorField() {
+      if (this.$data.formFieldError.username !== '') {
+        this.setFocusToField('username');
+      } else if (this.$data.formFieldError.email !== '') {
+        this.setFocusToField('email');
+      } else if (this.$data.formFieldError.password !== '') {
+        this.setFocusToField('password');
+      } else if (this.$data.formFieldError.password_confirmation !== '') {
+        this.setFocusToField('passwordConfirmation');
+      }
+    },
+
     async signUp() {
       try {
         await this.errorsChecking();
@@ -170,6 +182,7 @@ export default {
             this.clearObjectData('formFieldError');
           }
         }
+        this.setFocusToErrorField();
       } catch (error) {
         console.log(error);
       }
