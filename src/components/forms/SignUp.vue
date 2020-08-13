@@ -13,7 +13,7 @@
         autocomplete="username"
         placeholder="Create username"
         :error="formFieldError.username"
-        :animated="fieldAnimation.username"
+        :animated="formFieldAnimation.username"
         v-model="userRegistrationData.username"
       />
       <Clearable-input
@@ -24,7 +24,7 @@
         autocomplete="email"
         placeholder="Enter your email address"
         :error="formFieldError.email"
-        :animated="fieldAnimation.email"
+        :animated="formFieldAnimation.email"
         v-model="userRegistrationData.email"
       />
       <Password-input
@@ -35,7 +35,7 @@
         autocomplete="new-password"
         placeholder="Create password"
         :error="formFieldError.password"
-        :animated="fieldAnimation.password"
+        :animated="formFieldAnimation.password"
         v-model="userRegistrationData.password"
       />
       <Password-input
@@ -46,7 +46,7 @@
         autocomplete="off"
         placeholder="Confirm password"
         :error="formFieldError.password_confirmation"
-        :animated="fieldAnimation.password_confirmation"
+        :animated="formFieldAnimation.password_confirmation"
         v-model="userRegistrationData.password_confirmation"
       />
       <Submit-button class="sign-up-button">Sign in</Submit-button>
@@ -81,7 +81,7 @@ export default {
       password: '',
       password_confirmation: ''
     },
-    fieldAnimation: {
+    formFieldAnimation: {
       username: false,
       email: false,
       password: false,
@@ -90,9 +90,9 @@ export default {
   }),
   methods: {
     animateErrorField(fieldName) {
-      this.$data.fieldAnimation[fieldName] = true;
+      this.$data.formFieldAnimation[fieldName] = true;
       setTimeout(() => {
-        this.$data.fieldAnimation[fieldName] = false;
+        this.$data.formFieldAnimation[fieldName] = false;
       }, 400);
     },
 
