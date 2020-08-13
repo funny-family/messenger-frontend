@@ -143,6 +143,14 @@ export default {
       }
     },
 
+    clearObjectData(object) {
+      const iterableObject = this.$data[object];
+      Object.keys(iterableObject).forEach((key) => {
+        iterableObject[key] = '';
+      });
+      return iterableObject;
+    },
+
     async signUp() {
       try {
         await this.errorsChecking();
@@ -158,15 +166,8 @@ export default {
 
           // if sign up result successful
           if (await this.$store.state.auth.isUserSiggedUp === true) {
-            this.$data.userRegistrationData.username = '';
-            this.$data.userRegistrationData.email = '';
-            this.$data.userRegistrationData.password = '';
-            this.$data.userRegistrationData.password_confirmation = '';
-
-            this.$data.formFieldError.username = '';
-            this.$data.formFieldError.email = '';
-            this.$data.formFieldError.password = '';
-            this.$data.formFieldError.password_confirmation = '';
+            this.clearObjectData('userRegistrationData');
+            this.clearObjectData('formFieldError');
           }
         }
       } catch (error) {
