@@ -4,7 +4,6 @@
       class="sign-up-from"
       @submit.prevent="signUp"
     >
-      <div>Sign up</div>
       <Clearable-input
         ref="username"
         class="sign-up-input"
@@ -50,6 +49,9 @@
         v-model="userRegistrationData.password_confirmation"
       />
       <Submit-button class="sign-up-button">Sign in</Submit-button>
+      <router-link to="signin">
+        <div class="new-account-link">If you don't have account you can create it <b>here</b>!</div>
+      </router-link>
     </form>
   </div>
 </template>
@@ -244,5 +246,23 @@ export default {
 .sign-up-button {
   width: 100%;
   margin: 20px 0;
+}
+
+.new-account-link {
+  letter-spacing: 0.3px;
+}
+
+.new-account-link::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 1px;
+  background-color: var(--Azure);
+  transition: width 0.3s;
+}
+
+.new-account-link:hover::after {
+  width: 100%;
+  transition: width 0.3s;
 }
 </style>
