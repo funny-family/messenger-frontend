@@ -223,7 +223,7 @@ export default {
 }
 
 .error-container span {
-  color: var(--Rosso-Corsa);
+  color: var(--error-color);
   font-size: 16px;
   font-weight: 500px;
 }
