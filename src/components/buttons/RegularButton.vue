@@ -28,3 +28,9 @@
   background-color: var(--Flickr-Blue);
 }
 </style>
+
+<script>
+export default {
+  name: 'Regular-button'
+};
+</script>

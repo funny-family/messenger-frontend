@@ -32,3 +32,9 @@
   background-color: var(--Flickr-Blue);
 }
 </style>
+
+<script>
+export default {
+  name: 'Submit-button'
+};
+</script>
