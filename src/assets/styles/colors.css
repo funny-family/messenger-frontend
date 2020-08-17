@@ -1,5 +1,5 @@
 :root {
-  --White-Smoke: #f0f0f0; /* selection */
+  --selection-color: #f0f0f0; /* selection */
 
   --Azure: #0A84FF; /* default */
   --Bluetiful: #007CFA; /* hover */
