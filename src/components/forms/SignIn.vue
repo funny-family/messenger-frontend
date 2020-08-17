@@ -35,7 +35,7 @@ import { mapActions } from 'vuex';
 
 export default {
   components: {
-    'Clearable-input': ClearableInput,
+    ClearableInput,
     PasswordInput,
     SubmitButton
   },
