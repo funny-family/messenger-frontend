@@ -1,5 +1,8 @@
 <template>
-  <button class="regular-button">
+  <button
+    class="regular-button"
+    :disabled="disabled"
+  >
     <slot></slot>
   </button>
 </template>
@@ -27,10 +30,22 @@
 .regular-button:active {
   background-color: var(--Flickr-Blue);
 }
+
+.regular-button:disabled {
+  color: var(--disabled-text-button-light);
+  background-color: var(--disabled-bg-button-light);
+  cursor: default;
+}
 </style>
 
 <script>
 export default {
-  name: 'Regular-button'
+  name: 'Regular-button',
+  props: {
+    disabled: {
+      type: Boolean,
+      default: false
+    }
+  }
 };
 </script>

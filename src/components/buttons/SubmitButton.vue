@@ -2,6 +2,7 @@
   <button
     class="submit-button"
     type="submit"
+    :disabled="disabled"
     formnovalidate
   >
     <slot></slot>
@@ -31,10 +32,22 @@
 .submit-button:active {
   background-color: var(--Flickr-Blue);
 }
+
+.submit-button:disabled {
+  color: var(--disabled-text-button-light);
+  background-color: var(--disabled-bg-button-light);
+  cursor: default;
+}
 </style>
 
 <script>
 export default {
-  name: 'Submit-button'
+  name: 'Submit-button',
+  props: {
+    disabled: {
+      type: Boolean,
+      default: false
+    }
+  }
 };
 </script>
