@@ -282,17 +282,17 @@ export default {
   computed: {
     borderColor() {
       return {
-        '--border-color': (this.$props.error === '') ? '#4b4b4b' : '#D50000'
+        '--border-color': (this.$props.error === '') ? '#4b4b4b' : '#F22837'
       };
     },
     borderColorFocused() {
       return {
-        '--border-color-focused': (this.$props.error === '') ? '#2b80ff' : '#D50000'
+        '--border-color-focused': (this.$props.error === '') ? '#2b80ff' : '#F22837'
       };
     },
     placeholderColorFocused() {
       return {
-        '--placeholder-color-focused': (this.$props.error === '') ? '#2b80ff' : '#D50000'
+        '--placeholder-color-focused': (this.$props.error === '') ? '#2b80ff' : '#F22837'
       };
     }
   }
