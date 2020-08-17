@@ -231,10 +231,10 @@
 
 <script>
 export default {
+  name: 'Password-input',
   data: () => ({
     inFocus: false,
     isPasswordIconVisible: false,
-    // animated: true,
     type: 'password'
   }),
   props: {
