@@ -41,8 +41,8 @@ import { mapActions } from 'vuex';
 
 export default {
   components: {
-    'Regular-button': RegularButton,
-    'Submit-button': SubmitButton
+    RegularButton,
+    SubmitButton
   },
   methods: {
     ...mapActions(['signOut'])

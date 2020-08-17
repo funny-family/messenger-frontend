@@ -68,7 +68,7 @@ export default {
   components: {
     'Clearable-input': ClearableInput,
     'Password-input': PasswordInput,
-    'Submit-button': SubmitButton
+    SubmitButton
   },
   data: () => ({
     userRegistrationData: {
