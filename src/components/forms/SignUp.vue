@@ -67,7 +67,7 @@ const passwordLength = 6;
 export default {
   components: {
     'Clearable-input': ClearableInput,
-    'Password-input': PasswordInput,
+    PasswordInput,
     SubmitButton
   },
   data: () => ({
