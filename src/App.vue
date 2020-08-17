@@ -10,98 +10,12 @@
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-@keyframes fade-in-down {
-  from {
-    transform: translate3d(0, -40px, 0);
-  }
+@import url('./assets/styles/page-transition.css');
+@import url('./assets/styles/colors.css');
+@import url('./assets/styles/input.css');
+@import url('./assets/styles/button.css');
+@import url('./assets/styles/link.css');
+@import url('./assets/styles/body.css');
+@import url('./assets/styles/selection.css');
 
-  to {
-    transform: translate3d(0, 0, 0);
-    opacity: 1
-  }
-}
-
-.fade-in-down-leave-to {
-  opacity: 0;
-  transition: opacity .3s;
-}
-
-.fade-in-down-enter {
-  opacity: 0;
-  transform: translate3d(0, -40px, 0);
-}
-
-.fade-in-down-enter-to {
-  opacity: 0;
-  animation-duration: .7s;
-  animation-fill-mode: both;
-  animation-name: fade-in-down;
-}
-
-:root {
-  --White-Smoke: #f0f0f0; /* selection */
-
-  --Azure: #2b80ff; /* main */
-  --Bluetiful: #266EF2; /* hover */
-  --Flickr-Blue: #205BE5; /* active/click */
-
-  /* input colors */
-  --Suva-Grey: #909090;
-  --Charcoal: #4b4b4b;
-
-  --Rosso-Corsa: #D50000;
-}
-
-* {
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Montserrat', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  width: 100vw;
-}
-
-input {
-  box-sizing: border-box;
-}
-
-input:-webkit-autofill,
-input:-webkit-autofill:hover,
-input:-webkit-autofill:focus,
-input:-webkit-autofill:active {
-  box-shadow: 0 0 0 30px white inset;
-}
-
-button {
-  font-family: 'Montserrat', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-button a {
-  color: white;
-  text-decoration: none;
-}
-
-button a:hover {
-  color: white;
-}
-
-a {
-  color: #4b4b4b;
-  text-decoration: none;
-}
-
-a:hover {
-  transition: 0.3s ease-in-out;
-  color: #5f5f5f;
-}
-
-::-moz-selection { background: var(--White-Smoke); }
-::selection { background: var(--White-Smoke); }
 </style>
