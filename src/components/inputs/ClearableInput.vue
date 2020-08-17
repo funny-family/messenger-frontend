@@ -69,9 +69,9 @@
 
 <script>
 export default {
+  name: 'Clearable-input',
   data: () => ({
     inFocus: false
-    // animated: true
   }),
   props: {
     value: {
