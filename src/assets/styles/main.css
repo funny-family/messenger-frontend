@@ -1,0 +1,12 @@
+/* config */
+@import url('./config/config.css');
+
+/* global colors */
+@import url('./colors.css');
+/* elements styles */
+@import url('./elements/elements.css');
+/* pseudo elements elements */
+@import url('./pseudo-elements/pseudo-elements.css');
+
+/* main page transition */
+@import url('./transitions/transitions.css');
