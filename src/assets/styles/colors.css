@@ -5,8 +5,8 @@
   --Bluetiful: #007CFA; /* hover */
   --Flickr-Blue: #266EF2; /* active/click */
 
-  --disabled-text-button-light: #266EF2;
-  --disabled-bg-button-light: #DEEAFF;
+  --light-text-disabled-button-color: #266EF2;
+  --light-bg-disabled-button-color: #DEEAFF;
 
   /* input colors */
   --Suva-Grey: #909090;

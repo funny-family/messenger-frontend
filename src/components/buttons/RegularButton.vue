@@ -32,8 +32,8 @@
 }
 
 .regular-button:disabled {
-  color: var(--disabled-text-button-light);
-  background-color: var(--disabled-bg-button-light);
+  color: var(--light-text-disabled-button-color);
+  background-color: var(--light-bg-disabled-button-color);
   cursor: default;
 }
 </style>
