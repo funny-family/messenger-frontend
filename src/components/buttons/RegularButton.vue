@@ -9,8 +9,6 @@
 
 <style scoped>
 .regular-button {
-  width: 200px;
-  height: 40px;
   cursor: pointer;
   outline: none;
   border: none;
