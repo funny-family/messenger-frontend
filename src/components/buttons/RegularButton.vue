@@ -17,16 +17,16 @@
   font-weight: 500;
   padding: 8px 24px;
   border-radius: 4px;
-  background-color: var(--Azure);
+  background-color: var(--primary-accent-color);
   transition: background-color 0.2s ease-out;
 }
 
 .regular-button:hover {
-  background-color: var(--Bluetiful);
+  background-color: var(--secondary-accent-color);
 }
 
 .regular-button:active {
-  background-color: var(--Flickr-Blue);
+  background-color: var(--thirdly-accent-color);
 }
 
 .regular-button:disabled {

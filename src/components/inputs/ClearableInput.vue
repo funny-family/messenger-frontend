@@ -68,6 +68,9 @@
 </template>
 
 <script>
+const primaryAccentColor = '#0A84FF';
+const errorColor = '#F22837';
+
 export default {
   name: 'Clearable-input',
   data: () => ({
@@ -121,17 +124,17 @@ export default {
   computed: {
     borderColor() {
       return {
-        '--border-color': (this.$props.error === '') ? '#4b4b4b' : '#F22837'
+        '--border-color': (this.$props.error === '') ? '#4b4b4b' : errorColor
       };
     },
     borderColorFocused() {
       return {
-        '--border-color-focused': (this.$props.error === '') ? '#2b80ff' : '#F22837'
+        '--border-color-focused': (this.$props.error === '') ? primaryAccentColor : errorColor
       };
     },
     placeholderColorFocused() {
       return {
-        '--placeholder-color-focused': (this.$props.error === '') ? '#2b80ff' : '#F22837'
+        '--placeholder-color-focused': (this.$props.error === '') ? primaryAccentColor : errorColor
       };
     }
   }

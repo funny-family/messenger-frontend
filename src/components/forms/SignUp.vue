@@ -257,7 +257,7 @@ export default {
   display: block;
   width: 0;
   height: 1px;
-  background-color: var(--Azure);
+  background-color: var(--primary-accent-color);
   transition: width 0.3s;
 }
 

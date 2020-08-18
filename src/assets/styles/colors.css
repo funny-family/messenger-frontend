@@ -1,9 +1,9 @@
 :root {
   --selection-color: #f0f0f0; /* selection */
 
-  --Azure: #0A84FF; /* default */
-  --Bluetiful: #007CFA; /* hover */
-  --Flickr-Blue: #266EF2; /* active/click */
+  --primary-accent-color: #0A84FF; /* primary / main */
+  --secondary-accent-color: #007CFA; /* hover */
+  --thirdly-accent-color: #266EF2; /* active / click */
 
   --light-text-disabled-button-color: #266EF2;
   --light-bg-disabled-button-color: #DEEAFF;
