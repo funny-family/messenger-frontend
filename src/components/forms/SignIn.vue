@@ -72,6 +72,22 @@ export default {
       this.$refs[fieldName].$el.children[0].firstChild.focus();
     },
 
+    errorsChecking() {
+      if (this.$data.userLoginData.email === '') {
+        this.$data.formFieldError.email = 'Email is required!';
+        this.animateErrorField('email');
+      } else {
+        this.$data.formFieldError.email = '';
+      }
+
+      if (this.$data.userLoginData.password === '') {
+        this.$data.formFieldError.password = 'Password is required!';
+        this.animateErrorField('password');
+      } else {
+        this.$data.formFieldError.password = '';
+      }
+    },
+
     async singIn() {
       if (1) {
         await this.$store.dispatch('signIp', this.$data.userLoginData);
