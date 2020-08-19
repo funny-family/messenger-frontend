@@ -110,10 +110,10 @@ export default {
   },
   computed: {
     emailFieldValue() {
-      return this.$data.userRegistrationData.email;
+      return this.$data.userLoginData.email;
     },
     passwordFieldValue() {
-      return this.$data.userRegistrationData.password;
+      return this.$data.userLoginData.password;
     }
   },
   watch: {
