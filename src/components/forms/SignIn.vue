@@ -105,9 +105,12 @@ export default {
     },
 
     async singIn() {
-      if (1) {
-        await this.$store.dispatch('signIp', this.$data.userLoginData);
-      }
+      //
+    }
+  },
+  computed: {
+    emailFieldValue() {
+      return this.$data.userRegistrationData.email;
     }
   }
 };
