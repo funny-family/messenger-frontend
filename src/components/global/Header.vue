@@ -19,30 +19,36 @@
         to="/signup"
         v-if="this.$store.state.auth.isUserLoggedIn === false"
       >
-        <Regular-button>
+        <MultiButton
+          type="button"
+          :formnovalidate="true"
+        >
           Sign up
-        </Regular-button>
+        </MultiButton>
       </router-link>
       <form
         class="link"
         @submit.prevent="signOut"
       >
-        <Submit-button>Sign out</Submit-button>
+        <MultiButton
+          type="button"
+          :formnovalidate="true"
+        >
+          Sign out
+        </MultiButton>
       </form>
     </div>
   </header>
 </template>
 
 <script>
-import RegularButton from '@/components/buttons/RegularButton.vue';
-import SubmitButton from '@/components/buttons/SubmitButton.vue';
+import MultiButton from '@/components/buttons/MultiButton.vue';
 
 import { mapActions } from 'vuex';
 
 export default {
   components: {
-    RegularButton,
-    SubmitButton
+    MultiButton
   },
   methods: {
     ...mapActions(['signOut'])
