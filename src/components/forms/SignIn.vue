@@ -104,8 +104,14 @@ export default {
       }
     },
 
-    async singIn() {
-      //
+    async signIn() {
+      await this.errorsChecking();
+      if (
+        this.$data.formFieldError.email === '' &&
+        this.$data.formFieldError.password === ''
+      ) {
+        console.log(123131);
+      }
     }
   },
   computed: {
