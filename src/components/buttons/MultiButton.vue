@@ -16,8 +16,8 @@ export default {
     type: {
       type: String,
       default: 'button',
-      validator(value) {
-        return ['submit', 'reset', 'button'].indexOf(value) !== -1;
+      validator(type) {
+        return ['submit', 'reset', 'button'].indexOf(type) !== -1;
       },
       required: true
     },
