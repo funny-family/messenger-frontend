@@ -121,6 +121,11 @@ export default {
       if (this.$data.userLoginData.email !== '') {
         this.$data.formFieldError.email = '';
       }
+    },
+    passwordFieldValue() {
+      if (this.$data.userLoginData.password !== '') {
+        this.$data.formFieldError.password = '';
+      }
     }
   }
 };
