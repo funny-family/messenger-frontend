@@ -15,6 +15,7 @@ export default {
   props: {
     type: {
       type: String,
+      default: 'button',
       validator(value) {
         return ['submit', 'reset', 'button'].indexOf(value) !== -1;
       },
