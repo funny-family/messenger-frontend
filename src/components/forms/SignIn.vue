@@ -88,6 +88,14 @@ export default {
       }
     },
 
+    clearObjectData(object) {
+      const clearableObject = this.$data[object];
+      Object.keys(clearableObject).forEach((key) => {
+        clearableObject[key] = '';
+      });
+      return clearableObject;
+    },
+
     async singIn() {
       if (1) {
         await this.$store.dispatch('signIp', this.$data.userLoginData);
