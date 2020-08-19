@@ -96,6 +96,14 @@ export default {
       return clearableObject;
     },
 
+    setFocusToErrorField() {
+      if (this.$data.formFieldError.email !== '') {
+        this.setFocusToField('email');
+      } else if (this.$data.formFieldError.password !== '') {
+        this.setFocusToField('password');
+      }
+    },
+
     async singIn() {
       if (1) {
         await this.$store.dispatch('signIp', this.$data.userLoginData);
