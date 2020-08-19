@@ -92,8 +92,10 @@ export default {
     type: {
       type: String,
       default: 'text',
-      required: true,
-      Validate: (type) => ['text'].indexOf(type) !== 1
+      validator(type) {
+        return ['text', 'number', 'email', 'tel'].indexOf(type) !== 1;
+      },
+      required: true
     },
     disabled: {
       type: Boolean,
