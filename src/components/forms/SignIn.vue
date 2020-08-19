@@ -68,6 +68,10 @@ export default {
       }, 400);
     },
 
+    setFocusToField(fieldName) {
+      this.$refs[fieldName].$el.children[0].firstChild.focus();
+    },
+
     async singIn() {
       if (1) {
         await this.$store.dispatch('signIp', this.$data.userLoginData);
