@@ -5,6 +5,7 @@
       @submit.prevent="signIn"
     >
       <Clearable-input
+        ref="email"
         class="sign-in-input"
         type="text"
         name="email"
@@ -15,6 +16,7 @@
         v-model="userLoginData.email"
       />
       <Password-input
+        ref="password"
         class="sign-in-input"
         type="password"
         name="password"
