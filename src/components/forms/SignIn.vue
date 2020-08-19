@@ -21,7 +21,13 @@
         placeholder="Password"
         v-model="userLoginData.password"
       />
-      <Submit-button class="sign-in-button">Sign in</Submit-button>
+      <MultiButton
+        class="sign-in-button"
+        type="submit"
+        :formnovalidate="true"
+      >
+        Sign in
+      </MultiButton>
     </form>
   </div>
 </template>
@@ -29,7 +35,7 @@
 <script>
 import ClearableInput from '@/components/inputs/ClearableInput.vue';
 import PasswordInput from '@/components/inputs/PasswordInput.vue';
-import SubmitButton from '@/components/buttons/SubmitButton.vue';
+import MultiButton from '@/components/buttons/MultiButton.vue';
 
 import { mapActions } from 'vuex';
 
@@ -37,7 +43,7 @@ export default {
   components: {
     ClearableInput,
     PasswordInput,
-    SubmitButton
+    MultiButton
   },
   data: () => ({
     userLoginData: {
