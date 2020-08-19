@@ -2,15 +2,16 @@
   <div class="sign-in-form-position">
     <form
       class="sign-in-from"
-      @submit.prevent="signIn(userLoginData)"
+      @submit.prevent="signIn"
     >
-      <div>Sign in</div>
       <Clearable-input
         class="sign-in-input"
         type="text"
         name="email"
         autocomplete="email"
         placeholder="Email address"
+        :error="formFieldError.email"
+        :animated="formFieldAnimation.email"
         v-model="userLoginData.email"
       />
       <Password-input
@@ -19,6 +20,8 @@
         name="password"
         autocomplete="current-password"
         placeholder="Password"
+        :error="formFieldError.password"
+        :animated="formFieldAnimation.password"
         v-model="userLoginData.password"
       />
       <MultiButton
@@ -37,8 +40,6 @@ import ClearableInput from '@/components/inputs/ClearableInput.vue';
 import PasswordInput from '@/components/inputs/PasswordInput.vue';
 import MultiButton from '@/components/buttons/MultiButton.vue';
 
-import { mapActions } from 'vuex';
-
 export default {
   components: {
     ClearableInput,
@@ -49,10 +50,23 @@ export default {
     userLoginData: {
       email: '',
       password: ''
+    },
+    formFieldError: {
+      email: '',
+      password: ''
+    },
+    formFieldAnimation: {
+      email: false,
+      password: false
     }
   }),
   methods: {
-    ...mapActions(['signIn'])
+    // ...mapActions(['signIn'])
+    async singIn() {
+      if (1) {
+        await this.$store.dispatch('signIp', this.$data.userLoginData);
+      }
+    }
   }
 };
 </script>
