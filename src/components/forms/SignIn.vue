@@ -61,7 +61,13 @@ export default {
     }
   }),
   methods: {
-    // ...mapActions(['signIn'])
+    animateErrorField(fieldName) {
+      this.$data.formFieldAnimation[fieldName] = true;
+      setTimeout(() => {
+        this.$data.formFieldAnimation[fieldName] = false;
+      }, 400);
+    },
+
     async singIn() {
       if (1) {
         await this.$store.dispatch('signIp', this.$data.userLoginData);
