@@ -111,6 +111,9 @@ export default {
   computed: {
     emailFieldValue() {
       return this.$data.userRegistrationData.email;
+    },
+    passwordFieldValue() {
+      return this.$data.userRegistrationData.password;
     }
   }
 };
