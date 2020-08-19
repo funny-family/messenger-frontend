@@ -135,6 +135,9 @@ export default {
         this.$data.formFieldError.password = '';
       }
     }
+  },
+  mounted() {
+    this.setFocusToField('email');
   }
 };
 </script>
