@@ -48,7 +48,13 @@
         :animated="formFieldAnimation.password_confirmation"
         v-model="userRegistrationData.password_confirmation"
       />
-      <Submit-button class="sign-up-button">Sign in</Submit-button>
+      <MultiButton
+        class="sign-up-button"
+        type="submit"
+        :formnovalidate="true"
+      >
+        Sign up
+      </MultiButton>
       <router-link to="signin">
         <div class="new-account-link">If you don't have account you can create it <b>here</b>!</div>
       </router-link>
@@ -59,7 +65,7 @@
 <script>
 import ClearableInput from '@/components/inputs/ClearableInput.vue';
 import PasswordInput from '@/components/inputs/PasswordInput.vue';
-import SubmitButton from '@/components/buttons/SubmitButton.vue';
+import MultiButton from '@/components/buttons/MultiButton.vue';
 
 const usernameLength = 4;
 const passwordLength = 6;
@@ -68,7 +74,7 @@ export default {
   components: {
     ClearableInput,
     PasswordInput,
-    SubmitButton
+    MultiButton
   },
   data: () => ({
     userRegistrationData: {
