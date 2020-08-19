@@ -115,6 +115,13 @@ export default {
     passwordFieldValue() {
       return this.$data.userRegistrationData.password;
     }
+  },
+  watch: {
+    emailFieldValue() {
+      if (this.$data.userLoginData.email !== '') {
+        this.$data.formFieldError.email = '';
+      }
+    }
   }
 };
 </script>
