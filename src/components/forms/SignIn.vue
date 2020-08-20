@@ -74,20 +74,17 @@ export default {
       this.$refs[fieldName].$el.children[0].firstChild.focus();
     },
 
-    errorsChecking() {
-      if (this.$data.userLoginData.email === '') {
-        this.$data.formFieldError.email = 'Email is required!';
-        this.animateErrorField('email');
-      } else {
-        this.$data.formFieldError.email = '';
+    setRequiredError(fieldName, errorDescription) {
+      if (this.$data.userLoginData[fieldName] === '') {
+        this.$data.formFieldError[fieldName] = errorDescription;
+        this.animateErrorField(fieldName);
       }
+    },
 
-      if (this.$data.userLoginData.password === '') {
-        this.$data.formFieldError.password = 'Password is required!';
-        this.animateErrorField('password');
-      } else {
-        this.$data.formFieldError.password = '';
-      }
+    errorsChecking() {
+      this.setRequiredError('email', 'Email is required!');
+
+      this.setRequiredError('password', 'Password is required!');
     },
 
     clearObjectData(object) {
@@ -107,12 +104,25 @@ export default {
     },
 
     async signIn() {
-      await this.errorsChecking();
-      if (
-        this.$data.formFieldError.email === '' &&
-        this.$data.formFieldError.password === ''
-      ) {
-        console.log(123131);
+      try {
+        await this.errorsChecking();
+        if (
+          this.$data.formFieldError.email === '' &&
+          this.$data.formFieldError.password === ''
+        ) {
+          await this.$store.dispatch('signIn', this.$data.userLoginData);
+
+          // this.$data.formFieldError.email = this.$store.state.auth.authError.email.message;
+          // this.animateErrorField('email');
+          // this.$data.formFieldError.password = this.$store.state.auth.authError.password.message;
+          // this.animateErrorField('password');
+
+          console.log('hui', this.$store.state.auth.authError);
+          // console.log('formFieldError', this.$data.formFieldError);
+        }
+        this.setFocusToErrorField();
+      } catch (error) {
+        console.log(error);
       }
     }
   },
