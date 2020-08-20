@@ -211,7 +211,7 @@
     <transition name="fade">
       <div
         class="error-container"
-        :class="{ 'headShake animated': animated }"
+        :class="{ 'head-shake animated': animated }"
         v-if="error !== ''"
       >
         <svg width="16" height="16" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -433,7 +433,7 @@ export default {
   animation-duration: .75s;
 }
 
-@-webkit-keyframes headShake {
+@-webkit-keyframes head-shake {
   0% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
@@ -465,7 +465,7 @@ export default {
   }
 }
 
-@keyframes headShake {
+@keyframes head-shake {
   0% {
     -webkit-transform: translateX(0);
     transform: translateX(0);
@@ -497,11 +497,11 @@ export default {
   }
 }
 
-.headShake {
+.head-shake {
   -webkit-animation-timing-function: ease-in-out;
   animation-timing-function: ease-in-out;
-  -webkit-animation-name: headShake;
-  animation-name: headShake;
+  -webkit-animation-name: head-shake;
+  animation-name: head-shake;
 }
 
 .fade-enter-active,
