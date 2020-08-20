@@ -116,15 +116,11 @@ export default {
       } else if (this.$data.userRegistrationData.username.length < usernameLength) {
         this.$data.formFieldError.username = `Username must be at least ${usernameLength} characters!`;
         this.animateErrorField('username');
-      } else {
-        this.$data.formFieldError.username = '';
       }
 
       if (this.$data.userRegistrationData.email === '') {
         this.$data.formFieldError.email = 'Email is required!';
         this.animateErrorField('email');
-      } else {
-        this.$data.formFieldError.email = '';
       }
 
       if (this.$data.userRegistrationData.password === '') {
@@ -133,8 +129,6 @@ export default {
       } else if (this.$data.userRegistrationData.password.length < passwordLength) {
         this.$data.formFieldError.password = `Password must be at least ${passwordLength} characters!`;
         this.animateErrorField('password');
-      } else {
-        this.$data.formFieldError.password = '';
       }
 
       if (this.$data.userRegistrationData.password_confirmation === '') {
@@ -146,8 +140,6 @@ export default {
       ) {
         this.$data.formFieldError.password_confirmation = 'Passwords must match!';
         this.animateErrorField('password_confirmation');
-      } else {
-        this.$data.formFieldError.password_confirmation = '';
       }
     },
 
