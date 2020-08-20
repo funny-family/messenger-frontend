@@ -108,38 +108,36 @@ export default {
       this.$refs[fieldName].$el.children[0].firstChild.focus();
     },
 
+    setError(errorField, errorDescription) {
+      this.$data.formFieldError[errorField] = errorDescription;
+      this.animateErrorField(errorField);
+    },
+
     // part of error checks was moved to client side to not load the server
     errorsChecking() {
       if (this.$data.userRegistrationData.username === '') {
-        this.$data.formFieldError.username = 'Username is required!';
-        this.animateErrorField('username');
+        this.setError('username', 'Username is required!');
       } else if (this.$data.userRegistrationData.username.length < usernameLength) {
-        this.$data.formFieldError.username = `Username must be at least ${usernameLength} characters!`;
-        this.animateErrorField('username');
+        this.setError('username', `Username must be at least ${usernameLength} characters!`);
       }
 
       if (this.$data.userRegistrationData.email === '') {
-        this.$data.formFieldError.email = 'Email is required!';
-        this.animateErrorField('email');
+        this.setError('email', 'Email is required!');
       }
 
       if (this.$data.userRegistrationData.password === '') {
-        this.$data.formFieldError.password = 'Password is required!';
-        this.animateErrorField('password');
+        this.setError('password', 'Password is required!');
       } else if (this.$data.userRegistrationData.password.length < passwordLength) {
-        this.$data.formFieldError.password = `Password must be at least ${passwordLength} characters!`;
-        this.animateErrorField('password');
+        this.setError('password', `Password must be at least ${passwordLength} characters!`);
       }
 
       if (this.$data.userRegistrationData.password_confirmation === '') {
-        this.$data.formFieldError.password_confirmation = 'Password should be confirmed!';
-        this.animateErrorField('password_confirmation');
+        this.setError('password_confirmation', 'Password should be confirmed!');
       } else if (
         this.$data.userRegistrationData.password_confirmation !==
         this.$data.userRegistrationData.password
       ) {
-        this.$data.formFieldError.password_confirmation = 'Passwords must match!';
-        this.animateErrorField('password_confirmation');
+        this.setError('password_confirmation', 'Passwords must match!');
       }
     },
 

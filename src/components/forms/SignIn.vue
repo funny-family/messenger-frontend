@@ -74,17 +74,19 @@ export default {
       this.$refs[fieldName].$el.children[0].firstChild.focus();
     },
 
-    setRequiredError(fieldName, errorDescription) {
-      if (this.$data.userLoginData[fieldName] === '') {
-        this.$data.formFieldError[fieldName] = errorDescription;
-        this.animateErrorField(fieldName);
-      }
+    setError(errorField, errorDescription) {
+      this.$data.formFieldError[errorField] = errorDescription;
+      this.animateErrorField(errorField);
     },
 
     errorsChecking() {
-      this.setRequiredError('email', 'Email is required!');
+      if (this.$data.userLoginData.email === '') {
+        this.setError('email', 'Email is required!');
+      }
 
-      this.setRequiredError('password', 'Password is required!');
+      if (this.$data.userLoginData.password === '') {
+        this.setError('password', 'Password is required!');
+      }
     },
 
     clearObjectData(object) {
