@@ -79,18 +79,20 @@ export default {
       this.animateErrorField(errorField);
     },
 
-    formValidation() {
+    clientFormValidation() {
       if (this.$data.userLoginData.email === '') {
         this.setError('email', 'Email is required!');
       }
 
+      if (this.$data.userLoginData.password === '') {
+        this.setError('password', 'Password is required!');
+      }
+    },
+
+    serverFormValidation() {
       if (this.$store.state.auth.authError.email) {
         this.setError('email', this.$store.state.auth.authError.email.properties.message);
         this.$data.formFieldError.password = ''; // clear password error field to mix with email error
-      }
-
-      if (this.$data.userLoginData.password === '') {
-        this.setError('password', 'Password is required!');
       }
 
       if (this.$store.state.auth.authError.password) {
@@ -117,13 +119,13 @@ export default {
 
     async signIn() {
       try {
-        await this.formValidation();
+        await this.clientFormValidation();
         if (
           this.$data.userLoginData.email !== '' &&
           this.$data.userLoginData.password !== ''
         ) {
           await this.$store.dispatch('signIn', this.$data.userLoginData);
-          this.formValidation();
+          this.serverFormValidation();
 
           // if sign in result successful
           if (await this.$store.state.auth.isUserLoggedIn === true) {
