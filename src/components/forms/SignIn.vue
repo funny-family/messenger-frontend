@@ -79,7 +79,7 @@ export default {
       this.animateErrorField(errorField);
     },
 
-    errorsChecking() {
+    formValidation() {
       if (this.$data.userLoginData.email === '') {
         this.setError('email', 'Email is required!');
       }
@@ -117,13 +117,13 @@ export default {
 
     async signIn() {
       try {
-        await this.errorsChecking();
+        await this.formValidation();
         if (
           this.$data.userLoginData.email !== '' &&
           this.$data.userLoginData.password !== ''
         ) {
           await this.$store.dispatch('signIn', this.$data.userLoginData);
-          this.errorsChecking();
+          this.formValidation();
         }
         this.setFocusToErrorField();
       } catch (error) {
