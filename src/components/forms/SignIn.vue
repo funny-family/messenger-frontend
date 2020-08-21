@@ -124,6 +124,12 @@ export default {
         ) {
           await this.$store.dispatch('signIn', this.$data.userLoginData);
           this.formValidation();
+
+          // if sign in result successful
+          if (await this.$store.state.auth.isUserLoggedIn === true) {
+            this.clearObjectData('userLoginData');
+            this.clearObjectData('formFieldError');
+          }
         }
         this.setFocusToErrorField();
       } catch (error) {
