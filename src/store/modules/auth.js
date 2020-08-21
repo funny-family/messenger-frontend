@@ -77,7 +77,6 @@ export default {
           commit('SIGN_IN');
         } else {
           const result = await response.json();
-          console.log('errors', result);
           commit('SET_AUTH_ERRORS', result.errors);
         }
       } catch (error) {
