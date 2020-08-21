@@ -125,6 +125,10 @@ export default {
         this.setError('email', 'Email is required!');
       }
 
+      if (this.$store.state.auth.authError.email) {
+        this.setError('email', this.$store.state.auth.authError.email.properties.message);
+      }
+
       if (this.$data.userRegistrationData.password === '') {
         this.setError('password', 'Password is required!');
       } else if (this.$data.userRegistrationData.password.length < passwordLength) {
@@ -165,14 +169,13 @@ export default {
       try {
         await this.errorsChecking();
         if (
-          this.$data.formFieldError.username === '' &&
-          this.$data.formFieldError.email === '' &&
-          this.$data.formFieldError.password === '' &&
-          this.$data.formFieldError.password_confirmation === ''
+          this.$data.userRegistrationData.username !== '' &&
+          this.$data.userRegistrationData.email !== '' &&
+          this.$data.userRegistrationData.password !== '' &&
+          this.$data.userRegistrationData.password_confirmation !== ''
         ) {
           await this.$store.dispatch('signUp', this.$data.userRegistrationData);
-          this.$data.formFieldError.email = this.$store.state.auth.authError.email.message;
-          this.animateErrorField('email');
+          this.errorsChecking();
 
           // if sign up result successful
           if (await this.$store.state.auth.isUserSiggedUp === true) {
