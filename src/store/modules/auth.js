@@ -14,8 +14,11 @@ export default {
     SIGN_OUT(state) {
       state.isUserLoggedIn = false;
     },
-    AUTH_ERRORS_SETTER(state, error) {
+    SET_AUTH_ERRORS(state, error) {
       state.authError = error;
+    },
+    CLEAR_AUTH_ERRORS(state) {
+      state.authError = {};
     }
   },
   actions: {
@@ -23,6 +26,7 @@ export default {
       username, email, password, password_confirmation
     }) {
       try {
+        commit('CLEAR_AUTH_ERRORS');
         const userRegistrationData = {
           username,
           email,
@@ -43,22 +47,7 @@ export default {
           commit('SIGN_UP');
         } else {
           const result = await response.json();
-          const errors = {
-            username: {
-              message: ''
-            },
-            email: {
-              message: ''
-            },
-            password: {
-              message: ''
-            },
-            password_confirmation: {
-              message: ''
-            }
-          };
-          errors.email.message = result.errors.email.properties.message;
-          commit('AUTH_ERRORS_SETTER', errors);
+          commit('SET_AUTH_ERRORS', result.errors);
         }
       } catch (error) {
         console.log(error);
@@ -68,6 +57,7 @@ export default {
       email, password
     }) {
       try {
+        commit('CLEAR_AUTH_ERRORS');
         const userLoginData = {
           email,
           password
@@ -81,10 +71,15 @@ export default {
           },
           body: JSON.stringify(userLoginData)
         });
-        const result = await response.json();
-        console.log('response', response);
-        console.log('SIGN IN FETCH RESULT!', result);
-        commit('SIGN_IN');
+        console.log(response);
+        if (response.ok) {
+          await response.json();
+          commit('SIGN_IN');
+        } else {
+          const result = await response.json();
+          console.log('errors', result);
+          commit('SET_AUTH_ERRORS', result.errors);
+        }
       } catch (error) {
         console.log(error);
       }
