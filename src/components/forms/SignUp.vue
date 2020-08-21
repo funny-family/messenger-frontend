@@ -114,7 +114,7 @@ export default {
     },
 
     // part of error checks was moved to client side to not load the server
-    errorsChecking() {
+    formValidation() {
       if (this.$data.userRegistrationData.username === '') {
         this.setError('username', 'Username is required!');
       } else if (this.$data.userRegistrationData.username.length < usernameLength) {
@@ -167,7 +167,7 @@ export default {
 
     async signUp() {
       try {
-        await this.errorsChecking();
+        await this.formValidation();
         if (
           this.$data.userRegistrationData.username !== '' &&
           this.$data.userRegistrationData.email !== '' &&
@@ -175,7 +175,7 @@ export default {
           this.$data.userRegistrationData.password_confirmation !== ''
         ) {
           await this.$store.dispatch('signUp', this.$data.userRegistrationData);
-          this.errorsChecking();
+          this.formValidation();
 
           // if sign up result successful
           if (await this.$store.state.auth.isUserSiggedUp === true) {
