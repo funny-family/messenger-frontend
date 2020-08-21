@@ -114,7 +114,7 @@ export default {
     },
 
     // part of error checks was moved to client side to not load the server
-    formValidation() {
+    clientFormValidation() {
       if (this.$data.userRegistrationData.username === '') {
         this.setError('username', 'Username is required!');
       } else if (this.$data.userRegistrationData.username.length < usernameLength) {
@@ -123,10 +123,6 @@ export default {
 
       if (this.$data.userRegistrationData.email === '') {
         this.setError('email', 'Email is required!');
-      }
-
-      if (this.$store.state.auth.authError.email) {
-        this.setError('email', this.$store.state.auth.authError.email.properties.message);
       }
 
       if (this.$data.userRegistrationData.password === '') {
@@ -142,6 +138,12 @@ export default {
         this.$data.userRegistrationData.password
       ) {
         this.setError('password_confirmation', 'Passwords must match!');
+      }
+    },
+
+    serverFormValidation() {
+      if (this.$store.state.auth.authError.email) {
+        this.setError('email', this.$store.state.auth.authError.email.properties.message);
       }
     },
 
@@ -167,15 +169,15 @@ export default {
 
     async signUp() {
       try {
-        await this.formValidation();
+        await this.clientFormValidation();
         if (
-          this.$data.userRegistrationData.username !== '' &&
-          this.$data.userRegistrationData.email !== '' &&
-          this.$data.userRegistrationData.password !== '' &&
-          this.$data.userRegistrationData.password_confirmation !== ''
+          this.$data.formFieldError.username === '' &&
+          this.$data.formFieldError.email === '' &&
+          this.$data.formFieldError.password === '' &&
+          this.$data.formFieldError.password_confirmation === ''
         ) {
           await this.$store.dispatch('signUp', this.$data.userRegistrationData);
-          this.formValidation();
+          this.serverFormValidation();
 
           // if sign up result successful
           if (await this.$store.state.auth.isUserSiggedUp === true) {
