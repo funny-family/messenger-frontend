@@ -84,8 +84,18 @@ export default {
         this.setError('email', 'Email is required!');
       }
 
+      if (this.$store.state.auth.authError.email) {
+        this.setError('email', this.$store.state.auth.authError.email.properties.message);
+        this.$data.formFieldError.password = ''; // clear password error field to mix with email error
+      }
+
       if (this.$data.userLoginData.password === '') {
         this.setError('password', 'Password is required!');
+      }
+
+      if (this.$store.state.auth.authError.password) {
+        this.setError('password', this.$store.state.auth.authError.password.properties.message);
+        this.$data.formFieldError.email = ''; // clear email error field to mix with password error
       }
     },
 
@@ -109,18 +119,11 @@ export default {
       try {
         await this.errorsChecking();
         if (
-          this.$data.formFieldError.email === '' &&
-          this.$data.formFieldError.password === ''
+          this.$data.userLoginData.email !== '' &&
+          this.$data.userLoginData.password !== ''
         ) {
           await this.$store.dispatch('signIn', this.$data.userLoginData);
-
-          // this.$data.formFieldError.email = this.$store.state.auth.authError.email.message;
-          // this.animateErrorField('email');
-          // this.$data.formFieldError.password = this.$store.state.auth.authError.password.message;
-          // this.animateErrorField('password');
-
-          console.log('hui', this.$store.state.auth.authError);
-          // console.log('formFieldError', this.$data.formFieldError);
+          this.errorsChecking();
         }
         this.setFocusToErrorField();
       } catch (error) {
