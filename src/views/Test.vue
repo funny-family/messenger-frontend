@@ -45,6 +45,8 @@
     </form>
     <hr>
     <button @click="getLogState">get log state</button>
+    <hr>
+    <button @click="showTest" autofocus>TEST</button>
   </div>
 </template>
 
@@ -84,6 +86,9 @@ export default {
     getLogState() {
       console.log('just sate', this.$store.state);
       console.log('Is user logged in?', this.$store.state.auth.isUserLoggedIn);
+    },
+    showTest() {
+      console.log('TEST');
     }
   }
 };
