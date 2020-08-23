@@ -1,11 +1,11 @@
 <template>
   <header class="header">
-      <router-link
-        class="link"
-        to="/"
-      >
-        <div class="header__logo">Chatus</div>
-      </router-link>
+    <router-link
+      class="link"
+      to="/"
+    >
+      <div class="header__logo">Chatus</div>
+    </router-link>
     <div class="header__page-links">
       <router-link
         class="link"
