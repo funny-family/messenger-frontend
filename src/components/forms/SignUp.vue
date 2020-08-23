@@ -1,5 +1,5 @@
 <template>
-  <div class="sign-up-form-position">
+  <div>
     <form
       class="sign-up-from"
       @submit.prevent="signUp"
