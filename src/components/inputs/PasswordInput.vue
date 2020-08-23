@@ -27,7 +27,7 @@
         </span>
       </label>
       <svg
-        class="visible-password-icon"
+        class="auth-input__visible-password-icon password-icon"
         @click="switchPasswordIconVisibility"
         v-if="isPasswordIconVisible === false"
         width="36"
@@ -177,7 +177,7 @@
           21.5767 103.193 29.1666 103.193 38.5293Z" fill="#4b4b4b"/>
       </svg>
       <svg
-        class="hidden-password-icon"
+        class="auth-input__hidden-password-icon password-icon"
         @click="switchPasswordIconVisibility"
         v-if="isPasswordIconVisible === true"
         width="44"
@@ -376,18 +376,22 @@ export default {
   transform: translateX(0%);
 }
 
-.visible-password-icon {
+.auth-input__visible-password-icon {
   position: absolute;
   right: calc(var(--icon-rigt-side-indet) - 9px);
   bottom: 15px;
   cursor: pointer;
 }
 
-.hidden-password-icon {
+.auth-input__hidden-password-icon {
   position: absolute;
   right: calc(5px - var(--icon-rigt-side-indet));
   bottom: 11px;
   cursor: pointer;
+}
+
+.password-icon:hover {
+  filter: contrast(200%);
 }
 
 .error-container {
