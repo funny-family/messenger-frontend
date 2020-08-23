@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <Sign-in class="form" />
+    <Sign-in class="sign-in-from-container" />
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style scoped>
-.form {
+.sign-in-from-container {
   display: flex;
   justify-content: center;
   align-items: center;
