@@ -27,7 +27,7 @@
         </span>
       </label>
       <svg
-        class="auth-input__icon"
+        class="auth-input__icon password-icon"
         @click="resetInputValue"
         v-if="value.length > 0 && type === 'text'"
         width="14"
@@ -221,6 +221,10 @@ export default {
   right: var(--icon-rigt-side-indet);
   bottom: 14px;
   cursor: pointer;
+}
+
+.password-icon:hover {
+  filter: contrast(200%);
 }
 
 .error-container {
