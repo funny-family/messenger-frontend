@@ -1,5 +1,5 @@
 <template>
-  <div class="sign-in-form-position">
+  <div>
     <form
       class="sign-in-from"
       @submit.prevent="signIn"
