@@ -104,17 +104,28 @@ export default {
       }, 400);
     },
 
+    animateErrorFields() {
+      const iterableObject = this.$data.formFieldError;
+      setTimeout(() => {
+        Object.entries(iterableObject).forEach((obj) => {
+          if (obj[1] !== '') { // obj[1] error field value
+            this.animateErrorField(obj[0]); // obj[0] error field key
+          }
+        });
+      }, 0);
+    },
+
     setFocusToField(fieldName) {
       this.$refs[fieldName].$el.children[0].firstChild.focus();
     },
 
     setError(errorField, errorDescription) {
       this.$data.formFieldError[errorField] = errorDescription;
-      this.animateErrorField(errorField);
     },
 
     // part of error checks was moved to client side to not load the server
     clientFormValidation() {
+      this.animateErrorFields();
       if (this.$data.userRegistrationData.username === '') {
         this.setError('username', 'Username is required!');
       } else if (this.$data.userRegistrationData.username.length < usernameLength) {
@@ -142,6 +153,7 @@ export default {
     },
 
     serverFormValidation() {
+      this.animateErrorFields();
       if (this.$store.state.auth.authError.email) {
         this.setError('email', this.$store.state.auth.authError.email.properties.message);
       }
