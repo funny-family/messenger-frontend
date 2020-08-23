@@ -7,6 +7,8 @@
 @import url('./elements/elements.css');
 /* pseudo elements elements */
 @import url('./pseudo-elements/pseudo-elements.css');
+/* animations */
+@import url('./animations/animations.css');
 
 /* main page transition */
 @import url('./transitions/transitions.css');
