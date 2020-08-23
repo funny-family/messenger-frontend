@@ -411,15 +411,4 @@ export default {
 .error-container svg {
   margin-right: 6px;
 }
-
-.fade-enter-active,
-.fade-leave-active {
-  opacity: 1;
-}
-
-.fade-enter,
-.fade-leave-to {
-  opacity: 0;
-  transition: opacity 0.2s ease-out;
-}
 </style>
