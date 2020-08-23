@@ -70,16 +70,27 @@ export default {
       }, 400);
     },
 
+    animateErrorFields() {
+      const iterableObject = this.$data.formFieldError;
+      setTimeout(() => {
+        Object.entries(iterableObject).forEach((obj) => {
+          if (obj[1] !== '') {
+            this.animateErrorField(obj[0]);
+          }
+        });
+      }, 0);
+    },
+
     setFocusToField(fieldName) {
       this.$refs[fieldName].$el.children[0].firstChild.focus();
     },
 
     setError(errorField, errorDescription) {
       this.$data.formFieldError[errorField] = errorDescription;
-      this.animateErrorField(errorField);
     },
 
     clientFormValidation() {
+      this.animateErrorFields();
       if (this.$data.userLoginData.email === '') {
         this.setError('email', 'Email is required!');
       }
@@ -90,6 +101,7 @@ export default {
     },
 
     serverFormValidation() {
+      this.animateErrorFields();
       if (this.$store.state.auth.authError.email) {
         this.setError('email', this.$store.state.auth.authError.email.properties.message);
         this.$data.formFieldError.password = ''; // clear password error field to mix with email error
