@@ -1,7 +1,7 @@
 <template>
   <div>
     <Header />
-    <Sign-up class="form" />
+    <Sign-up class="sign-up-from-container" />
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
 </script>
 
 <style scoped>
-.form {
+.sign-up-from-container {
   display: flex;
   justify-content: center;
   align-items: center;
