@@ -31,7 +31,7 @@
         @submit.prevent="signOut"
       >
         <MultiButton
-          type="button"
+          type="submit"
           :formnovalidate="true"
         >
           Sign out
@@ -44,14 +44,14 @@
 <script>
 import MultiButton from '@/components/buttons/MultiButton.vue';
 
-import { mapActions } from 'vuex';
-
 export default {
   components: {
     MultiButton
   },
   methods: {
-    ...mapActions(['signOut'])
+    signOut() {
+      this.$store.dispatch('signOut');
+    }
   }
 };
 </script>
