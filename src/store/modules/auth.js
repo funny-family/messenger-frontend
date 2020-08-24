@@ -89,14 +89,19 @@ export default {
         const response = await fetch(url, {
           method: 'POST',
           headers: {
-            // 'Content-Type': 'application/json'
-            'Content-Type': 'application/x-www-form-urlencoded'
+            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/x-www-form-urlencoded'
           }
         });
         console.log('response', response);
-        const result = await response.json();
-        console.log(result);
-        commit('SIGN_OUT');
+        if (response.ok) {
+          const good = await response.json();
+          console.log('good', good);
+          commit('SIGN_OUT');
+        } else {
+          const bad = await response.json();
+          console.log('bad', bad);
+        }
       } catch (error) {
         console.log(error);
       }
