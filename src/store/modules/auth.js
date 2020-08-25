@@ -1,3 +1,5 @@
+import config from '@/config';
+
 export default {
   state: {
     isUserLoggedIn: false,
@@ -33,7 +35,7 @@ export default {
           password,
           password_confirmation
         };
-        const url = process.env.VUE_APP_SIGN_UP_URL;
+        const url = config.api.url.signup;
         const response = await fetch(url, {
           method: 'POST',
           headers: {
@@ -62,7 +64,7 @@ export default {
           email,
           password
         };
-        const url = process.env.VUE_APP_SIGN_IN_URL;
+        const url = config.api.url.signin;
         const response = await fetch(url, {
           method: 'POST',
           credentials: 'include', // for cookies
@@ -85,7 +87,7 @@ export default {
     },
     async signOut({ commit }) {
       try {
-        const url = process.env.VUE_APP_SIGN_OUT_URL;
+        const url = config.api.url.signout;
         const response = await fetch(url, {
           method: 'POST',
           headers: {
