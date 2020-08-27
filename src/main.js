@@ -5,7 +5,7 @@ import store from './store';
 
 Vue.config.productionTip = false;
 
-Vue.component('Header', () => import('@/components/global/Header'));
+Vue.component('Header', () => import('@/components/navigations/Header'));
 
 new Vue({
   router,
