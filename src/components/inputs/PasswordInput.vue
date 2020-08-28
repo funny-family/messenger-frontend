@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="auth-input">
+    <div class="password">
       <input
-        class="auth-input__input"
+        class="password__input"
         ref="passwordInput"
         :value="value"
         :name="name"
@@ -15,19 +15,19 @@
         required
       />
       <label
-        class="auth-input__container"
+        class="password__label"
         for="input"
         :style="[borderColor, borderColorFocused]"
       >
         <span
-          class="auth-input__placeholder"
+          class="password__placeholder"
           :style="placeholderColorFocused"
         >
           {{ placeholder }}
         </span>
       </label>
       <svg
-        class="auth-input__visible-password-icon password-icon"
+        class="password__visible-password-icon password-icon"
         @click="switchPasswordIconVisibility"
         v-if="isPasswordIconVisible === false"
         width="36"
@@ -177,7 +177,7 @@
           21.5767 103.193 29.1666 103.193 38.5293Z" fill="#4b4b4b"/>
       </svg>
       <svg
-        class="auth-input__hidden-password-icon password-icon"
+        class="password__hidden-password-icon password-icon"
         @click="switchPasswordIconVisibility"
         v-if="isPasswordIconVisible === true"
         width="44"
@@ -312,13 +312,13 @@ export default {
   --icon-rigt-side-indet: 9px;
 }
 
-.auth-input {
+.password {
   position: relative;
   height: 60px;
   overflow: hidden;
 }
 
-.auth-input input {
+.password input {
   width: 100%;
   height: 100%;
   border: none;
@@ -329,7 +329,7 @@ export default {
   padding-right: calc(var(--icon-rigt-side-indet) * 4)
 }
 
-.auth-input label {
+.password label {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -340,7 +340,7 @@ export default {
   pointer-events: none;
 }
 
-.auth-input label::after {
+.password label::after {
   content: '';
   position: absolute;
   left: 0;
@@ -353,7 +353,7 @@ export default {
   transform: translateX(-100%);
 }
 
-.auth-input__placeholder {
+.password__placeholder {
   position: absolute;
   left: 0;
   bottom: 10px;
@@ -363,27 +363,27 @@ export default {
   transition: all 0.2s ease;
 }
 
-.auth-input input:focus + .auth-input__container .auth-input__placeholder,
-.auth-input input:valid + .auth-input__container .auth-input__placeholder {
+.password input:focus + .password__label .password__placeholder,
+.password input:valid + .password__label .password__placeholder {
   transform: translateY(-140%);
   color: var(--placeholder-color-focused);
   font-size: 16px;
 }
 
-.auth-input input:focus + .auth-input__container::after,
-.auth-input input:valid + .auth-input__container::after {
+.password input:focus + .password__label::after,
+.password input:valid + .password__label::after {
   border-color: var(--border-color-focused);
   transform: translateX(0%);
 }
 
-.auth-input__visible-password-icon {
+.password__visible-password-icon {
   position: absolute;
   right: calc(var(--icon-rigt-side-indet) - 9px);
   bottom: 15px;
   cursor: pointer;
 }
 
-.auth-input__hidden-password-icon {
+.password__hidden-password-icon {
   position: absolute;
   right: calc(5px - var(--icon-rigt-side-indet));
   bottom: 11px;
