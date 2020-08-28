@@ -4,7 +4,7 @@
       class="sign-in-from"
       @submit.prevent="signIn"
     >
-      <ClearableInput
+      <ResetInput
         ref="email"
         class="sign-in-input"
         type="text"
@@ -38,14 +38,14 @@
 </template>
 
 <script>
-import ClearableInput from '@/components/inputs/ClearableInput.vue';
+import ResetInput from '@/components/inputs/ResetInput.vue';
 import PasswordInput from '@/components/inputs/PasswordInput.vue';
 import MultiButton from '@/components/buttons/MultiButton.vue';
 
 export default {
   name: 'SignInForm',
   components: {
-    ClearableInput,
+    ResetInput,
     PasswordInput,
     MultiButton
   },

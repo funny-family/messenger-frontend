@@ -4,7 +4,7 @@
       class="sign-up-from"
       @submit.prevent="signUp"
     >
-      <ClearableInput
+      <ResetInput
         ref="username"
         class="sign-up-input"
         type="text"
@@ -15,7 +15,7 @@
         :animated="formFieldAnimation.username"
         v-model="userRegistrationData.username"
       />
-      <ClearableInput
+      <ResetInput
         ref="email"
         class="sign-up-input"
         type="text"
@@ -63,7 +63,7 @@
 </template>
 
 <script>
-import ClearableInput from '@/components/inputs/ClearableInput.vue';
+import ResetInput from '@/components/inputs/ResetInput.vue';
 import PasswordInput from '@/components/inputs/PasswordInput.vue';
 import MultiButton from '@/components/buttons/MultiButton.vue';
 
@@ -73,7 +73,7 @@ const passwordLength = 6;
 export default {
   name: 'SignUpForm',
   components: {
-    ClearableInput,
+    ResetInput,
     PasswordInput,
     MultiButton
   },
