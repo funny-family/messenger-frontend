@@ -17,5 +17,12 @@ module.exports = {
     'comma-dangle': ['error', 'never'],
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off'
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.ts', '.vue']
+      }
+    }
   }
 };
