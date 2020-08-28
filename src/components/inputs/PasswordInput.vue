@@ -308,7 +308,7 @@ export default {
 </script>
 
 <style scoped>
-template {
+* {
   --icon-rigt-side-indet: 9px;
 }
 
