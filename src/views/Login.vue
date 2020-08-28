@@ -1,17 +1,17 @@
 <template>
   <div>
-    <Header />
+    <nav-header />
     <sign-in-form class="sign-in-from-container" />
   </div>
 </template>
 
 <script>
-import Header from '@/components/navigations/Header.vue';
+import NavHeader from '@/components/navigations/NavHeader.vue';
 import SignInForm from '@/components/forms/SignInForm.vue';
 
 export default {
   components: {
-    Header,
+    NavHeader,
     SignInForm
   }
 };

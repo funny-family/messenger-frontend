@@ -45,6 +45,7 @@
 import MultiButton from '@/components/buttons/MultiButton.vue';
 
 export default {
+  name: 'nav-header',
   components: {
     MultiButton
   },

@@ -1,17 +1,17 @@
 <template>
   <div>
-    <Header />
+    <nav-header />
     <sign-up-form class="sign-up-from-container" />
   </div>
 </template>
 
 <script>
-import Header from '@/components/navigations/Header.vue';
+import NavHeader from '@/components/navigations/NavHeader.vue';
 import SignUpForm from '@/components/forms/SignUpForm.vue';
 
 export default {
   components: {
-    Header,
+    NavHeader,
     SignUpForm
   }
 };

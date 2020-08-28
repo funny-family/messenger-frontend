@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Header />
+    <nav-header />
     <main>
       <div class="title">Meet the Chatus!</div>
     </main>
@@ -8,11 +8,11 @@
 </template>
 
 <script>
-import Header from '@/components/navigations/Header.vue';
+import NavHeader from '@/components/navigations/NavHeader.vue';
 
 export default {
   components: {
-    Header
+    NavHeader
   }
 };
 </script>
