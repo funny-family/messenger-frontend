@@ -1,8 +1,8 @@
 <template>
   <div>
-    <div class="auth-input">
+    <div class="reset">
       <input
-        class="auth-input__input"
+        class="reset__input"
         ref="clearableInput"
         :value="value"
         :name="name"
@@ -15,21 +15,21 @@
         required
       />
       <label
-        class="auth-input__container"
+        class="reset__label"
         for="input"
         :style="[borderColor, borderColorFocused]"
       >
         <span
-          class="auth-input__placeholder"
+          class="reset__placeholder"
           :style="placeholderColorFocused"
         >
           {{ placeholder }}
         </span>
       </label>
       <svg
-        class="auth-input__icon password-icon"
+        class="reset__icon"
         @click="resetInputValue"
-        v-if="value.length > 0 && type === 'text'"
+        v-if="value.length > 0"
         width="14"
         height="14"
         viewBox="0 0 9 9"
@@ -152,13 +152,13 @@ export default {
   --icon-rigt-side-indet: 11px;
 }
 
-.auth-input {
+.reset {
   position: relative;
   height: 60px;
   overflow: hidden;
 }
 
-.auth-input input {
+.reset input {
   width: 100%;
   height: 100%;
   border: none;
@@ -169,7 +169,7 @@ export default {
   padding-right: calc(var(--icon-rigt-side-indet) * 3);
 }
 
-.auth-input label {
+.reset label {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -180,7 +180,7 @@ export default {
   pointer-events: none;
 }
 
-.auth-input label::after {
+.reset label::after {
   content: '';
   position: absolute;
   left: 0;
@@ -193,7 +193,7 @@ export default {
   transform: translateX(-100%);
 }
 
-.auth-input__placeholder {
+.reset__placeholder {
   position: absolute;
   left: 0;
   bottom: 10px;
@@ -203,27 +203,28 @@ export default {
   transition: all 0.2s ease;
 }
 
-.auth-input input:focus + .auth-input__container .auth-input__placeholder,
-.auth-input input:valid + .auth-input__container .auth-input__placeholder {
+.reset input:focus + .reset__label .reset__placeholder,
+.reset input:valid + .reset__label .reset__placeholder {
   transform: translateY(-140%);
   color: var(--placeholder-color-focused);
   font-size: 16px;
 }
 
-.auth-input input:focus + .auth-input__container::after ,
-.auth-input input:valid + .auth-input__container::after  {
+.reset input:focus + .reset__label::after ,
+.reset input:valid + .reset__label::after  {
   border-color: var(--border-color-focused);
   transform: translateX(0%);
 }
 
-.auth-input__icon {
+.reset__icon {
   position: absolute;
   right: var(--icon-rigt-side-indet);
   bottom: 14px;
   cursor: pointer;
 }
 
-.password-icon:hover {
+.reset__icon:hover {
+  transition: filter 0.3s ease-out;
   filter: contrast(200%);
 }
 
