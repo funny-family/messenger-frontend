@@ -6,10 +6,12 @@
 </template>
 
 <script>
+import Header from '@/components/navigations/Header.vue';
 import SignUp from '@/components/forms/SignUp.vue';
 
 export default {
   components: {
+    Header,
     'Sign-up': SignUp
   }
 };

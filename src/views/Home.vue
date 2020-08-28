@@ -8,7 +8,13 @@
 </template>
 
 <script>
-export default {};
+import Header from '@/components/navigations/Header.vue';
+
+export default {
+  components: {
+    Header
+  }
+};
 </script>
 
 <style scoped>
