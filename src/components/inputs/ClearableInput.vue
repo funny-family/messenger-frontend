@@ -76,7 +76,7 @@ const primaryAccentColor = '#0A84FF';
 const errorColor = '#F22837';
 
 export default {
-  name: 'Clearable-input',
+  name: 'ClearableInput',
   data: () => ({
     inFocus: false
   }),

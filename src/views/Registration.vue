@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav-header />
-    <sign-up-form class="sign-up-from-container" />
+    <SignUpForm class="sign-up-from-container" />
   </div>
 </template>
 

@@ -4,7 +4,7 @@
       class="sign-in-from"
       @submit.prevent="signIn"
     >
-      <Clearable-input
+      <ClearableInput
         ref="email"
         class="sign-in-input"
         type="text"
@@ -15,7 +15,7 @@
         :animated="formFieldAnimation.email"
         v-model="userLoginData.email"
       />
-      <Password-input
+      <PasswordInput
         ref="password"
         class="sign-in-input"
         type="password"
@@ -26,13 +26,13 @@
         :animated="formFieldAnimation.password"
         v-model="userLoginData.password"
       />
-      <multi-button
+      <MultiButton
         class="sign-in-button"
         type="submit"
         :formnovalidate="true"
       >
         Sign in
-      </multi-button>
+      </MultiButton>
     </form>
   </div>
 </template>
@@ -43,7 +43,7 @@ import PasswordInput from '@/components/inputs/PasswordInput.vue';
 import MultiButton from '@/components/buttons/MultiButton.vue';
 
 export default {
-  name: 'sign-in-form',
+  name: 'SignInForm',
   components: {
     ClearableInput,
     PasswordInput,

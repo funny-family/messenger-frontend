@@ -19,23 +19,23 @@
         to="/signup"
         v-if="this.$store.state.auth.isUserLoggedIn === false"
       >
-        <multi-button
+        <MultiButton
           type="button"
           :formnovalidate="true"
         >
           Sign up
-        </multi-button>
+        </MultiButton>
       </router-link>
       <form
         class="link"
         @submit.prevent="signOut"
       >
-        <multi-button
+        <MultiButton
           type="submit"
           :formnovalidate="true"
         >
           Sign out
-        </multi-button>
+        </MultiButton>
       </form>
     </div>
   </header>
@@ -45,7 +45,7 @@
 import MultiButton from '@/components/buttons/MultiButton.vue';
 
 export default {
-  name: 'nav-header',
+  name: 'NavHeader',
   components: {
     MultiButton
   },

@@ -1,7 +1,7 @@
 <template>
   <div>
     <nav-header />
-    <sign-in-form class="sign-in-from-container" />
+    <SignInForm class="sign-in-from-container" />
   </div>
 </template>
 

@@ -239,7 +239,7 @@ const primaryAccentColor = '#0A84FF';
 const errorColor = '#F22837';
 
 export default {
-  name: 'Password-input',
+  name: 'PasswordInput',
   data: () => ({
     inFocus: false,
     isPasswordIconVisible: false,

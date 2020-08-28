@@ -4,7 +4,7 @@
       class="sign-up-from"
       @submit.prevent="signUp"
     >
-      <Clearable-input
+      <ClearableInput
         ref="username"
         class="sign-up-input"
         type="text"
@@ -15,7 +15,7 @@
         :animated="formFieldAnimation.username"
         v-model="userRegistrationData.username"
       />
-      <Clearable-input
+      <ClearableInput
         ref="email"
         class="sign-up-input"
         type="text"
@@ -26,7 +26,7 @@
         :animated="formFieldAnimation.email"
         v-model="userRegistrationData.email"
       />
-      <Password-input
+      <PasswordInput
         ref="password"
         class="sign-up-input"
         type="password"
@@ -37,7 +37,7 @@
         :animated="formFieldAnimation.password"
         v-model="userRegistrationData.password"
       />
-      <Password-input
+      <PasswordInput
         ref="passwordConfirmation"
         class="sign-up-input"
         type="password"
@@ -48,13 +48,13 @@
         :animated="formFieldAnimation.password_confirmation"
         v-model="userRegistrationData.password_confirmation"
       />
-      <multi-button
+      <MultiButton
         class="sign-up-button"
         type="submit"
         :formnovalidate="true"
       >
         Sign up
-      </multi-button>
+      </MultiButton>
       <router-link to="signin">
         <div class="new-account-link">If you don't have account you can create it <b>here</b>!</div>
       </router-link>
@@ -71,7 +71,7 @@ const usernameLength = 4;
 const passwordLength = 6;
 
 export default {
-  name: 'sign-up-form',
+  name: 'SignUpForm',
   components: {
     ClearableInput,
     PasswordInput,

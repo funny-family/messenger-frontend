@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav-header />
+    <NavHeader />
     <main>
       <div class="title">Meet the Chatus!</div>
     </main>
