@@ -26,33 +26,20 @@
           Sign up
         </MultiButton>
       </router-link>
-      <form
-        class="link"
-        @submit.prevent="signOut"
-      >
-        <MultiButton
-          type="submit"
-          :formnovalidate="true"
-        >
-          Sign out
-        </MultiButton>
-      </form>
+      <SignOutForm class="link" />
     </div>
   </header>
 </template>
 
 <script>
 import MultiButton from '@/components/buttons/MultiButton.vue';
+import SignOutForm from '@/components/forms/SignOutForm.vue';
 
 export default {
   name: 'NavHeader',
   components: {
+    SignOutForm,
     MultiButton
-  },
-  methods: {
-    signOut() {
-      this.$store.dispatch('signOut');
-    }
   }
 };
 </script>
