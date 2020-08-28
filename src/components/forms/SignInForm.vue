@@ -43,6 +43,7 @@ import PasswordInput from '@/components/inputs/PasswordInput.vue';
 import MultiButton from '@/components/buttons/MultiButton.vue';
 
 export default {
+  name: 'sign-in-form',
   components: {
     ClearableInput,
     PasswordInput,
