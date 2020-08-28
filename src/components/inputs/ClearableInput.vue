@@ -184,7 +184,7 @@ export default {
   content: '';
   position: absolute;
   left: 0;
-  bottom: 1;
+  bottom: -1px;
   width: 100%;
   height: 100%;
   border-bottom: 1px solid;
