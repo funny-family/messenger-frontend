@@ -71,6 +71,7 @@ const usernameLength = 4;
 const passwordLength = 6;
 
 export default {
+  name: 'sign-up-form',
   components: {
     ClearableInput,
     PasswordInput,

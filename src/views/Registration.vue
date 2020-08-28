@@ -1,18 +1,18 @@
 <template>
   <div>
     <Header />
-    <Sign-up class="sign-up-from-container" />
+    <sign-up-form class="sign-up-from-container" />
   </div>
 </template>
 
 <script>
 import Header from '@/components/navigations/Header.vue';
-import SignUp from '@/components/forms/SignUp.vue';
+import SignUpForm from '@/components/forms/SignUpForm.vue';
 
 export default {
   components: {
     Header,
-    'Sign-up': SignUp
+    SignUpForm
   }
 };
 </script>
