@@ -11,7 +11,7 @@
 
 <script>
 export default {
-  name: 'Multi-Button',
+  name: 'multi-button',
   props: {
     type: {
       type: String,

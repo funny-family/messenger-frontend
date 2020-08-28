@@ -26,13 +26,13 @@
         :animated="formFieldAnimation.password"
         v-model="userLoginData.password"
       />
-      <MultiButton
+      <multi-button
         class="sign-in-button"
         type="submit"
         :formnovalidate="true"
       >
         Sign in
-      </MultiButton>
+      </multi-button>
     </form>
   </div>
 </template>

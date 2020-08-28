@@ -19,23 +19,23 @@
         to="/signup"
         v-if="this.$store.state.auth.isUserLoggedIn === false"
       >
-        <MultiButton
+        <multi-button
           type="button"
           :formnovalidate="true"
         >
           Sign up
-        </MultiButton>
+        </multi-button>
       </router-link>
       <form
         class="link"
         @submit.prevent="signOut"
       >
-        <MultiButton
+        <multi-button
           type="submit"
           :formnovalidate="true"
         >
           Sign out
-        </MultiButton>
+        </multi-button>
       </form>
     </div>
   </header>

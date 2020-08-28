@@ -48,13 +48,13 @@
         :animated="formFieldAnimation.password_confirmation"
         v-model="userRegistrationData.password_confirmation"
       />
-      <MultiButton
+      <multi-button
         class="sign-up-button"
         type="submit"
         :formnovalidate="true"
       >
         Sign up
-      </MultiButton>
+      </multi-button>
       <router-link to="signin">
         <div class="new-account-link">If you don't have account you can create it <b>here</b>!</div>
       </router-link>
