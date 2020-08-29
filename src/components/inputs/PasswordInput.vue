@@ -32,7 +32,7 @@
         v-if="isPasswordIconVisible === false"
         width="36"
         height="12"
-        src="@/assets/imgs/svgs/show-password-icon.svg"
+        src="@/assets/imgs/svg/show-password-icon.svg"
         alt="show password"
       />
       <img
@@ -41,7 +41,7 @@
         v-if="isPasswordIconVisible === true"
         width="44"
         height="20"
-        src="@/assets/imgs/svgs/hide-password-icon.svg"
+        src="@/assets/imgs/svg/hide-password-icon.svg"
         alt="hide password"
       />
     </div>
