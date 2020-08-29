@@ -225,7 +225,7 @@ export default {
   font-weight: 500px;
 }
 
-.error-container svg {
+.error-container img {
   margin-right: 6px;
 }
 </style>
