@@ -28,20 +28,20 @@
       </label>
       <img
         class="password__visible-password-icon password-icon"
-        @click="switchPasswordIconVisibility"
+        @click="changePasswordIconVisibility"
         v-if="isPasswordIconVisible === false"
         width="36"
         height="12"
-        src="@/assets/imgs/svg/show-password-icon.svg"
+        src="../../assets/imgs/svg/show-password-icon.svg"
         alt="show password"
       />
       <img
         class="password__hidden-password-icon password-icon"
-        @click="switchPasswordIconVisibility"
+        @click="changePasswordIconVisibility"
         v-if="isPasswordIconVisible === true"
         width="44"
         height="20"
-        src="@/assets/imgs/svg/hide-password-icon.svg"
+        src="../../assets/imgs/svg/hide-password-icon.svg"
         alt="hide password"
       />
     </div>
@@ -52,7 +52,7 @@
         v-if="error !== ''"
       >
         <img
-          src="../../assets/imgs/svgs/input-error-icon.svg"
+          src="../../assets/imgs/svg/input-error-icon.svg"
           width="16"
           height="16"
           alt="!"
@@ -105,15 +105,23 @@ export default {
     }
   },
   methods: {
+    setFocusToTheInputEnd() {
+      const inputRef = this.$refs.passwordInput;
+      const valueLength = this.$props.value.length;
+
+      inputRef.focus();
+      inputRef.setSelectionRange(valueLength, valueLength);
+    },
+
     updateInputValue(value) {
       this.$emit('input', value);
     },
-    switchPasswordIconVisibility() {
-      const valueLength = this.$props.value.length;
+
+    changePasswordIconVisibility() {
       this.$data.isPasswordIconVisible = !this.$data.isPasswordIconVisible;
       this.$data.type = this.$data.type === 'password' ? 'text' : 'password'; // change input type on icon click
-      this.$refs.passwordInput.focus();
-      this.$refs.passwordInput.setSelectionRange(valueLength, valueLength);
+
+      this.setFocusToTheInputEnd();
     }
   },
   computed: {
