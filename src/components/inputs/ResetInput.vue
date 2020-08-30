@@ -102,12 +102,15 @@ export default {
     }
   },
   methods: {
+    setFocusToInput() {
+      this.$refs.clearableInput.focus();
+    },
     updateInputValue(value) {
       this.$emit('input', value);
     },
     resetInputValue() {
       this.$emit('input', '');
-      this.$refs.clearableInput.focus();
+      this.setFocusToInput();
     }
   },
   computed: {
