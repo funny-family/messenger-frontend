@@ -32,7 +32,7 @@
         v-if="value.length > 0"
         width="14"
         height="14"
-        src="@/assets/imgs/svg/clear-icon.svg"
+        src="../../assets/imgs/svg/clear-icon.svg"
         alt="clear input"
       />
     </div>
@@ -43,7 +43,7 @@
         v-if="error !== ''"
       >
         <img
-          src="../../assets/imgs/svgs/input-error-icon.svg"
+          src="../../assets/imgs/svg/input-error-icon.svg"
           width="16"
           height="16"
           alt="!"
