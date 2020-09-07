@@ -90,9 +90,9 @@ export default {
         const url = config.api.url.signout;
         const response = await fetch(url, {
           method: 'POST',
+          credentials: 'include', // for cookies
           headers: {
-            'Content-Type': 'application/json'
-            // 'Content-Type': 'application/x-www-form-urlencoded'
+            'Content-Type': 'application/x-www-form-urlencoded'
           }
         });
         console.log('response', response);
