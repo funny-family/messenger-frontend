@@ -1,11 +1,12 @@
-const domain = 'http://localhost:3000/';
+const domain = 'http://localhost:3000';
+const v1 = '/api/v1';
 
 export default {
   api: {
     url: {
-      signup: `${domain}auth/signup`,
-      signin: `${domain}auth/signin`,
-      signout: `${domain}auth/signout`
+      signup: `${domain + v1}/auth/signup`,
+      signin: `${domain + v1}/auth/signin`,
+      signout: `${domain + v1}/auth/signout`
     }
   }
 };
