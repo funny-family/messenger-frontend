@@ -92,7 +92,7 @@ export default {
           method: 'POST',
           credentials: 'include', // for cookies
           headers: {
-            'Content-Type': 'application/x-www-form-urlencoded'
+            'Content-Type': 'application/json'
           }
         });
         console.log('response', response);
