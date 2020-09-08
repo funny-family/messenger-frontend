@@ -97,12 +97,8 @@ export default {
         });
         console.log('response', response);
         if (response.ok) {
-          const good = await response.json();
-          console.log('good', good);
+          await response.json();
           commit('SIGN_OUT');
-        } else {
-          const bad = await response.json();
-          console.log('bad', bad);
         }
       } catch (error) {
         console.log(error);
