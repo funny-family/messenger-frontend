@@ -7,13 +7,13 @@ export default {
     authError: {}
   },
   mutations: {
-    SIGN_IN(state) {
+    SIGNED_IN(state) {
       state.isUserLoggedIn = true;
     },
-    SIGN_UP(state) {
+    SIGNED_UP(state) {
       state.isUserSiggedUp = true;
     },
-    SIGN_OUT(state) {
+    SIGNED_OUT(state) {
       state.isUserLoggedIn = false;
     },
     SET_AUTH_ERRORS(state, error) {
@@ -46,7 +46,7 @@ export default {
         console.log(response);
         if (response.ok) {
           await response.json();
-          commit('SIGN_UP');
+          commit('SIGNED_UP');
         } else {
           const result = await response.json();
           commit('SET_AUTH_ERRORS', result.errors);
@@ -55,6 +55,7 @@ export default {
         console.log(error);
       }
     },
+
     async signIn({ commit }, {
       email, password
     }) {
@@ -76,7 +77,7 @@ export default {
         console.log(response);
         if (response.ok) {
           await response.json();
-          commit('SIGN_IN');
+          commit('SIGNED_IN');
         } else {
           const result = await response.json();
           commit('SET_AUTH_ERRORS', result.errors);
@@ -85,6 +86,7 @@ export default {
         console.log(error);
       }
     },
+
     async signOut({ commit }) {
       try {
         const url = config.api.url.signout;
@@ -98,7 +100,30 @@ export default {
         console.log('response', response);
         if (response.ok) {
           await response.json();
-          commit('SIGN_OUT');
+          commit('SIGNED_OUT');
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    },
+
+    async checkAuth({ commit }) {
+      try {
+        const url = config.api.url.checkAuth;
+        const response = await fetch(url, {
+          method: 'POST',
+          credentials: 'include', // for cookies
+          headers: {
+            'Content-Type': 'application/json'
+            // 'Content-Type': 'application/x-www-form-urlencoded'
+          }
+        });
+        if (response.ok) {
+          console.log(await response);
+          commit('SIGNED_IN');
+        } else {
+          console.log(await response);
+          commit('SIGNED_OUT');
         }
       } catch (error) {
         console.log(error);
