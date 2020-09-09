@@ -6,7 +6,8 @@ export default {
     url: {
       signup: `${domain + apiVerion1}/auth/signup`,
       signin: `${domain + apiVerion1}/auth/signin`,
-      signout: `${domain + apiVerion1}/auth/signout`
+      signout: `${domain + apiVerion1}/auth/signout`,
+      checkAuth: `${domain + apiVerion1}/user/check-auth`
     }
   }
 };
