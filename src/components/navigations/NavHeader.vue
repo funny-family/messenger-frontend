@@ -26,7 +26,10 @@
           Sign up
         </MultiButton>
       </router-link>
-      <SignOutForm class="link" />
+      <SignOutForm
+        class="link"
+        v-if="this.$store.state.auth.isUserLoggedIn === true"
+      />
     </div>
   </header>
 </template>
