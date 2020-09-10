@@ -115,7 +115,6 @@ export default {
           credentials: 'include', // for cookies
           headers: {
             'Content-Type': 'application/json'
-            // 'Content-Type': 'application/x-www-form-urlencoded'
           }
         });
         if (response.ok) {
@@ -128,6 +127,12 @@ export default {
       } catch (error) {
         console.log(error);
       }
+    },
+
+    keepUserAthenticated({ dispatch, state }) {
+      do {
+        dispatch('checkAuth');
+      } while (state.isUserLoggedIn === true);
     }
   }
 };

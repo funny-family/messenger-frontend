@@ -5,9 +5,7 @@ import store from './store';
 
 Vue.config.productionTip = false;
 
-if (store.state.auth.isUserLoggedIn === true) {
-  store.dispatch('checkAuth');
-}
+store.dispatch('keepUserAthenticated');
 
 new Vue({
   router,
