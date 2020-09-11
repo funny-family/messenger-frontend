@@ -194,6 +194,7 @@ export default {
 
           // if sign up result successful
           if (await this.$store.state.auth.isUserSiggedUp === true) {
+            this.$router.replace('/signin');
             this.clearObjectData('userRegistrationData');
             this.clearObjectData('formFieldError');
           }
