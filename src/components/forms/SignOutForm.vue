@@ -24,6 +24,7 @@ export default {
   methods: {
     signOut() {
       this.$store.dispatch('signOut');
+      this.$router.replace('/signin');
     }
   }
 };
