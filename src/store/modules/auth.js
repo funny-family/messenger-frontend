@@ -44,8 +44,7 @@ export default {
           body: JSON.stringify(userRegistrationData)
         });
         console.log(response);
-        if (response.ok) {
-          await response.json();
+        if (await response.ok) {
           commit('SIGNED_UP');
         } else {
           const result = await response.json();
@@ -75,8 +74,7 @@ export default {
           body: JSON.stringify(userLoginData)
         });
         console.log(response);
-        if (response.ok) {
-          await response.json();
+        if (await response.ok) {
           commit('SIGNED_IN');
         } else {
           const result = await response.json();
