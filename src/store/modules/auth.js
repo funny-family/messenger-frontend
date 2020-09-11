@@ -99,7 +99,7 @@ export default {
         });
         console.log('response', response);
         if (response.ok) {
-          await response.json();
+          await response;
           commit('SIGNED_OUT');
         }
       } catch (error) {
