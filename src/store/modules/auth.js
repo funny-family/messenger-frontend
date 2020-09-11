@@ -98,8 +98,7 @@ export default {
           }
         });
         console.log('response', response);
-        if (response.ok) {
-          await response;
+        if (await response.ok) {
           commit('SIGNED_OUT');
         }
       } catch (error) {
