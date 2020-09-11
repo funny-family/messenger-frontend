@@ -4,8 +4,7 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter);
 
-// const loggedInState = store.state.auth.isUserLoggedIn;
-// console.log(loggedInState);
+// const loggedInUser = store.state.auth.isUserLoggedIn;
 
 const routes = [
   {
@@ -14,15 +13,26 @@ const routes = [
   },
   {
     path: '/',
-    component: () => import('@/views/Home')
+    component: () => import('@/views/Home'),
+    meta: {
+      title: 'Home'
+    }
   },
   {
     path: '/signin',
-    component: () => import('@/views/Login')
+    component: () => import('@/views/Login'),
+    meta: {
+      title: 'Sign in',
+      requiresAuth: false
+    }
   },
   {
     path: '/signup',
-    component: () => import('@/views/Registration')
+    component: () => import('@/views/Registration'),
+    meta: {
+      title: 'Sign up',
+      requiresAuth: false
+    }
   },
   {
     path: '/test',
@@ -34,6 +44,11 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+});
+
+router.beforeEach((to, from, next) => {
+  document.title = to.meta.title;
+  next();
 });
 
 export default router;
