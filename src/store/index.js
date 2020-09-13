@@ -5,14 +5,10 @@ import auth from './modules/auth';
 
 Vue.use(Vuex);
 
-export default new Vuex.Store({
-  state: {
-  },
-  mutations: {
-  },
-  actions: {
-  },
+const store = new Vuex.Store({
   modules: {
     auth
   }
 });
+
+export default store;
