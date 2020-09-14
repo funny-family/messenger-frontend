@@ -114,11 +114,11 @@ export default {
             'Content-Type': 'application/json'
           }
         });
-        if (response.ok) {
-          console.log(await response);
+        if (await response.ok) {
+          console.log(response.text(), response);
           commit('SIGNED_IN');
         } else {
-          console.log(await response);
+          console.log(await response.text());
           commit('SIGNED_OUT');
         }
       } catch (error) {
