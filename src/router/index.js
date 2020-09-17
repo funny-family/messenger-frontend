@@ -35,7 +35,10 @@ const routes = [
   },
   {
     path: '/test',
-    component: () => import('@/views/Test')
+    component: () => import('@/views/Test'),
+    meta: {
+      requiresAuth: true
+    }
   }
 ];
 
@@ -46,11 +49,6 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-  // let isCurrentUserLoggedIn;
-  // setTimeout(() => {
-  //   isCurrentUserLoggedIn = store.state.auth.isUserLoggedIn;
-  // }, 0);
-
   const isCurrentUserLoggedIn = store.state.auth.isUserLoggedIn;
   const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
 
@@ -67,9 +65,15 @@ router.beforeEach((to, from, next) => {
   } else {
     next();
   }
-  // if (requiresAuth && !isCurrentUserLoggedIn) next('/signin');
-  // else if (!requiresAuth && isCurrentUserLoggedIn) next('/');
-  // else next();
+  setTimeout(() => {
+    // let isCurrentUserLoggedIn;
+    // setTimeout(() => {
+    //   isCurrentUserLoggedIn = store.state.auth.isUserLoggedIn;
+    // }, 0);
+    // if (requiresAuth && !isCurrentUserLoggedIn) next('/signin');
+    // else if (!requiresAuth && isCurrentUserLoggedIn) next('/');
+    // else next();
+  }, 1000);
 });
 
 router.beforeEach((to, from, next) => {
