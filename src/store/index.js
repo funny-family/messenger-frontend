@@ -1,5 +1,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
+import { sync } from 'vuex-router-sync';
+import router from '../router';
+
 
 import auth from './modules/auth';
 
@@ -10,5 +13,7 @@ const store = new Vuex.Store({
     auth
   }
 });
+
+sync(store, router);
 
 export default store;
