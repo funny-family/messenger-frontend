@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-// import { sync } from 'vuex-router-sync';
 import routes from './routes';
 import store from '../store';
 
@@ -12,11 +11,8 @@ const router = new VueRouter({
   routes
 });
 
-// sync(store, router);
-// console.log('store.state', store.state.route);
-
-router.afterEach(async (to, from, next) => {
-  const isCurrentUserLoggedIn = await store.state.auth.isUserLoggedIn;
+router.beforeResolve((to, from, next) => {
+  const isCurrentUserLoggedIn = store.state.auth.isUserLoggedIn;
   const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
 
   console.log('isCurrentUserLoggedIn:', isCurrentUserLoggedIn);
@@ -32,15 +28,6 @@ router.afterEach(async (to, from, next) => {
   } else {
     next();
   }
-  setTimeout(() => {
-    // let isCurrentUserLoggedIn;
-    // setTimeout(() => {
-    //   isCurrentUserLoggedIn = store.state.auth.isUserLoggedIn;
-    // }, 0);
-    // if (requiresAuth && !isCurrentUserLoggedIn) next('/signin');
-    // else if (!requiresAuth && isCurrentUserLoggedIn) next('/');
-    // else next();
-  }, 1000);
 });
 
 router.beforeEach((to, from, next) => {
