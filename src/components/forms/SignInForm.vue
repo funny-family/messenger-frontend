@@ -142,7 +142,7 @@ export default {
 
           // if sign in result successful
           if (await this.$store.state.auth.isUserLoggedIn === true) {
-            this.$router.replace('/');
+            this.$router.replace('/im');
             this.clearObjectData('userLoginData');
             this.clearObjectData('formFieldError');
           }
