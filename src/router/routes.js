@@ -22,14 +22,16 @@ const routes = [
     path: '/signin',
     component: () => import('@/views/Login'),
     meta: {
-      title: 'Sign in'
+      title: 'Sign in',
+      guest: true
     }
   },
   {
     path: '/signup',
     component: () => import('@/views/Registration'),
     meta: {
-      title: 'Sign up'
+      title: 'Sign up',
+      guest: true
     }
   },
   {

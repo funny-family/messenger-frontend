@@ -15,9 +15,22 @@ router.beforeResolve((to, from, next) => {
   const isCurrentUserLoggedIn = store.state.auth.isUserLoggedIn;
   const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
 
+  const guest = to.matched.some((record) => record.meta.guest);
+
+  const previousPath = from.fullPath;
+
   console.log('isCurrentUserLoggedIn:', isCurrentUserLoggedIn);
   console.log('requiresAuth:', requiresAuth);
-  console.log(store.state.auth);
+  // console.log('guest:', guest);
+  // console.log('to:', to);
+  // console.log('from:', from);
+  // console.log('previousPath:', previousPath);
+
+  if (guest) {
+    next(previousPath);
+  } else {
+    next();
+  }
 
   if (requiresAuth) {
     if (!isCurrentUserLoggedIn) {
