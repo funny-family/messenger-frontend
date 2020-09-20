@@ -22,8 +22,8 @@ export default {
     MultiButton
   },
   methods: {
-    signOut() {
-      this.$store.dispatch('signOut');
+    async signOut() {
+      await this.$store.dispatch('signOut');
       this.$router.replace('/signin');
     }
   }
