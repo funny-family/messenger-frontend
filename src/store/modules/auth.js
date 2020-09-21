@@ -104,7 +104,27 @@ export default {
       }
     },
 
-    async checkAuth({ commit }) {
+    async refreshAuth({ commit }) {
+      try {
+        const url = config.api.url.refreshAuth;
+        const response = await fetch(url, {
+          method: 'POST',
+          credentials: 'include', // for cookies
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+        if (await response.ok) {
+          commit('SIGNED_IN');
+        } else {
+          commit('SIGNED_OUT');
+        }
+      } catch (error) {
+        console.log(error);
+      }
+    },
+
+    async checkAuth({ commit, dispatch }) {
       try {
         const url = config.api.url.checkAuth;
         const response = await fetch(url, {
@@ -118,8 +138,7 @@ export default {
           console.log(response.text(), response);
           commit('SIGNED_IN');
         } else {
-          console.log(await response.text());
-          commit('SIGNED_OUT');
+          dispatch('refreshAuth');
         }
       } catch (error) {
         console.log(error);
