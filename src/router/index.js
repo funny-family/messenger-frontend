@@ -16,23 +16,23 @@ router.beforeResolve((to, from, next) => {
   const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
 
   const guest = to.matched.some((record) => record.meta.guest);
-
   const previousPath = from.fullPath;
 
   console.log('isCurrentUserLoggedIn:', isCurrentUserLoggedIn);
   console.log('requiresAuth:', requiresAuth);
-  // console.log('guest:', guest);
-  // console.log('to:', to);
-  // console.log('from:', from);
-  // console.log('previousPath:', previousPath);
 
-  if (guest) {
+  console.log('guest:', guest);
+  console.log('to:', to);
+  console.log('from:', from);
+  console.log('previousPath:', previousPath);
+
+  if (guest) { // if user is guest
     next(previousPath);
   } else {
     next();
   }
 
-  if (requiresAuth) {
+  if (requiresAuth) { // if user is not authenticated
     if (!isCurrentUserLoggedIn) {
       next('/signin');
     } else {
