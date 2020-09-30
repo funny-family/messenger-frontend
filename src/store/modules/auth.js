@@ -1,7 +1,10 @@
 import config from '@/config';
 
+// https://vuex.vuejs.org/ru/api/#subscribe
+
 export default {
   state: {
+    isUserAuthenticated: false,
     isUserLoggedIn: false,
     isUserSiggedUp: false,
     authError: {}
@@ -9,6 +12,9 @@ export default {
   mutations: {
     SIGNED_IN(state) {
       state.isUserLoggedIn = true;
+    },
+    SET_AUTHENTICATION(state) {
+      state.isUserAuthenticated = true;
     },
     SIGNED_UP(state) {
       state.isUserSiggedUp = true;
@@ -143,12 +149,12 @@ export default {
       } catch (error) {
         console.log(error);
       }
-    },
-
-    keepUserAthenticated({ dispatch, state }) {
-      do {
-        dispatch('checkAuth');
-      } while (state.isUserLoggedIn === true);
     }
+
+    // keepUserAthenticated({ dispatch, state }) {
+    //   do {
+    //     dispatch('checkAuth');
+    //   } while (state.isUserLoggedIn === true);
+    // }
   }
 };

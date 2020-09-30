@@ -6,7 +6,19 @@ import App from './App.vue';
 
 Vue.config.productionTip = false;
 
-store.dispatch('keepUserAthenticated');
+// store.dispatch('keepUserAthenticated');
+// store.dispatch(''); // [vuex] unknown action type:
+
+// store.subscribe((mutation, state) => {
+//   // state.auth.isUserLoggedIn = true;
+//   console.log('mutation:', mutation);
+//   console.log('state:', state);
+// });
+
+store.subscribeAction((action, state) => {
+  console.log(action);
+  console.log(state);
+});
 
 sync(store, router);
 
