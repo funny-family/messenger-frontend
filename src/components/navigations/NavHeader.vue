@@ -26,22 +26,16 @@
           Sign up
         </MultiButton>
       </router-link>
-      <SignOutForm
-        class="link"
-        v-if="this.$store.state.auth.isUserLoggedIn === true"
-      />
     </div>
   </header>
 </template>
 
 <script>
 import MultiButton from '@/components/buttons/MultiButton.vue';
-import SignOutForm from '@/components/forms/SignOutForm.vue';
 
 export default {
   name: 'NavHeader',
   components: {
-    SignOutForm,
     MultiButton
   }
 };
