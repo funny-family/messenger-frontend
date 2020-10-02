@@ -10,16 +10,13 @@ export default {
     authError: {}
   },
   mutations: {
-    SIGNED_IN(state) {
+    SET_AUTHENTICATION(state) {
       state.isUserLoggedIn = true;
     },
-    SET_AUTHENTICATION(state) {
-      state.isUserAuthenticated = true;
-    },
-    SIGNED_UP(state) {
+    SET_REGISTRATION(state) {
       state.isUserSiggedUp = true;
     },
-    SIGNED_OUT(state) {
+    SET_LOGOUT(state) {
       state.isUserLoggedIn = false;
     },
     SET_AUTH_ERRORS(state, error) {
@@ -51,7 +48,7 @@ export default {
         });
         console.log(response);
         if (await response.ok) {
-          commit('SIGNED_UP');
+          commit('SET_REGISTRATION');
         } else {
           const result = await response.json();
           commit('SET_AUTH_ERRORS', result.errors);
@@ -81,7 +78,7 @@ export default {
         });
         console.log(response);
         if (await response.ok) {
-          commit('SIGNED_IN');
+          commit('SET_AUTHENTICATION');
         } else {
           const result = await response.json();
           commit('SET_AUTH_ERRORS', result.errors);
@@ -103,7 +100,7 @@ export default {
         });
         console.log('response', response);
         if (await response.ok) {
-          commit('SIGNED_OUT');
+          commit('SET_LOGOUT');
         }
       } catch (error) {
         console.log(error);
@@ -121,9 +118,9 @@ export default {
           }
         });
         if (await response.ok) {
-          commit('SIGNED_IN');
+          commit('SET_AUTHENTICATION');
         } else {
-          commit('SIGNED_OUT');
+          commit('SET_LOGOUT');
         }
       } catch (error) {
         console.log(error);
@@ -142,7 +139,7 @@ export default {
         });
         if (await response.ok) {
           console.log(response.text(), response);
-          commit('SIGNED_IN');
+          commit('SET_AUTHENTICATION');
         } else {
           dispatch('refreshAuth');
         }
