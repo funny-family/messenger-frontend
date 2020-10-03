@@ -181,8 +181,9 @@ export default {
 
 <style scoped>
 .sign-in-from {
-  width: 400px;
-  min-width: 400px;
+  margin: 0 16px;
+  /* width: 400px; */
+  /* max-width: 400px; */
 }
 
 .sign-in-input {
