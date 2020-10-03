@@ -249,8 +249,9 @@ export default {
 
 <style scoped>
 .sign-up-from {
-  width: 400px;
-  min-width: 400px;
+  margin: 0 16px;
+  /* width: 400px;
+  min-width: 400px; */
 }
 
 .sign-up-input {
