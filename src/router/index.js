@@ -11,6 +11,8 @@ const router = new VueRouter({
   routes
 });
 
+// https://github.com/auth0-blog/vuejs2-authentication-tutorial/blob/master/utils/auth.js
+// https://github.com/manojkumar3692/Vuejs-Authentication/blob/master/LB2/src/router/index.js
 router.beforeResolve((to, from, next) => {
   const isCurrentUserLoggedIn = store.state.auth.isUserLoggedIn;
   const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);

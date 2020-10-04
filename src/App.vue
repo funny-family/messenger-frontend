@@ -13,3 +13,12 @@
 @import url('./assets/styles/main.css');
 
 </style>
+
+<script>
+export default {
+  beforeMount() {
+    // console.log('bla bla bla');
+    // this.$store.dispatch('checkAuth');
+  }
+};
+</script>

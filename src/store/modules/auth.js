@@ -4,7 +4,6 @@ import config from '@/config';
 
 export default {
   state: {
-    isUserAuthenticated: false,
     isUserLoggedIn: false,
     isUserSiggedUp: false,
     authError: {}
@@ -46,7 +45,7 @@ export default {
           },
           body: JSON.stringify(userRegistrationData)
         });
-        console.log(response);
+        // console.log(response);
         if (await response.ok) {
           commit('SET_REGISTRATION');
         } else {
@@ -76,9 +75,10 @@ export default {
           },
           body: JSON.stringify(userLoginData)
         });
-        console.log(response);
+        console.log('signIn action:', response);
         if (await response.ok) {
           commit('SET_AUTHENTICATION');
+          // dispatch('checkAuth');
         } else {
           const result = await response.json();
           commit('SET_AUTH_ERRORS', result.errors);
@@ -98,7 +98,7 @@ export default {
             'Content-Type': 'application/json'
           }
         });
-        console.log('response', response);
+        // console.log('response', response);
         if (await response.ok) {
           commit('SET_LOGOUT');
         }
@@ -117,10 +117,11 @@ export default {
             'Content-Type': 'application/json'
           }
         });
+        console.log('refreshAuth:', response);
         if (await response.ok) {
           commit('SET_AUTHENTICATION');
         } else {
-          commit('SET_LOGOUT');
+          // commit('SET_LOGOUT');
         }
       } catch (error) {
         console.log(error);
@@ -137,8 +138,8 @@ export default {
             'Content-Type': 'application/json'
           }
         });
+        console.log('checkAuth action:', response);
         if (await response.ok) {
-          console.log(response.text(), response);
           commit('SET_AUTHENTICATION');
         } else {
           dispatch('refreshAuth');
@@ -148,10 +149,10 @@ export default {
       }
     }
 
-    // keepUserAthenticated({ dispatch, state }) {
-    //   do {
+    // keepUserAuthenticated({ state, dispatch }) {
+    //   if (state.isUserLoggedIn === false) {
     //     dispatch('checkAuth');
-    //   } while (state.isUserLoggedIn === true);
+    //   }
     // }
   }
 };
