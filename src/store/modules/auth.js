@@ -118,11 +118,12 @@ export default {
           }
         });
         console.log('refreshAuth:', response);
-        if (await response.ok) {
-          commit('SET_AUTHENTICATION');
-        } else {
-          // commit('SET_LOGOUT');
-        }
+        console.log(commit);
+        // if (await response.ok) {
+        //   commit('SET_AUTHENTICATION');
+        // } else {
+        //   // commit('SET_LOGOUT');
+        // }
       } catch (error) {
         console.log(error);
       }

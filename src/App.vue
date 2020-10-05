@@ -16,9 +16,9 @@
 
 <script>
 export default {
-  beforeMount() {
+  mounted() {
     // console.log('bla bla bla');
-    // this.$store.dispatch('checkAuth');
+    this.$store.dispatch('checkAuth');
   }
 };
 </script>
