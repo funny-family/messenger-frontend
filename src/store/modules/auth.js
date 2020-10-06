@@ -1,6 +1,12 @@
 import config from '@/config';
 
 // https://vuex.vuejs.org/ru/api/#subscribe
+// function getCookieValue(name) {
+//   const matches = document.cookie.match(new RegExp(
+//     `(?:^|; )${name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1')}=([^;]*)`
+//   ));
+//   return matches ? decodeURIComponent(matches[1]) : undefined;
+// }
 
 export default {
   state: {
@@ -98,61 +104,62 @@ export default {
             'Content-Type': 'application/json'
           }
         });
-        // console.log('response', response);
+        console.log('signOut action', response);
         if (await response.ok) {
           commit('SET_LOGOUT');
         }
       } catch (error) {
         console.log(error);
       }
-    },
-
-    async refreshAuth({ commit }) {
-      try {
-        const url = config.api.url.refreshAuth;
-        const response = await fetch(url, {
-          method: 'POST',
-          credentials: 'include', // for cookies
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        });
-        console.log('refreshAuth:', response);
-        console.log(commit);
-        // if (await response.ok) {
-        //   commit('SET_AUTHENTICATION');
-        // } else {
-        //   // commit('SET_LOGOUT');
-        // }
-      } catch (error) {
-        console.log(error);
-      }
-    },
-
-    async checkAuth({ commit, dispatch }) {
-      try {
-        const url = config.api.url.checkAuth;
-        const response = await fetch(url, {
-          method: 'POST',
-          credentials: 'include', // for cookies
-          headers: {
-            'Content-Type': 'application/json'
-          }
-        });
-        console.log('checkAuth action:', response);
-        if (await response.ok) {
-          commit('SET_AUTHENTICATION');
-        } else {
-          dispatch('refreshAuth');
-        }
-      } catch (error) {
-        console.log(error);
-      }
     }
 
-    // keepUserAuthenticated({ state, dispatch }) {
-    //   if (state.isUserLoggedIn === false) {
+    // async refreshAuth({ commit }) {
+    //   try {
+    //     const url = config.api.url.refreshAuth;
+    //     const response = await fetch(url, {
+    //       method: 'POST',
+    //       credentials: 'include', // for cookies
+    //       headers: {
+    //         'Content-Type': 'application/json'
+    //       }
+    //     });
+    //     console.log('refreshAuth:', response);
+    //     console.log(commit);
+    //     // if (await response.ok) {
+    //     //   commit('SET_AUTHENTICATION');
+    //     // } else {
+    //     //   // commit('SET_LOGOUT');
+    //     // }
+    //   } catch (error) {
+    //     console.log(error);
+    //   }
+    // },
+
+    // async checkAuth({ commit }) {
+    //   try {
+    //     const url = config.api.url.checkAuth;
+    //     const response = await fetch(url, {
+    //       method: 'POST',
+    //       credentials: 'include', // for cookies
+    //       headers: {
+    //         'Content-Type': 'application/json'
+    //       }
+    //     });
+    //     console.log('checkAuth action:', response);
+    //     if (await response.ok) {
+    //       commit('SET_AUTHENTICATION');
+    //     }
+    //   } catch (error) {
+    //     console.log(error);
+    //   }
+    // }
+
+    // keepUserAuthenticated({ dispatch }) {
+    //   console.log(getCookieValue('logged-in'));
+    //   if (getCookieValue('logged-in') === 'yes') {
     //     dispatch('checkAuth');
+    //   } else if (getCookieValue('logged-in') !== 'yes') {
+    //     dispatch('signOut');
     //   }
     // }
   }

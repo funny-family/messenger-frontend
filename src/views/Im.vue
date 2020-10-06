@@ -11,6 +11,9 @@ import SignOutForm from '@/components/forms/SignOutForm.vue';
 export default {
   components: {
     SignOutForm
+  },
+  mounted() {
+    this.$store.dispatch('getUserInfo');
   }
 };
 </script>
