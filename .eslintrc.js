@@ -11,6 +11,7 @@ module.exports = {
     parser: 'babel-eslint'
   },
   rules: {
+    'no-useless-escape': 'off',
     'operator-linebreak': ['error', 'after'],
     camelcase: 'off',
     'func-names': ['off', 'never'],
