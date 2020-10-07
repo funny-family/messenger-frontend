@@ -1,12 +1,6 @@
 import config from '@/config';
-
-// https://vuex.vuejs.org/ru/api/#subscribe
-// function getCookieValue(name) {
-//   const matches = document.cookie.match(new RegExp(
-//     `(?:^|; )${name.replace(/([\.$?*|{}\(\)\[\]\\\/\+^])/g, '\\$1')}=([^;]*)`
-//   ));
-//   return matches ? decodeURIComponent(matches[1]) : undefined;
-// }
+import getCookieValue from '../functions/get-cookie-value';
+import checkAuth from '../functions/check-auth';
 
 export default {
   state: {
@@ -111,9 +105,23 @@ export default {
       } catch (error) {
         console.log(error);
       }
+    },
+
+    keepUserAuthenticated({ dispatch }) {
+      const isLoggedIn = getCookieValue('logged-in');
+      console.log(isLoggedIn === undefined);
+      console.log(isLoggedIn !== 'yes');
+
+      if (isLoggedIn === undefined && isLoggedIn !== 'yes') {
+        dispatch('signOut');
+      }
+
+      if (isLoggedIn === 'yes') {
+        checkAuth();
+      }
     }
 
-    // async refreshAuth({ commit }) {
+    // async refreshAuth({ commdit }) {
     //   try {
     //     const url = config.api.url.refreshAuth;
     //     const response = await fetch(url, {

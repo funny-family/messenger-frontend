@@ -6,7 +6,7 @@ import App from './App.vue';
 
 Vue.config.productionTip = false;
 
-store.dispatch('checkAuth');
+store.dispatch('keepUserAuthenticated');
 
 sync(store, router);
 
