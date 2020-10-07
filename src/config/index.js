@@ -8,7 +8,7 @@ export default {
       signin: `${domain + apiVerion1}/auth/signin`,
       signout: `${domain + apiVerion1}/auth/signout`,
       refreshAuth: `${domain + apiVerion1}/auth/refresh-auth`,
-      checkAuth: `${domain + apiVerion1}/user/check-auth`
+      checkAuth: `${domain + apiVerion1}/auth/check-auth`
     }
   }
 };
