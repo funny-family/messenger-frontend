@@ -6,7 +6,9 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "fix": "npm run lint --fix"
+    "fix": "npm run lint --fix",
+    "module:create": "node ./cli/commands/create-store-module.js",
+    "component:create": "node ./cli/commands/create-component.js"
   },
   "dependencies": {
     "core-js": "^3.6.5",
