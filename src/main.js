@@ -1,17 +1,17 @@
-import Vue from 'vue';
 import { sync } from 'vuex-router-sync';
 import router from './router';
 import store from './store';
 import App from './App.vue';
 
-Vue.config.productionTip = false;
+import { createApp } from './utils';
 
 store.dispatch('keepUserAuthenticated');
-
 sync(store, router);
 
-new Vue({
+const app = createApp({
   router,
   store,
   render: (h) => h(App)
-}).$mount('#app');
+});
+
+app.$mount('#app');
