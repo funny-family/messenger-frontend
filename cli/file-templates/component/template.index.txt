@@ -1,0 +1,4 @@
+import { declareComponent } from '@/utils';
+import Example from './example.component.vue';
+
+export default declareComponent(Example.name, Example);
