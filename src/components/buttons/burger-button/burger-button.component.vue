@@ -1,17 +1,17 @@
 <template>
-  <div class="hamburger-menu-container">
+  <div class="burger-button-container">
     <input
-      id="menu__toggler"
+      id="button__trigger"
       :isOpened="isOpened"
-      @change="changeMenuState($event.target.checked)"
+      @change="changeBurgerButtonState($event.target.checked)"
       type="checkbox"
     />
     <label
-      class="menu__button"
+      class="burger-button"
       :class="{
         'menu__opened': isOpened
       }"
-      for="menu__toggler"
+      for="button__trigger"
     >
       <!-- <span></span> -->
     </label>
@@ -29,7 +29,7 @@ export default {
     }
   },
   methods: {
-    changeMenuState(event) {
+    changeBurgerButtonState(event) {
       this.$emit('change', event);
     }
   }

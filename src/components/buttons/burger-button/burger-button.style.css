@@ -1,8 +1,8 @@
-#menu__toggler {
+#button__trigger {
   display: none;
 }
 
-.hamburger-menu-container {
+.burger-button-container {
   --hamburger-menu-color: red;
   --hamburger-menu-size: 2em;
   --hamburger-menu-padding: calc(var(--hamburger-menu-size) * 3 / 10);
@@ -11,16 +11,16 @@
 
   --transition-time: .2s;
 
+  /* position: relative; */
   /* position: relative;
 
   left: 20px;
   top: 20px; */
 }
 
-.menu__button {
-  --padding: .4em;
-
-  position: absolute;
+.burger-button {
+  /* position: absolute; */
+  /* position: relative; */
 
   width: var(--hamburger-menu-width);
   height: var(--hamburger-menu-height);
@@ -37,20 +37,20 @@
   transition: padding-bottom var(--transition-time) ease;
 }
 
-.menu__button::before {
+.burger-button::before {
   top: 0;
 
   /* transition: top var(--transition-time) ease; */
 }
 
-.menu__button::after {
+.burger-button::after {
   bottom: 0;
 
   /* transition: bottom var(--transition-time) ease; */
 }
 
-.menu__button::before,
-.menu__button::after {
+.burger-button::before,
+.burger-button::after {
   content: '';
 
   position: absolute;
@@ -81,5 +81,5 @@
 
 .menu__opened::before,
 .menu__opened::after {
-  top: .4em;
+  top: .6em;
 }
