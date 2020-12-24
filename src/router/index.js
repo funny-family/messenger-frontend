@@ -17,8 +17,14 @@ router.beforeResolve((to, from, next) => {
   const isCurrentUserLoggedIn = store.state.auth.isUserLoggedIn;
   const requiresAuth = to.matched.some((record) => record.meta.requiresAuth);
 
-  const guest = to.matched.some((record) => record.meta.guest);
-  const previousPath = from.fullPath;
+  // const guest = to.matched.some((record) => record.meta.guest);
+  // const previousPath = from.fullPath;
+
+  // if (guest && !requiresAuth) { // if user is guest
+  //   next(previousPath);
+  // } else {
+  //   next();
+  // }
 
   // console.log('isCurrentUserLoggedIn:', isCurrentUserLoggedIn);
   // console.log('requiresAuth:', requiresAuth);
@@ -27,12 +33,6 @@ router.beforeResolve((to, from, next) => {
   // console.log('to:', to);
   // console.log('from:', from);
   // console.log('previousPath:', previousPath);
-
-  if (guest) { // if user is guest
-    next(previousPath);
-  } else {
-    next();
-  }
 
   if (requiresAuth) { // if user is not authenticated
     if (!isCurrentUserLoggedIn) {
