@@ -12,6 +12,14 @@ const routes = [
     }
   },
   {
+    name: 'Chats',
+    path: '/chats',
+    component: () => import('../views/chats/'),
+    meta: {
+      title: 'Chats'
+    }
+  },
+  {
     name: 'Profile',
     path: '/im',
     component: () => import('../views/Im.vue'),
