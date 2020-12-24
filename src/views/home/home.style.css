@@ -1,0 +1,51 @@
+.home-page {
+  min-height: 100%;
+  min-width: 100%;
+}
+
+.container {
+  width: 90%;
+  height: 100%;
+
+  margin: 0 auto;
+
+  max-width: 200rem;
+}
+
+.nav-header {
+  position: fixed;
+
+  top: 0;
+  /* position: fixed;
+  top: 0; */
+
+  /* position: fixed;
+
+  top: 0; */
+
+  width: 100%;
+}
+
+.home-page-main {
+  height: 150vh;
+  background-color: antiquewhite;
+  /* margin-top: 68px; */
+}
+
+.title-block {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  /* height: 400px; */
+  /* height: 200vh; */
+}
+
+.title-block h2 {
+  padding: 0;
+  margin: 0;
+
+  font-size: 100px;
+  word-spacing: 12px;
+}
