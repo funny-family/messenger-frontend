@@ -1,8 +1,8 @@
 /* config */
 @import url('./config/config.css');
 
-/* global colors */
-@import url('./colors.css');
+/* global variables */
+@import url('./variables/global.css');
 /* elements styles */
 @import url('./elements/elements.css');
 /* pseudo elements elements */
