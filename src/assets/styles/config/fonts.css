@@ -1,0 +1,22 @@
+@font-face {
+  font-family: var(--primary-font);
+  src:
+    url('../../fonts/Jost-Black.woff2') format('woff2'),
+    url('../../fonts/Jost-BlackItalic.woff2') format('woff2'),
+    url('../../fonts/Jost-Bold.woff2') format('woff2'),
+    url('../../fonts/Jost-BoldItalic.woff2') format('woff2'),
+    url('../../fonts/Jost-ExtraBold.woff2') format('woff2'),
+    url('../../fonts/Jost-ExtraBoldItalic.woff2') format('woff2'),
+    url('../../fonts/Jost-ExtraLight.woff2') format('woff2'),
+    url('../../fonts/Jost-ExtraLightItalic.woff2') format('woff2'),
+    url('../../fonts/Jost-Italic.woff2') format('woff2'),
+    url('../../fonts/Jost-Light.woff2') format('woff2'),
+    url('../../fonts/Jost-LightItalic.woff2') format('woff2'),
+    url('../../fonts/Jost-Medium.woff2') format('woff2'),
+    url('../../fonts/Jost-MediumItalic.woff2') format('woff2'),
+    url('../../fonts/Jost-Regular.woff2') format('woff2'),
+    url('../../fonts/Jost-SemiBold.woff2') format('woff2'),
+    url('../../fonts/Jost-SemiBoldItalic.woff2') format('woff2'),
+    url('../../fonts/Jost-Thin.woff2') format('woff2'),
+    url('../../fonts/Jost-ThinItalic.woff2') format('woff2');
+}
