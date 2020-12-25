@@ -1,4 +1,6 @@
 :root {
+  --primary-font: 'Jost', sans-serif;
+
   --selection-color: #f0f0f0; /* selection */
 
   --primary-accent-color: #0A84FF; /* primary / main */
