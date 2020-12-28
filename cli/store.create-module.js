@@ -44,7 +44,7 @@ class StoreModuleTemplateCreator {
       __dirname, './file-templates/module/template.getters.txt'
     ));
 
-    const keyWordToReplace = 'template';
+    const keyWordToReplace = 'example';
 
     const processedIndexFileTemplate = new FileTemplateReplacer(indexFileTemplate)
       .replace(keyWordToReplace, this.name)
