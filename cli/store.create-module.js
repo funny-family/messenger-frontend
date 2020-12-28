@@ -47,7 +47,7 @@ class StoreModuleTemplateCreator {
     const keyWordToReplace = 'template';
 
     const processedIndexFileTemplate = new FileTemplateReplacer(indexFileTemplate)
-      .replaceOn(keyWordToReplace, this.name)
+      .replace(keyWordToReplace, this.name)
       .getFile();
     const processedStateFileTemplate = new FileTemplateReplacer(stateFileTemplate)
       .getFile();
