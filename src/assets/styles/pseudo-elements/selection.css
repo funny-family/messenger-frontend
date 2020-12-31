@@ -1,0 +1,2 @@
+::-moz-selection { background: var(--selection-color); }
+::selection { background: var(--selection-color); }

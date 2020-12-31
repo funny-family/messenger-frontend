@@ -1,0 +1,18 @@
+:root {
+  --primary-font: 'Jost', sans-serif;
+
+  --selection-color: #f0f0f0; /* selection */
+
+  --primary-accent-color: #0A84FF; /* primary / main */
+  --secondary-accent-color: #007CFA; /* hover */
+  --thirdly-accent-color: #266EF2; /* active / click */
+
+  --light-text-disabled-button-color: #266EF2;
+  --light-bg-disabled-button-color: #DEEAFF;
+
+  /* input colors */
+  --Suva-Grey: #909090;
+  --Charcoal: #4b4b4b;
+
+  --error-color: #F22837; /* error */
+}
