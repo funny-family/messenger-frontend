@@ -7,7 +7,7 @@ module.exports = {
       alias: {
         '@': path.resolve(__dirname, './src')
       },
-      extensions: ['.js', '.ts', '.vue', '.json']
+      extensions: ['.js', '.ts', '.vue', '.json', '.css', '.scss']
     }
   }
 };
