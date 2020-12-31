@@ -11,7 +11,8 @@
     "stylelint": "stylelint '**/*{.css,.scss}'",
     "stylelint:fix": "stylelint '**/*{.css,.scss}' --fix",
     "module:create": "node ./cli/commands/create-store-module.js",
-    "component:create": "node ./cli/commands/create-component.js"
+    "component:create": "node ./cli/commands/create-component.js",
+    "commit": "cz"
   },
   "dependencies": {
     "core-js": "^3.8.1",
@@ -22,10 +23,13 @@
   "devDependencies": {
     "@babel/core": "^7.12.10",
     "@babel/eslint-parser": "^7.12.1",
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-conventional": "^11.0.0",
     "@vue/cli-plugin-babel": "~5.0.0-alpha.0",
     "@vue/cli-plugin-eslint": "~5.0.0-alpha.0",
     "@vue/cli-service": "~5.0.0-alpha.0",
     "@vue/compiler-sfc": "^3.0.4",
+    "commitizen": "^4.2.2",
     "eslint": "^7.15.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^7.1.0",
@@ -33,6 +37,7 @@
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-prettier": "^3.3.0",
     "eslint-plugin-vue": "^7.2.0",
+    "husky": "^4.3.6",
     "prettier": "^2.2.1",
     "stylelint": "^13.8.0",
     "stylelint-config-airbnb": "0.0.0",
