@@ -2,7 +2,7 @@
   <div class="not-found-page">
     <section class="error-section">
       <h1 class="error-section__text">
-        404 not found!
+        404 page not found!
       </h1>
       <router-link
         class="error-section__link"
