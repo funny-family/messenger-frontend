@@ -1,9 +1,10 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import routes from './routes';
+import { collectExportedRoutes } from './utils';
+import * as routes from './routes';
 
 const router = createRouter({
   history: createWebHistory(),
-  routes
+  routes: collectExportedRoutes(routes)
 });
 
 router.beforeEach((to, from, next) => {
