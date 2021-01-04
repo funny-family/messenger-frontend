@@ -1,0 +1,24 @@
+.sign-up-page {
+  width: 100%;
+  height: 100%;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+}
+
+/* getting access to this class form imported SignInFrom component */
+.sign-up-form {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  flex-direction: column;
+}

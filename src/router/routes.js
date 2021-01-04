@@ -21,7 +21,7 @@ export const homePage = {
 export const signin = {
   name: () => this.component.name,
   path: '/signin',
-  component: () => import('../views/signin'),
+  component: () => import('../views/sign-in'),
   meta: {
     title: 'Sign in'
   }
@@ -30,7 +30,7 @@ export const signin = {
 export const signup = {
   name: () => this.component.name,
   path: '/signup',
-  component: () => import('../views/signup'),
+  component: () => import('../views/sign-up'),
   meta: {
     title: 'Sign up'
   }
