@@ -1,3 +1,49 @@
-.text {
-  font-weight: bold;
+.home-page {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  width: 90%;
+  height: 100%;
+
+  margin: 0 auto;
+
+  max-width: 200rem;
+}
+
+.home-page__header {
+  position: fixed;
+
+  top: 0;
+
+  width: 100%;
+}
+
+.home-page__main {
+  height: 150vh;
+  background-color: antiquewhite;
+
+  padding-top: 64px; /* header overlap compensation (header height is 64px) */
+}
+
+.home-page__footer {}
+
+.title-block {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.title-block h1 {
+  padding: 0;
+  margin: 0;
+
+  font-size: 4em;
+  word-spacing: 12px;
 }
