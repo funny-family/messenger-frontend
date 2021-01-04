@@ -1,0 +1,85 @@
+#button__trigger {
+  display: none;
+}
+
+.burger-button-container {
+  --hamburger-menu-color: red;
+  --hamburger-menu-size: 2em;
+  --hamburger-menu-padding: calc(var(--hamburger-menu-size) * 3 / 10);
+  --hamburger-menu-width: var(--hamburger-menu-size);
+  --hamburger-menu-height: calc(var(--hamburger-menu-size) / 10);
+
+  --transition-time: .2s;
+
+  /* position: relative; */
+  /* position: relative;
+
+  left: 20px;
+  top: 20px; */
+}
+
+.burger-button {
+  /* position: absolute; */
+  /* position: relative; */
+
+  width: var(--hamburger-menu-width);
+  height: var(--hamburger-menu-height);
+
+  padding-top: var(--hamburger-menu-padding);
+  padding-bottom: var(--hamburger-menu-padding);
+
+  background-color: var(--hamburger-menu-color);
+  background-clip: content-box;
+
+  cursor: pointer;
+
+  transition: padding-top var(--transition-time) ease;
+  transition: padding-bottom var(--transition-time) ease;
+}
+
+.burger-button::before {
+  top: 0;
+
+  /* transition: top var(--transition-time) ease; */
+}
+
+.burger-button::after {
+  bottom: 0;
+
+  /* transition: bottom var(--transition-time) ease; */
+}
+
+.burger-button::before,
+.burger-button::after {
+  content: '';
+
+  position: absolute;
+
+  width: 100%;
+  height: var(--hamburger-menu-height);
+
+  background-color: var(--hamburger-menu-color);
+
+  /* transition: transform var(--transition-time) ease; */
+}
+
+.menu__opened {
+  background-color: transparent;
+}
+
+.menu__opened::before {
+  transform: rotate(-45deg) scaleX(1.2);
+
+  transition: transform var(--transition-time) ease;
+}
+
+.menu__opened::after {
+  transform: rotate(45deg) scaleX(1.2);
+
+  transition: transform var(--transition-time) ease;
+}
+
+.menu__opened::before,
+.menu__opened::after {
+  top: .6em;
+}
