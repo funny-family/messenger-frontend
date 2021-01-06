@@ -3,13 +3,12 @@
     <input
       id="button__trigger"
       type="checkbox"
-      :state="state"
-      @change="changeState($event.target.checked)"
+      @change="onClick($event.target.checked)"
     />
     <label
       class="burger-button"
       :class="{
-        'menu__opened': state
+        menu__opened: state
       }"
       for="button__trigger"
     >
@@ -18,29 +17,26 @@
 </template>
 
 <script>
+import { ref } from 'vue';
+
 const emitEnum = {
-  changeState: 'change-state'
+  onClick: 'onClick'
 };
 
 export default {
   name: 'BurgerButton',
-  props: {
-    state: {
-      type: Boolean,
-      required: true,
-      default: false
-    }
-  },
-  emits: [
-    emitEnum.changeState
-  ],
+  emits: [emitEnum.onClick],
   setup(_, { emit }) {
-    function changeState(event) {
-      return emit(emitEnum.changeState, event);
+    const state = ref(false);
+
+    function onClick(event) {
+      state.value = event;
+      return emit(emitEnum.onClick, event);
     }
 
     return {
-      changeState
+      state,
+      onClick
     };
   }
 };
