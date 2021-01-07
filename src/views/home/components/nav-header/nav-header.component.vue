@@ -4,54 +4,43 @@
     <nav
       class="nav-header__list-container"
       :class="{
-        'nav-header__list-container__showed': isMenuOpen
+        'nav-header__list-container__showed': isNavMenuOpen
       }"
     >
       <ul class="nav-header__list">
         <li class="nav-header__item">
-          <router-link to="/signin">
-            Sign in
-          </router-link>
+          <router-link to="/signin"> Sign in </router-link>
         </li>
         <li class="nav-header__item">
-          <router-link to="/signup">
-            Sign up
-          </router-link>
+          <router-link to="/signup"> Sign up </router-link>
         </li>
       </ul>
     </nav>
-    <BurgerButton
-      class="nav-header__burger-button"
-      :state="isMenuOpen"
-      @change-state="changeMenuState"
-    />
+    <BurgerButton class="nav-header__burger-button" @onClick="changeMenuState" />
   </header>
 </template>
 
 <script>
-import { ref } from 'vue';
 import BurgerButton from '@/components/burger-button';
+import { isNavMenuOpen } from './nav-header.state';
+
+const emitEnum = {
+  changeMenuState: 'changeMenuState'
+};
 
 export default {
   name: 'NavHeader',
   components: {
     BurgerButton
   },
-  props: {
-    isFixedWhenOpen: {
-      default: false,
-      type: Boolean
-    }
-  },
+  emits: [emitEnum.changeMenuState],
   setup() {
-    const isMenuOpen = ref(false);
-
-    function changeMenuState() {
-      isMenuOpen.value = !isMenuOpen.value;
+    function changeMenuState(state) {
+      isNavMenuOpen.value = state;
     }
 
     return {
-      isMenuOpen,
+      isNavMenuOpen,
       changeMenuState
     };
   }
