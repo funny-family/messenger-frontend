@@ -1,44 +1,61 @@
 // https://stackoverflow.com/questions/64974795/vue-js-3-component-doesnt-load-in-vuejs-with-router
+// https://router.vuejs.org/api/#name
 
-export const notFoundPage = {
-  name: () => this.component.name,
-  path: '/404',
-  component: () => import('../views/not-found'),
-  meta: {
-    title: 'Page not found!'
-  }
-};
+export const notFound = (() => {
+  const NotFound = () => import('../views/not-found');
 
-export const homePage = {
-  name: () => this.component.name,
-  path: '/',
-  component: () => import('../views/home'),
-  meta: {
-    title: 'Home'
-  }
-};
+  return {
+    name: NotFound.name,
+    path: '/404',
+    component: NotFound,
+    meta: {
+      title: 'Page not found!'
+    }
+  };
+})();
 
-export const signin = {
-  name: () => this.component.name,
-  path: '/signin',
-  component: () => import('../views/sign-in'),
-  meta: {
-    title: 'Sign in'
-  }
-};
+export const home = (() => {
+  const Home = () => import('../views/home');
 
-export const signup = {
-  name: () => this.component.name,
-  path: '/signup',
-  component: () => import('../views/sign-up'),
-  meta: {
-    title: 'Sign up'
-  }
-};
+  return {
+    name: Home.name,
+    path: '/',
+    component: Home,
+    meta: {
+      title: 'Home'
+    }
+  };
+})();
 
-export const notExisting = {
+export const signin = (() => {
+  const SignIn = () => import('../views/sign-in');
+
+  return {
+    name: SignIn.name,
+    path: '/signin',
+    component: SignIn,
+    meta: {
+      title: 'Sign in'
+    }
+  };
+})();
+
+export const signup = (() => {
+  const SignUp = () => import('../views/sign-up');
+
+  return {
+    name: SignUp.name,
+    path: '/signup',
+    component: SignUp,
+    meta: {
+      title: 'Sign up'
+    }
+  };
+})();
+
+export const notExisting = (() => ({
   path: '/:catchAll(.*)',
   redirect: {
-    name: notFoundPage.name
+    name: notFound.name
   }
-};
+}))();
