@@ -12,7 +12,7 @@
   align-items: center;
 }
 
-/* getting access to this class form imported SignInFrom component */
+/* getting access to this class form imported SignUpFrom component */
 .sign-up-form {
   display: -webkit-box;
   display: -moz-box;
