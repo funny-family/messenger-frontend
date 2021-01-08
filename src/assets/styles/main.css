@@ -7,3 +7,5 @@
 @import url('./elements/elements.css');
 /* pseudo elements elements */
 @import url('./pseudo-elements/pseudo-elements.css');
+/* all themes */
+@import url('./themes/themes.css')
