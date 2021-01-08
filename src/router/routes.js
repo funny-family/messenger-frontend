@@ -53,6 +53,40 @@ export const signup = (() => {
   };
 })();
 
+export const my = (() => {
+  const My = () => import('../views/my');
+
+  const Chats = () => import('../views/my/templates/chats');
+  const Settings = () => import('../views/my/templates/settings');
+
+  return {
+    name: My.name,
+    path: '/my',
+    component: My,
+    redirect: {
+      name: Chats.name || Settings.name
+    },
+    children: [
+      {
+        name: Chats.name,
+        path: 'chats',
+        component: Chats,
+        meta: {
+          title: 'Chats'
+        }
+      },
+      {
+        name: Settings.name,
+        path: 'settings',
+        component: Settings,
+        meta: {
+          title: 'Settings'
+        }
+      }
+    ]
+  };
+})();
+
 export const notExisting = (() => ({
   path: '/:catchAll(.*)',
   redirect: {
