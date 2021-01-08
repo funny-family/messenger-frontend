@@ -1,3 +1,19 @@
-.text {
-  font-weight: bold;
+.my-page {
+  --navbar-menu-height: 20px;
+
+  width: 100%;
+  height: 100%;
+}
+
+.my-page__main {
+  width: 100%;
+  height: 100%;
+
+  background-color: #cfcfcf;
+}
+
+.my-page__menu {
+  position: absolute;
+
+  bottom: 0;
 }

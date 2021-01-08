@@ -56,33 +56,42 @@ export const signup = (() => {
 export const my = (() => {
   const My = () => import('../views/my');
 
-  const Chats = () => import('../views/my/templates/chats');
-  const Settings = () => import('../views/my/templates/settings');
+  const chats = (() => {
+    const Chats = () => import('../views/my/templates/chats');
+
+    return {
+      name: Chats.name,
+      path: 'chats',
+      component: Chats,
+      meta: {
+        title: 'Chats'
+      }
+    };
+  })();
+
+  const settings = (() => {
+    const Settings = () => import('../views/my/templates/settings');
+
+    return {
+      name: Settings.name,
+      path: 'settings',
+      component: Settings,
+      meta: {
+        title: 'Settings'
+      }
+    };
+  })();
 
   return {
     name: My.name,
     path: '/my',
     component: My,
     redirect: {
-      name: Chats.name || Settings.name
+      name: chats.name || settings.name
     },
     children: [
-      {
-        name: Chats.name,
-        path: 'chats',
-        component: Chats,
-        meta: {
-          title: 'Chats'
-        }
-      },
-      {
-        name: Settings.name,
-        path: 'settings',
-        component: Settings,
-        meta: {
-          title: 'Settings'
-        }
-      }
+      chats,
+      settings
     ]
   };
 })();

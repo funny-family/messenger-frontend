@@ -1,6 +1,7 @@
 <template>
   <div class="text">
     Hello from settings component!
+    <input type="text" />
   </div>
 </template>
 
