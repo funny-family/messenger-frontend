@@ -6,7 +6,7 @@
       </h1>
       <router-link
         class="error-section__link"
-        to="/"
+        :to="{ name: routes.home.name }"
       >
         Back to home page
       </router-link>
@@ -15,8 +15,15 @@
 </template>
 
 <script>
+import { routes } from '@/router';
+
 export default {
-  name: 'NotFound'
+  name: 'NotFound',
+  setup() {
+    return {
+      routes
+    };
+  }
 };
 </script>
 
