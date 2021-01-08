@@ -12,4 +12,7 @@ router.beforeEach((to, from, next) => {
   next();
 });
 
-export default router;
+export {
+  router,
+  routes
+};
