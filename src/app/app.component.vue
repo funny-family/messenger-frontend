@@ -1,10 +1,10 @@
 <template>
-  <router-view v-slot="appRouterView">
+  <router-view v-slot="{ Component }">
     <transition
       name="fade-in-down"
       mode="out-in"
     >
-      <component :is="appRouterView.Component" />
+      <component :is="Component" />
     </transition>
   </router-view>
 </template>
