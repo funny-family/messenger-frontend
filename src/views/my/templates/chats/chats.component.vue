@@ -1,12 +1,17 @@
 <template>
-  <div class="text">
-    Hello from chats component!
+  <div>
+    <ContactList />
   </div>
 </template>
 
 <script>
+import ContactList from './components/contact-list';
+
 export default {
-  name: 'Chats'
+  name: 'Chats',
+  components: {
+    ContactList
+  }
 };
 </script>
 
