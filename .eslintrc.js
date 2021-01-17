@@ -29,7 +29,17 @@ const airbnbOverwrittenRules = {
   'comma-dangle': ['error', 'never'],
   'operator-linebreak': ['error', 'after'],
   'no-useless-return': 'off',
-  'import/prefer-default-export': 'off'
+  'import/prefer-default-export': 'off',
+  'no-underscore-dangle': 'off',
+  'no-param-reassign': [
+    'error',
+    {
+      props: true,
+      ignorePropertyModificationsFor: [
+        'state'
+      ]
+    }
+  ]
 };
 
 module.exports = {
