@@ -25,6 +25,9 @@ requiredModules.keys().forEach((pathToFile) => {
   // all modules connecting ends here!
   modules[moduleName] = requiredModules(pathToFile).default;
 
+  // add namespaced filed to make module
+  modules[moduleName].namespaced = true;
+
   // add additional "data" value to "moduleName" object
   const additionalField = 'data';
   modules[moduleName][additionalField] = {};
