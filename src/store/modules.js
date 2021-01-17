@@ -46,13 +46,11 @@ requiredModules.keys().forEach((pathToFile) => {
   // fill in "names.actions" and "name.mutations" objects
   // eslint-disable-next-line
   for (const action of Object.values(actions)) {
-    // eslint-disable-next-line
     actionsNames[action.name] = action.name;
   }
 
   // eslint-disable-next-line
   for (const mutation of Object.values(mutations)) {
-    // eslint-disable-next-line
     mutationsNames[mutation.name] = mutation.name;
   }
 });
