@@ -22,7 +22,39 @@ requiredModules.keys().forEach((pathToFile) => {
     pathToFile.split('/')[2]
   );
 
-  modules[moduleName] = requiredModules(pathToFile);
+  // all modules connecting ends here!
+  modules[moduleName] = requiredModules(pathToFile).default;
+
+  // add additional "data" value to "moduleName" object
+  const additionalField = 'data';
+  modules[moduleName][additionalField] = {};
+  modules[moduleName][additionalField].moduleName = moduleName;
+
+  // create "names" object inside "data"
+  modules[moduleName][additionalField].names = {};
+  modules[moduleName][additionalField].names.actions = {};
+  modules[moduleName][additionalField].names.mutations = {};
+
+  // "names" object contain "actions" and "mutations"
+  const actionsNames = modules[moduleName][additionalField].names.actions;
+  const mutationsNames = modules[moduleName][additionalField].names.mutations;
+
+  // extract all actions and mutations functions from module object
+  const { actions } = modules[moduleName];
+  const { mutations } = modules[moduleName];
+
+  // fill in "names.actions" and "name.mutations" objects
+  // eslint-disable-next-line
+  for (const action of Object.values(actions)) {
+    // eslint-disable-next-line
+    actionsNames[action.name] = action.name;
+  }
+
+  // eslint-disable-next-line
+  for (const mutation of Object.values(mutations)) {
+    // eslint-disable-next-line
+    mutationsNames[mutation.name] = mutation.name;
+  }
 });
 
 export default modules;
