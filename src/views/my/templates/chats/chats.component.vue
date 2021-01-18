@@ -1,7 +1,7 @@
 <template>
-  <div>
+  <section>
     <ContactList />
-  </div>
+  </section>
 </template>
 
 <script>
