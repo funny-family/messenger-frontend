@@ -1,3 +1,99 @@
-.text {
-  font-weight: bold;
+.contact {
+  --avatar-size: 60px;
+  --unread-message-size: 24px;
+
+  display: grid;
+  display: -ms-grid;
+
+  align-items: center;
+
+  height: 80px;
+  width: 100%;
+
+  grid-template-columns: var(--avatar-size) auto auto;
+  /* -ms-grid-columns: var(--avatar-size) auto auto; */
+
+  cursor: pointer;
+}
+
+.contact__avatar {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  grid-template-rows: var(--avatar-size);
+
+  width: var(--avatar-size);
+  height: var(--avatar-size);
+
+  border-radius: var(--avatar-size);
+
+  background-color: aquamarine;
+}
+
+.contact__name {
+  grid-column: 2;
+  grid-row: 1;
+
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.contact__message {
+  grid-column: 2;
+  grid-row: 2;
+
+  font-size: 18px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+
+  overflow: hidden;
+}
+
+.contact__name-of-the-message-sender {
+  font-size: 18px;
+  color: cornflowerblue;
+}
+
+.contact__time-of-last-message {
+  grid-column: 3;
+  grid-row: 1;
+
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  align-items: flex-start;
+}
+
+.contact__unread-message {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  /* padding: 0 6px; */
+
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+
+  min-width: var(--unread-message-size);
+  height: var(--unread-message-size);
+
+  /* border-radius: var(--unread-message-size); */
+
+  background-color: darksalmon;
 }
