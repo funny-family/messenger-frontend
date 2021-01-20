@@ -1,18 +1,28 @@
 <template>
-  <article class="contact">
+  <article class="grid contact">
     <div class="contact__avatar">{{ avatar }}</div>
-    <div class="contact__name">{{ name }}</div>
-    <div>
-      <span
-        class="contact__name-of-the-message-sender"
-        v-if="nameOfTheMessageSender"
-      >
-        {{ nameOfTheMessageSender }}:
-      </span>
-      <span class="contact__message">{{ message }}</span>
+    <div class="col text-ellipsis">
+      <div class="row space-between">
+        <div class="contact__name text-ellipsis">{{ name }}</div>
+        <div class="contact__time-of-last-message">
+          time: {{ timeOfLastMeaasge }}
+        </div>
+      </div>
+      <div class="row space-between">
+        <div class="contact__message-container text-ellipsis">
+          <span
+            class="contact__sender-name"
+            v-if="nameOfTheMessageSender"
+          >
+            {{ nameOfTheMessageSender }}:
+          </span>
+          <span class="contact__message">{{ message }}</span>
+        </div>
+        <div class="contact__unread-message">
+          {{ unreadMessages }}
+        </div>
+      </div>
     </div>
-    <div class="contact__time-of-last-message">{{ timeOfLastMeaasge }}</div>
-    <div class="contact__unread-message">{{ unreadMessages }}</div>
   </article>
 </template>
 
@@ -29,8 +39,7 @@ export default {
       required: true
     },
     nameOfTheMessageSender: {
-      type: String,
-      required: true
+      type: String
     },
     message: {
       type: String,
