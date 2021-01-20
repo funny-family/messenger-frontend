@@ -1,51 +1,6 @@
-.grid {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-
-  align-items: center;
-
-  width: 100%;
-
-  background-color: #b19155;
+.col .row:nth-child(2) {
+  margin-top: 5px;
 }
-
-.row {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-
-  width: 100%;
-}
-
-.col {
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-
-  flex-direction: column;
-
-  width: 100%;
-}
-
-.text-ellipsis {
-  white-space: nowrap;
-  text-overflow: ellipsis;
-
-  overflow: hidden;
-}
-
-.space-between {
-  justify-content: space-between;
-}
-
-/* ---------------------------------------------------------------- */
 
 .contact {
   --avatar-margin-left: 10px;
@@ -63,10 +18,6 @@
   cursor: pointer;
 
   box-sizing: border-box;
-}
-
-.col .row:nth-child(2) {
-  margin-top: 5px;
 }
 
 .contact + .contact { /* need to remove later! */
@@ -125,10 +76,4 @@
   background-color: tomato;
 
   margin-left: 6px;
-}
-
-.contact__unread-message span {
-  max-width: 100%;
-
-  padding: 0 6px;
 }

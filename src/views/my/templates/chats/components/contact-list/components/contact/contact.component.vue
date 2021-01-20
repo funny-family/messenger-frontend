@@ -57,5 +57,6 @@ export default {
 </script>
 
 <style scoped>
+@import url('./contact.layout.style.css');
 @import url('./contact.style.css');
 </style>
