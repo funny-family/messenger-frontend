@@ -1,16 +1,19 @@
 <template>
-  <section>
-    <ContactList />
-  </section>
+  <main class="chats-section">
+    <NavHeader />
+    <ChatList />
+  </main>
 </template>
 
 <script>
-import ContactList from './components/contact-list';
+import NavHeader from './components/nav-header';
+import ChatList from './components/chat-list';
 
 export default {
   name: 'Chats',
   components: {
-    ContactList
+    NavHeader,
+    ChatList
   }
 };
 </script>
