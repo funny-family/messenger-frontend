@@ -1,4 +1,4 @@
-import mutations from './contacts.mutations';
+import mutations from './chats.mutations';
 
 export default {
   async fetchThem({ commit }) {
