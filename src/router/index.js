@@ -12,6 +12,7 @@ router.beforeEach((to, from, next) => {
   next();
 });
 
+export * from 'vue-router';
 export {
   router,
   routes
