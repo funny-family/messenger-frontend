@@ -8,7 +8,7 @@
  * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
-*
+*,
 *::before,
 *::after {
   -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
