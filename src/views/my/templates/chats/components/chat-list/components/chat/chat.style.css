@@ -20,11 +20,15 @@
   box-sizing: border-box;
 }
 
+.contact:hover {
+  background-color: whitesmoke;
+}
+
 .contact + .contact { /* need to remove later! */
   margin-top: 20px;
 }
 
-.contact__avatar {
+.chat__avatar {
   --avatar-size: 60px;
 
   display: -webkit-box;
@@ -43,25 +47,25 @@
   background-color: aqua;
 }
 
-.contact__name {
+.chat__name {
   font-weight: 700;
 
   margin-left: var(--avatar-margin-left);
 }
 
-.contact__time-of-last-message {
+.chat__time-of-last-message {
   text-transform: uppercase;
 }
 
-.contact__message-container {
+.chat__message-container {
   margin-left: var(--avatar-margin-left);
 }
 
-.contact__sender-name {}
+.chat__sender-name {}
 
-.contact__message {}
+.chat__message {}
 
-.contact__unread-message {
+.chat__unread-message {
   --unread-message-size: 20px;
 
   height: var(--unread-message-size);
