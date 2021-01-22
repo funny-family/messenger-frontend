@@ -35,6 +35,8 @@
 
   transition: padding-top var(--transition-time) ease;
   transition: padding-bottom var(--transition-time) ease;
+
+  box-sizing: content-box;
 }
 
 .burger-button::before {
