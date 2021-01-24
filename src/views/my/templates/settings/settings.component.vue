@@ -1,7 +1,8 @@
 <template>
-  <div class="text">
+  <div>
     Hello from settings component!
     <input type="text" />
+    <div>123131</div>
   </div>
 </template>
 
