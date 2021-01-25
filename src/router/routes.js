@@ -69,15 +69,15 @@ export const my = (() => {
     };
   })();
 
-  const settings = (() => {
-    const Settings = () => import('../views/my/templates/settings');
+  const profile = (() => {
+    const Profile = () => import('../views/my/templates/profile');
 
     return {
-      name: Settings.name,
-      path: 'settings',
-      component: Settings,
+      name: Profile.name,
+      path: 'profile',
+      component: Profile,
       meta: {
-        title: 'Settings'
+        title: 'Profile'
       }
     };
   })();
@@ -87,11 +87,11 @@ export const my = (() => {
     path: '/my',
     component: My,
     redirect: {
-      name: chats.name || settings.name
+      name: chats.name || profile.name
     },
     children: [
       chats,
-      settings
+      profile
     ]
   };
 })();
