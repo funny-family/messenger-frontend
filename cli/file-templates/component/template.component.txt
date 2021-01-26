@@ -11,5 +11,5 @@ export default {
 </script>
 
 <style scoped>
-@import url('./example.style.css');
+@import url('./example.styles.css');
 </style>
