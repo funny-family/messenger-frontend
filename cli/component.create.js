@@ -42,7 +42,7 @@ class ComponentTemplateCreator {
       __dirname, './file-templates/component/template.component.txt'
     ));
     const styleFileTemplate = readFile(path.join(
-      __dirname, './file-templates/component/template.style.txt'
+      __dirname, './file-templates/component/template.styles.txt'
     ));
 
     const processedIndexFileTemplate = new FileTemplateReplacer(indexFileTemplate)
@@ -68,7 +68,7 @@ class ComponentTemplateCreator {
       createdComponentDirectory, `${this.name}.component.vue`, processedComponentFileTemplate
     );
     createFile(
-      createdComponentDirectory, `${this.name}.style.css`, processedStyleFileTemplate
+      createdComponentDirectory, `${this.name}.styles.css`, processedStyleFileTemplate
     );
 
     console.log('\x1b[36m', `Created component ${this.name} in directory ${this.directory}.`);
