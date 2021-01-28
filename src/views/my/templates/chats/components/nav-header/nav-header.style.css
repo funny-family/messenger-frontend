@@ -1,0 +1,16 @@
+.nav-header {
+  --nav-header-height: 60px;
+
+  height: var(--nav-header-height);
+  width: 100%;
+
+  padding: 0 12px;
+
+  box-sizing: border-box;
+
+  background-color: tan;
+}
+
+.nav-header input[type="text"] {
+  width: 100%;
+}
