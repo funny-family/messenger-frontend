@@ -1,9 +1,14 @@
 .chat-list {
-  width: 100%;
+  /* width: 100%;
+  min-width: 100%; */
 
-  /* pointer-events: none; */
+  /* max-height: 100%; */
+  /* height: 400px; */
 
-  /* width: 100%; */
-  /* border: 1px solid black; */
-  /* margin-right: 100px; */
+  /* height: 816px; */
+  /* overflow: auto; */
+
+  height: 100%;
+
+  overflow: auto;
 }
