@@ -59,13 +59,26 @@ export const my = (() => {
   const chats = (() => {
     const Chats = () => import('../views/my/templates/chats');
 
+    const chat = (() => {
+      const ChatWindow = () => import('../views/my/templates/chats/templates/chat-window');
+
+      return {
+        name: 'ChatWindow',
+        path: 'chat/:id',
+        component: ChatWindow
+      };
+    })();
+
     return {
       name: Chats.name,
       path: 'chats',
       component: Chats,
       meta: {
         title: 'Chats'
-      }
+      },
+      children: [
+        chat
+      ]
     };
   })();
 
