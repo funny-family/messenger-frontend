@@ -29,6 +29,9 @@ export default {
 </script>
 
 <style scoped>
-@import url('./my.style.css');
+@import url('./my.styles.css');
+@import url('./my.moobile.styles.css');
+@import url('./my.desktop.styles.css');
+
 @import url('../../assets/styles/transitions/fade-in-down.css');
 </style>

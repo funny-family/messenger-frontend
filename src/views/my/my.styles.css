@@ -1,0 +1,9 @@
+.my-page {
+  --navbar-menu-height: 20px;
+
+  background-color: #cfcfcf;
+}
+
+.my-page__main {}
+
+.my-page__menu {}
