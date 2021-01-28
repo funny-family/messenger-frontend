@@ -49,5 +49,5 @@ export default {
 
 <style scoped>
 @import url('./nav-header.style.css');
-@import url('./nav-header.media-style.css');
+@import url('./nav-header.media.style.css');
 </style>
