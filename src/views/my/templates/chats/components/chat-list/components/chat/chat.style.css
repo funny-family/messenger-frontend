@@ -2,7 +2,7 @@
   margin-top: 5px;
 }
 
-.contact {
+.chat {
   --avatar-margin-left: 10px;
 
   width: 100%;
@@ -17,15 +17,15 @@
 
   cursor: pointer;
 
-  box-sizing: border-box;
-}
-
-.contact:hover {
   background-color: whitesmoke;
 }
 
-.contact + .contact { /* need to remove later! */
-  margin-top: 20px;
+.chat:hover {
+  background-color: #949494;
+}
+
+.chat { /* need to remove later! */
+  margin-bottom: 40px;
 }
 
 .chat__avatar {
@@ -54,6 +54,8 @@
 }
 
 .chat__time-of-last-message {
+  margin-left: 6px;
+
   text-transform: uppercase;
 }
 

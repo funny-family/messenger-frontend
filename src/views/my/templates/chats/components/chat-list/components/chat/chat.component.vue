@@ -1,6 +1,6 @@
 <template>
-  <router-link to="/">
-    <article class="grid contact">
+  <router-link :to="{ name: 'ChatWindow', params: { id: id } }">
+    <article class="grid chat">
       <div class="chat__avatar">{{ avatar }} {{ id }}</div>
       <div class="col text-ellipsis">
         <div class="row space-between">
@@ -19,7 +19,10 @@
             </span>
             <span class="chat__message">{{ message }}</span>
           </div>
-          <div class="chat__unread-message">
+          <div
+            class="chat__unread-message"
+            v-if="unreadMessages > 0"
+          >
             {{ unreadMessages }}
           </div>
         </div>
