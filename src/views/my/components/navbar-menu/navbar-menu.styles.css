@@ -1,4 +1,6 @@
 .navbar-menu {
+  --navbar-menu-size: 60px;
+
   background-color: #9c6beb;
 }
 

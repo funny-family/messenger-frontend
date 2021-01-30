@@ -1,10 +1,8 @@
 @media only screen and (min-width: 768px) {
   .navbar-menu {
-    min-width: 60px;
-    max-width: 60px;
+    min-width: var(--navbar-menu-size);
+    max-width: var(--navbar-menu-size);
     height: 100%;
-
-    /* background-color: blue; */
   }
 
   .navbar-menu__list {
