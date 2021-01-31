@@ -1,6 +1,6 @@
 <template>
-  <div class="text">
-    Hello from chat-window component!
+  <div class="chat-window">
+    This current chat id: {{ $route.params.id }}
   </div>
 </template>
 
