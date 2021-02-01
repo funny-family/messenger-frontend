@@ -1,4 +1,4 @@
-.grid {
+.chat-grid {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -10,7 +10,7 @@
   width: 100%;
 }
 
-.row {
+.chat-row {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
@@ -20,7 +20,7 @@
   width: 100%;
 }
 
-.col {
+.chat-column {
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;

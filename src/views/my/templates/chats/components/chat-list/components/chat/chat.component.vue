@@ -3,16 +3,16 @@
     :to="{ name: 'ChatWindow',
     params: { id: id } }"
   >
-    <article class="grid chat">
+    <article class="chat-grid chat">
       <div class="chat__avatar">{{ avatar }} {{ id }}</div>
-      <div class="col text-ellipsis">
-        <div class="row space-between">
+      <div class="chat-column text-ellipsis">
+        <div class="chat-row space-between">
           <div class="chat__name text-ellipsis">{{ name }}</div>
           <div class="chat__time-of-last-message">
             time: {{ timeOfLastMeaasge }}
           </div>
         </div>
-        <div class="row space-between">
+        <div class="chat-row space-between">
           <div class="chat__message-container text-ellipsis">
             <span
               class="chat__sender-name"
@@ -69,6 +69,6 @@ export default {
 </script>
 
 <style scoped>
-@import url('./chat.layout.style.css');
-@import url('./chat.style.css');
+@import url('./chat.layout.styles.css');
+@import url('./chat.styles.css');
 </style>
