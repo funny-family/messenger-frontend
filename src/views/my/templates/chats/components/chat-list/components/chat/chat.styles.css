@@ -24,12 +24,21 @@
   background-color: #949494;
 }
 
-.chat { /* need to remove later! */
+/* need to remove later! */
+.chat {
   margin-bottom: 40px;
 }
 
+/* change background color of chat if active */
 .router-link-active > .chat {
   background-color: thistle;
+}
+
+/* set chat link non clickable */
+.chat__link.router-link-active {
+  pointer-events: none;
+
+  cursor: default;
 }
 
 .chat__avatar {

@@ -1,5 +1,6 @@
 <template>
   <router-link
+    class="chat__link"
     :to="{ name: 'ChatWindow',
     params: { id: id } }"
   >
@@ -68,7 +69,5 @@ export default {
 };
 </script>
 
-<style scoped>
-@import url('./chat.layout.styles.css');
-@import url('./chat.styles.css');
-</style>
+<style scoped src="./chat.layout.styles.css"></style>
+<style scoped src="./chat.styles.css"></style>
