@@ -1,5 +1,8 @@
 <template>
-  <router-link :to="{ name: 'ChatWindow', params: { id: id } }">
+  <router-link
+    :to="{ name: 'ChatWindow',
+    params: { id: id } }"
+  >
     <article class="grid chat">
       <div class="chat__avatar">{{ avatar }} {{ id }}</div>
       <div class="col text-ellipsis">

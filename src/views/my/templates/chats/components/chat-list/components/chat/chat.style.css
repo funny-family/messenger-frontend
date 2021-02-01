@@ -28,6 +28,10 @@
   margin-bottom: 40px;
 }
 
+.router-link-active > .chat {
+  background-color: thistle;
+}
+
 .chat__avatar {
   --avatar-size: 60px;
 
