@@ -1,6 +1,5 @@
 @media only screen and (min-width: 768px) {
   .my-page {
-    /* display: grid; */
     display: flex;
 
     flex-direction: row;
@@ -13,11 +12,5 @@
     width: 100%;
 
     order: 1;
-  }
-
-  .chats-section { /* form chats component */
-    display: flex;
-
-    flex-direction: row;
   }
 }
