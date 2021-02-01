@@ -1,0 +1,11 @@
+@media only screen and (min-width: 768px) {
+  .chats-page {
+    display: flex;
+  }
+
+  .chats-page__chats-navbar {
+    height: calc(100% - var(--chat-header-height));
+  }
+
+  .chats-page__chat-window {}
+}

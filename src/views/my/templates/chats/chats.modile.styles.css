@@ -1,0 +1,12 @@
+@media only screen and (max-width: 768px) {
+  .hidden-chat-block {
+    display: none;
+  }
+}
+
+.chats-page {}
+
+.chats-page__chat-header {}
+
+.chats-page__chat-window {}
+

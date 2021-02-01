@@ -1,13 +1,23 @@
 <template>
-  <div class="chats-section">
-    <div>
-      <NavHeader ref="header" />
-      <ChatList />
-    </div>
-    <main>
+  <div class="chats-page">
+    <nav
+      class="chats-page__chats-navbar"
+      :class="{
+        'hidden-chat-block': chatId
+      }"
+    >
+      <ChatHeader class="chats-page__chat-header" />
+      <ChatList class="chats-page__chat-list" />
+    </nav>
+    <main
+      class="chats-page__chat-window"
+      :class="{
+        'hidden-chat-block': !chatId
+      }"
+    >
       <router-view v-slot="chats">
         <transition
-          name="fade-in-down"
+          name=""
           mode="out-in"
         >
           <!-- <keep-alive> -->
@@ -20,25 +30,43 @@
 </template>
 
 <script>
-import { ref, onMounted } from 'vue';
+import {
+  useRoute
+} from '@/router';
 
-import NavHeader from './components/nav-header';
+import {
+  ref,
+  watch
+} from 'vue';
+
+import ChatHeader from './components/chat-header';
 import ChatList from './components/chat-list';
 
 export default {
   name: 'Chats',
   components: {
-    NavHeader,
+    ChatHeader,
     ChatList
   },
   setup() {
-    const header = ref(null);
-    onMounted(() => {
-      console.log(header.value);
-    });
+    const route = useRoute();
+
+    // const header = ref(null);
+    // const main = ref(null);
+    // onMounted(() => {
+    //   console.log(header.value);
+    //   console.log(main.value);
+    // });
+
+    const chatId = ref(null);
+    watch(
+      () => route.params,
+      (currentChatParam) => {
+        chatId.value = currentChatParam.id;
+      }
+    );
 
     // const sticky = header.value.offsetTop;
-
     // function myFunction() {
     //   if (window.pageYOffset > sticky) {
     //     header.value.classList.add('sticky');
@@ -46,16 +74,17 @@ export default {
     //     header.value.classList.remove('sticky');
     //   }
     // }
-
     // window.onscroll = () => { myFunction(); };
 
     return {
-      header
+      chatId
     };
   }
 };
 </script>
 
 <style scoped>
-@import url('./chats.style.css');
+@import url('./chats.styles.css');
+@import url('./chats.modile.styles.css');
+@import url('./chats.desktop.styles.css');
 </style>
