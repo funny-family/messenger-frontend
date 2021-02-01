@@ -1,16 +1,15 @@
 <template>
-  <header class="nav-header">
-    <div>This is header</div>
+  <header class="chat-header">
     <input type="text" />
   </header>
 </template>
 
 <script>
 export default {
-  name: 'NavHeader'
+  name: 'ChatHeader'
 };
 </script>
 
 <style scoped>
-@import url('./nav-header.style.css');
+@import url('./chat-header.styles.css');
 </style>

@@ -1,0 +1,15 @@
+.chat-header {
+  width: 100%;
+  height: var(--chat-header-height);
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 12px;
+
+  background-color: turquoise;
+}
+
+.chat-header input {
+  width: 100%;
+}
