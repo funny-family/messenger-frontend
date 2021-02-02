@@ -19,4 +19,14 @@
   outline: 2px solid red;
 }
 
+/* link is non clickable if link is active */
+.navbar-menu__list > .router-link-active {
+  pointer-events: none;
+
+  cursor: default;
+
+  /* need to remove it later */
+  opacity: 0.4;
+}
+
 .navbar-menu__item {}
