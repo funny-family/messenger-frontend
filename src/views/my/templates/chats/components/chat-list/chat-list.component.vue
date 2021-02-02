@@ -15,9 +15,6 @@
 </template>
 
 <script>
-import {
-  useLink, useRoute, useRouter, routes
-} from '@/router';
 import { useStore, modules } from '@/store';
 import { computed } from 'vue';
 
@@ -36,13 +33,8 @@ export default {
     dispatch(`${chats.data.moduleName}/${chats.data.names.actions.fetchThem}`);
     const chatList = computed(() => state.chats.list);
 
-    console.log('useLink:', useLink());
-    console.log('useRoute:', useRoute());
-    console.log('useRouter:', useRouter());
-    console.log('routes:', routes.my.children[0].children[0].name);
     return {
-      chatList,
-      routes
+      chatList
     };
   }
 };
