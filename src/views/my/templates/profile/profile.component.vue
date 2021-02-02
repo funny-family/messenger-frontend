@@ -10,6 +10,4 @@ export default {
 };
 </script>
 
-<style scoped>
-@import url('./profile.style.css');
-</style>
+<style scoped src="./profile.styles.css"></style>

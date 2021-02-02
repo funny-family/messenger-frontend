@@ -14,6 +14,4 @@ export default {
 };
 </script>
 
-<style scoped>
-@import url('./sign-up-form.style.css');
-</style>
+<style scoped src="./sign-up-form.styles.css"></style>

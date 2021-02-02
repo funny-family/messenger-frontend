@@ -40,6 +40,4 @@ export default {
 };
 </script>
 
-<style scoped>
-@import url('./chat-list.style.css');
-</style>
+<style scoped src="./chat-list.styles.css"></style>

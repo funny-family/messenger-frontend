@@ -10,6 +10,4 @@ export default {
 };
 </script>
 
-<style scoped>
-@import url('./nav-footer.style.css');
-</style>
+<style scoped src="./nav-footer.styles.css"></style>

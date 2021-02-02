@@ -42,6 +42,4 @@ export default {
 };
 </script>
 
-<style scoped>
-@import url('./burger-button.style.css');
-</style>
+<style scoped src="./burger-button.styles.css"></style>

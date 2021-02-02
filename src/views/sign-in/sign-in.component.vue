@@ -15,6 +15,4 @@ export default {
 };
 </script>
 
-<style scoped>
-@import url('./sign-in.style.css');
-</style>
+<style scoped src="./sign-in.styles.css"></style>

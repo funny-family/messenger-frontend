@@ -30,8 +30,6 @@ export default {
 };
 </script>
 
-<style scoped>
-@import url('./navbar-menu.styles.css');
-@import url('./navbar-menu.mobile.styles.css');
-@import url('./navbar-menu.desktop.styles.css');
-</style>
+<style scoped src="./navbar-menu.styles.css"></style>
+<style scoped src="./navbar-menu.mobile.styles.css"></style>
+<style scoped src="./navbar-menu.desktop.styles.css"></style>

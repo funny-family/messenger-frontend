@@ -10,6 +10,4 @@ export default {
 };
 </script>
 
-<style scoped>
-@import url('./chat-header.styles.css');
-</style>
+<style scoped src="./chat-header.styles.css"></style>

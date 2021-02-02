@@ -47,7 +47,5 @@ export default {
 };
 </script>
 
-<style scoped>
-@import url('./nav-header.style.css');
-@import url('./nav-header.media.style.css');
-</style>
+<style scoped src="./nav-header.styles.css"></style>
+<style scoped src="./nav-header.media.styles.css"></style>

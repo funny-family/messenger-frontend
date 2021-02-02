@@ -83,8 +83,6 @@ export default {
 };
 </script>
 
-<style scoped>
-@import url('./chats.styles.css');
-@import url('./chats.modile.styles.css');
-@import url('./chats.desktop.styles.css');
-</style>
+<style scoped src="./chats.styles.css"></style>
+<style scoped src="./chats.modile.styles.css"></style>
+<style scoped src="./chats.desktop.styles.css"></style>

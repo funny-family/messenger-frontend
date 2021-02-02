@@ -100,6 +100,4 @@ export default {
 };
 </script>
 
-<style scoped>
-@import url('./home.style.css');
-</style>
+<style scoped src="./home.styles.css"></style>

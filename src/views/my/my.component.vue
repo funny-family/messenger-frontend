@@ -28,10 +28,7 @@ export default {
 };
 </script>
 
-<style scoped>
-@import url('./my.styles.css');
-@import url('./my.moobile.styles.css');
-@import url('./my.desktop.styles.css');
-
-@import url('../../assets/styles/transitions/fade-in-down.css');
-</style>
+<style scoped src="./my.styles.css"></style>
+<style scoped src="./my.moobile.styles.css"></style>
+<style scoped src="./my.desktop.styles.css"></style>
+<style scoped src="../../assets/styles/transitions/fade-in-down.css"></style>

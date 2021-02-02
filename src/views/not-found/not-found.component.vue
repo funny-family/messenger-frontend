@@ -27,6 +27,4 @@ export default {
 };
 </script>
 
-<style scoped>
-@import url('./not-found.style.css');
-</style>
+<style scoped src="./not-found.styles.css"></style>
