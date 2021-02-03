@@ -1,32 +1,28 @@
 <template>
   <div class="chat-window">
-    This current chat id: {{ $route.params.id }}
-    <router-link
-      class="chat-window__redirect-link hidden-redirect-link"
-      :to="{
-        name: chatsRoute
-      }"
-      ref="redirectLink"
-    >
-      ⬅
-    </router-link>
+    <ChatWidnowHeader class="chat-window__header" />
+
+    <main class="chat-window__main">
+      <section class="section">
+        <div v-for="i in 100" :key="i">
+          {{ i }}
+        </div>
+      </section>
+    </main>
+
+    <footer class="chat-window__message-input-block">
+      <input type="text" />
+    </footer>
   </div>
 </template>
 
 <script>
-import { ref } from 'vue';
-import { routes } from '@/router';
+import ChatWidnowHeader from './components/chat-widnow-header';
 
 export default {
   name: 'ChatWindow',
-  setup() {
-    const chatsRoute = routes.my.children[0].name;
-    const redirectLink = ref(null);
-
-    return {
-      chatsRoute,
-      redirectLink
-    };
+  components: {
+    ChatWidnowHeader
   }
 };
 </script>

@@ -2,4 +2,27 @@
 
 .chat-window {}
 
+.chat-window__header {
+  position: fixed;
+
+  top: 0;
+  right: 0;
+  left: 0;
+
+  height: 60px;
+}
+
 .chat-window__redirect-link {}
+
+.chat-window__main {}
+
+.section {
+  position: absolute;
+
+  top: 60px;
+
+  width: 100%;
+  height: calc(100% - 2 * 60px);
+}
+
+.chat-window__message-input-block {}

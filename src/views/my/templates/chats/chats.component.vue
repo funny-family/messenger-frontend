@@ -3,18 +3,30 @@
     <nav
       class="chats-page__chats-navbar"
       :class="{
-        'hidden-chat-block': chatId
+        'hidden-chat-page-block-on-mobile': chatId
       }"
     >
       <ChatHeader class="chats-page__chat-header" />
       <ChatList class="chats-page__chat-list" />
     </nav>
+
     <main
       class="chats-page__chat-window"
       :class="{
-        'hidden-chat-block': !chatId
+        'hidden-chat-page-block-on-mobile': !chatId
       }"
     >
+
+      <section
+        class="hidden-chat-page-block-on-mobile"
+        :class="{
+          'chats-page__chat-window-info': !chatId,
+          'hidden-chat-page-block-on-desktop': chatId
+        }"
+      >
+        <h2>Selete chat to start messaging.</h2>
+      </section>
+
       <router-view v-slot="chats">
         <transition
           name=""

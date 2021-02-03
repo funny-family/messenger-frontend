@@ -1,6 +1,20 @@
 @media only screen and (min-width: 768px) {
+  .hidden-chat-page-block-on-desktop {
+    display: none;
+  }
+
   .chats-page {
     display: flex;
+  }
+
+  .chats-page__chat-header {
+    position: static;
+  }
+
+  .chats-page__chat-list {
+    position: static;
+
+    height: 100%;
   }
 
   .chats-page__chats-navbar {
@@ -8,4 +22,13 @@
   }
 
   .chats-page__chat-window {}
+
+  /* show info text if any chat is not selected  */
+  .chats-page__chat-window-info {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+  }
+
 }

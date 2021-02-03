@@ -10,4 +10,14 @@
 .chats-page__chat-window {
   width: 100%;
   height: 100%;
+
+  background-color: aquamarine;
+}
+
+/* displaces block only on desktop version  */
+.chats-page__chat-window-info {
+  width: 100%;
+  height: 100%;
+
+  background-color: burlywood;
 }

@@ -1,10 +1,30 @@
 @media only screen and (min-width: 768px) {
-  /* hide redirect link if user doesn't use mobile layout */
-  .hidden-redirect-link {
-    display: none;
+  .chat-window {
+    height: calc(100% - 60px);
   }
+
+  .chat-window__header {
+    position: static;
+
+    top: auto;
+    right: auto;
+    left: auto;
+  }
+
+  .chat-window__redirect-link {}
+
+  .chat-window__main {}
+
+  .section {
+    position: static;
+
+    top: auto;
+    right: auto;
+    left: auto;
+
+    height: calc(100% - 60px);
+  }
+
+  .chat-window__message-input {}
 }
 
-.chat-window {}
-
-.chat-window__redirect-link {}

@@ -13,7 +13,12 @@
       </router-view>
     </main>
 
-    <NavbarMenu class="my-page__menu" />
+    <NavbarMenu
+      class="my-page__menu"
+      :class="{
+        'hidden-navbar-menu': $route.params.id
+      }"
+    />
   </div>
 </template>
 
