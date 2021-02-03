@@ -28,7 +28,5 @@ export default {
 };
 </script>
 
-<style>
-@import url('./app.styles.css');
-</style>
+<style src="./app.styles.css"></style>
 <style scoped src="../assets/styles/transitions/fade-in-down.css"></style>
