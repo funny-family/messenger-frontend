@@ -36,7 +36,7 @@ import {
 
 import {
   ref,
-  watch
+  watchEffect
 } from 'vue';
 
 import ChatHeader from './components/chat-header';
@@ -59,12 +59,9 @@ export default {
     // });
 
     const chatId = ref(null);
-    watch(
-      () => route.params,
-      (currentChatParam) => {
-        chatId.value = currentChatParam.id;
-      }
-    );
+    watchEffect(() => {
+      chatId.value = route.params.id;
+    });
 
     // const sticky = header.value.offsetTop;
     // function myFunction() {
