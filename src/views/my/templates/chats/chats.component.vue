@@ -3,7 +3,7 @@
     <nav
       class="chats-page__chats-navbar"
       :class="{
-        'hidden-chat-page-block-on-mobile': chatId
+        'hidden-chat-page-block-on-mobile': isChatSelected
       }"
     >
       <ChatHeader class="chats-page__chat-header" />
@@ -12,32 +12,30 @@
 
     <main
       class="chats-page__chat-window"
-      :class="{
-        'hidden-chat-page-block-on-mobile': !chatId
-      }"
+      v-if="isChatSelected"
     >
 
-      <section
-        class="hidden-chat-page-block-on-mobile"
-        :class="{
-          'chats-page__chat-window-info': !chatId,
-          'hidden-chat-page-block-on-desktop': chatId
-        }"
-      >
-        <h2>Selete chat to start messaging.</h2>
-      </section>
-
-      <router-view v-slot="chats">
+      <router-view v-slot="{ Component }">
         <transition
           name=""
           mode="out-in"
         >
           <!-- <keep-alive> -->
-            <component :is="chats.Component" />
+            <component :is="Component" />
           <!-- </keep-alive> -->
         </transition>
       </router-view>
     </main>
+
+    <section
+      class="
+        chats-page__chat-window-info
+        hidden-chat-page-block-on-mobile
+      "
+      v-else
+    >
+      <h2>Selete chat to start messaging.</h2>
+    </section>
   </div>
 </template>
 
@@ -48,11 +46,15 @@ import {
 
 import {
   ref,
+  defineAsyncComponent,
   watchEffect
 } from 'vue';
 
 import ChatHeader from './components/chat-header';
-import ChatList from './components/chat-list';
+
+const ChatList = defineAsyncComponent({
+  loader: () => import('./components/chat-list')
+});
 
 export default {
   name: 'Chats',
@@ -63,30 +65,17 @@ export default {
   setup() {
     const route = useRoute();
 
-    // const header = ref(null);
-    // const main = ref(null);
-    // onMounted(() => {
-    //   console.log(header.value);
-    //   console.log(main.value);
-    // });
-
-    const chatId = ref(null);
+    const isChatSelected = ref(false);
     watchEffect(() => {
-      chatId.value = route.params.id;
+      if (route.params.id) {
+        isChatSelected.value = true;
+      } else {
+        isChatSelected.value = false;
+      }
     });
 
-    // const sticky = header.value.offsetTop;
-    // function myFunction() {
-    //   if (window.pageYOffset > sticky) {
-    //     header.value.classList.add('sticky');
-    //   } else {
-    //     header.value.classList.remove('sticky');
-    //   }
-    // }
-    // window.onscroll = () => { myFunction(); };
-
     return {
-      chatId
+      isChatSelected
     };
   }
 };
