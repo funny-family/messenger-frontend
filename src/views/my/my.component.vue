@@ -1,13 +1,13 @@
 <template>
   <div class="my-page">
     <main class="my-page__main">
-      <router-view v-slot="myRouterView">
+      <router-view v-slot="{ Component }">
         <transition
           name="fade-in-down"
           mode="out-in"
         >
           <keep-alive>
-            <component :is="myRouterView.Component" />
+            <component :is="Component" />
           </keep-alive>
         </transition>
       </router-view>
@@ -16,19 +16,42 @@
     <NavbarMenu
       class="my-page__menu"
       :class="{
-        'hidden-navbar-menu': $route.params.id
+        'hidden-navbar-menu': state.isChatSelected
       }"
     />
   </div>
 </template>
 
 <script>
+import { useRoute } from '@/router';
+import { watchEffect } from 'vue';
+
+import { my } from './store';
+
 import NavbarMenu from './components/navbar-menu';
 
 export default {
   name: 'My',
   components: {
     NavbarMenu
+  },
+  setup() {
+    const route = useRoute();
+    const { state } = my;
+
+    watchEffect((onInvalidate) => {
+      if (route.params.id) {
+        my.actions.changeIsChatSelectedValue(true);
+      }
+
+      onInvalidate(() => {
+        my.actions.changeIsChatSelectedValue(false);
+      });
+    });
+
+    return {
+      state
+    };
   }
 };
 </script>

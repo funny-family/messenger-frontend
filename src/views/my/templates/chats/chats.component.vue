@@ -3,7 +3,7 @@
     <nav
       class="chats-page__chats-navbar"
       :class="{
-        'hidden-chat-page-block-on-mobile': isChatSelected
+        'hidden-chat-page-block-on-mobile': state.isChatSelected
       }"
     >
       <ChatHeader class="chats-page__chat-header" />
@@ -12,7 +12,7 @@
 
     <main
       class="chats-page__chat-window"
-      v-if="isChatSelected"
+      v-if="state.isChatSelected"
     >
 
       <router-view v-slot="{ Component }">
@@ -40,15 +40,8 @@
 </template>
 
 <script>
-import {
-  useRoute
-} from '@/router';
-
-import {
-  ref,
-  defineAsyncComponent,
-  watchEffect
-} from 'vue';
+import { defineAsyncComponent } from 'vue';
+import { my } from '../../store';
 
 import ChatHeader from './components/chat-header';
 
@@ -63,19 +56,10 @@ export default {
     ChatList
   },
   setup() {
-    const route = useRoute();
-
-    const isChatSelected = ref(false);
-    watchEffect(() => {
-      if (route.params.id) {
-        isChatSelected.value = true;
-      } else {
-        isChatSelected.value = false;
-      }
-    });
+    const { state } = my;
 
     return {
-      isChatSelected
+      state
     };
   }
 };
