@@ -3,7 +3,7 @@
     <nav
       class="chats-page__chats-navbar"
       :class="{
-        'hidden-chat-page-block-on-mobile': state.isChatSelected
+        'hidden-chat-page-block-on-mobile': isChatSelected
       }"
     >
       <ChatHeader class="chats-page__chat-header" />
@@ -12,7 +12,7 @@
 
     <main
       class="chats-page__chat-window"
-      v-if="state.isChatSelected"
+      v-if="isChatSelected"
     >
 
       <router-view v-slot="{ Component }">
@@ -56,10 +56,10 @@ export default {
     ChatList
   },
   setup() {
-    const { state } = my;
+    const { isChatSelected } = my.state;
 
     return {
-      state
+      isChatSelected
     };
   }
 };

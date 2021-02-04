@@ -16,7 +16,7 @@
     <NavbarMenu
       class="my-page__menu"
       :class="{
-        'hidden-navbar-menu': state.isChatSelected
+        'hidden-navbar-menu': isChatSelected
       }"
     />
   </div>
@@ -37,7 +37,7 @@ export default {
   },
   setup() {
     const route = useRoute();
-    const { state } = my;
+    const { isChatSelected } = my.state;
 
     watchEffect((onInvalidate) => {
       if (route.params.id) {
@@ -50,7 +50,7 @@ export default {
     });
 
     return {
-      state
+      isChatSelected
     };
   }
 };

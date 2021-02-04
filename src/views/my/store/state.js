@@ -1,5 +1,5 @@
-import { reactive } from 'vue';
+import { ref } from 'vue';
 
-export default reactive({
-  isChatSelected: false
-});
+export default {
+  isChatSelected: ref(false)
+};
