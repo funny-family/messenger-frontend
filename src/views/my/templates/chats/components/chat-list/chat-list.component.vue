@@ -16,9 +16,11 @@
 
 <script>
 import { useStore, modules } from '@/store';
-import { computed } from 'vue';
+import { computed, defineAsyncComponent } from 'vue';
 
-import Chat from './components/chat';
+const Chat = defineAsyncComponent({
+  loader: () => import('./components/chat')
+});
 
 const { chats } = modules;
 

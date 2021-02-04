@@ -6,6 +6,10 @@
 
 .chats-page {}
 
+.chats-page__chats-navbar {
+  height: 100%;
+}
+
 .chats-page__chat-header {
   position: fixed;
 
@@ -15,12 +19,13 @@
 }
 
 .chats-page__chat-list {
-  position: absolute;
+  position: relative;
 
   top: 60px;
 
   width: 100%;
-  height: calc(100% - 2 * 60px);
+
+  height: calc(100% - 60px);
 }
 
 .chats-page__chat-window {}
@@ -29,5 +34,3 @@
 .chats-page__chat-window-info {
   display: none;
 }
-
-.chat-window__message-input-block {}
