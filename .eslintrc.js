@@ -9,12 +9,6 @@ const vueFileRules = {
       multiline: 'always'
     }
   ],
-  'vue/component-tags-order': [
-    'error',
-    {
-      order: ['template', 'script', 'style']
-    }
-  ],
   'vue/component-name-in-template-casing': [
     'error',
     'PascalCase',
