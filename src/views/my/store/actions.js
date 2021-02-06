@@ -1,7 +1,11 @@
 import state from './state';
 
 export default {
-  changeIsChatSelectedValue(value) {
-    state.isChatSelected.value = value;
+  setChatSelection() {
+    state.isChatSelected.value = true;
+  },
+
+  unsetChatSelection() {
+    state.isChatSelected.value = false;
   }
 };

@@ -41,11 +41,11 @@ export default {
 
     watchEffect((onInvalidate) => {
       if (route.params.id) {
-        my.actions.changeIsChatSelectedValue(true);
+        my.actions.setChatSelection();
       }
 
       onInvalidate(() => {
-        my.actions.changeIsChatSelectedValue(false);
+        my.actions.unsetChatSelection();
       });
     });
 
