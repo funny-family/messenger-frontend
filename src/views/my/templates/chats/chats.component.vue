@@ -12,7 +12,7 @@
 
     <main
       class="chats-page__chat-window"
-      v-if="isChatSelected"
+      v-show="isChatSelected"
     >
 
       <router-view v-slot="{ Component }">
@@ -32,7 +32,7 @@
         chats-page__chat-window-info
         hidden-chat-page-block-on-mobile
       "
-      v-else
+      v-show="!isChatSelected"
     >
       <h2>Selete chat to start messaging.</h2>
     </section>

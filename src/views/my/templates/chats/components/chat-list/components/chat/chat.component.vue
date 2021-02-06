@@ -25,7 +25,7 @@
           </div>
           <div
             class="chat__unread-message"
-            v-if="unreadMessages > 0"
+            v-show="unreadMessages > 0"
           >
             {{ unreadMessages }}
           </div>
