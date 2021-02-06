@@ -3,7 +3,7 @@
 .chat-window {}
 
 .chat-window__header {
-  position: fixed;
+  position: absolute;
 
   top: 0;
   right: 0;

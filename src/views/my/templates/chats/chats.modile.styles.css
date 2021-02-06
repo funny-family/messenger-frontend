@@ -11,7 +11,7 @@
 }
 
 .chats-page__chat-header {
-  position: fixed;
+  position: absolute;
 
   top: 0;
   right: 0;
