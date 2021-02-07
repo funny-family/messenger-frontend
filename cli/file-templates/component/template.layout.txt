@@ -1,3 +1,0 @@
-<div class="text">
-  Hello from example component!
-</div>
