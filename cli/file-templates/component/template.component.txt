@@ -6,4 +6,4 @@
 
 <script src="./example.module.js"></script>
 
-<style src="./example.styles.css" scoped></style>
+<style scoped src="./example.styles.css"></style>
