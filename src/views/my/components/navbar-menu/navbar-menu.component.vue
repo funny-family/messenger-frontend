@@ -17,18 +17,7 @@
   </nav>
 </template>
 
-<script>
-import { routes } from '@/router';
-
-export default {
-  name: 'NavbarMenu',
-  setup() {
-    return {
-      routes
-    };
-  }
-};
-</script>
+<script src="./navbar-menu.module.js"></script>
 
 <style scoped src="./navbar-menu.styles.css"></style>
 <style scoped src="./navbar-menu.mobile.styles.css"></style>

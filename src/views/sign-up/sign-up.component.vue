@@ -4,15 +4,6 @@
   </div>
 </template>
 
-<script>
-import SignUpForm from '@/components/sign-up-form';
-
-export default {
-  name: 'SignUp',
-  components: {
-    SignUpForm
-  }
-};
-</script>
+<script src="./sign-up.module.js"></script>
 
 <style scoped src="./sign-up.styles.css"></style>

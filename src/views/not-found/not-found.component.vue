@@ -14,17 +14,6 @@
   </div>
 </template>
 
-<script>
-import { routes } from '@/router';
-
-export default {
-  name: 'NotFound',
-  setup() {
-    return {
-      routes
-    };
-  }
-};
-</script>
+<script src="./not-found.module.js"></script>
 
 <style scoped src="./not-found.styles.css"></style>

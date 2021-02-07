@@ -12,20 +12,7 @@
   </header>
 </template>
 
-<script>
-import { routes } from '@/router';
-
-export default {
-  name: 'ChatWidnowHeader',
-  setup() {
-    const chatsRoute = routes.my.children[0].name;
-
-    return {
-      chatsRoute
-    };
-  }
-};
-</script>
+<script src="./chat-window-header.module.js"></script>
 
 <style scoped src="./chat-widnow-header.styles.css"></style>
 <style scoped src="./chat-widnow-header.desktop.styles.css"></style>

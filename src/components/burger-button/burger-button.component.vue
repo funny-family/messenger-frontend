@@ -16,30 +16,6 @@
   </div>
 </template>
 
-<script>
-import { ref } from 'vue';
-
-const emitEnum = {
-  onClick: 'onClick'
-};
-
-export default {
-  name: 'BurgerButton',
-  emits: [emitEnum.onClick],
-  setup(_, { emit }) {
-    const state = ref(false);
-
-    function onClick(event) {
-      state.value = event;
-      return emit(emitEnum.onClick, event);
-    }
-
-    return {
-      state,
-      onClick
-    };
-  }
-};
-</script>
+<script src="./burger-button.module.js"></script>
 
 <style scoped src="./burger-button.styles.css"></style>

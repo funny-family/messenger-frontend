@@ -6,10 +6,6 @@
   </form>
 </template>
 
-<script>
-export default {
-  name: 'SignInForm'
-};
-</script>
+<script src="./sign-in-form.module.js"></script>
 
 <style scoped src="./sign-in-form.styles.css"></style>

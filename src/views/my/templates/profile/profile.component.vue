@@ -4,10 +4,6 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'Profile'
-};
-</script>
+<script src="./profile.module.js"></script>
 
 <style scoped src="./profile.styles.css"></style>

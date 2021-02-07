@@ -1,6 +1,6 @@
 <template>
   <div class="chat-window">
-    <ChatWidnowHeader class="chat-window__header" />
+    <ChatWindowHeader class="chat-window__header" />
 
     <main class="chat-window__main">
       <section class="section">
@@ -16,16 +16,7 @@
   </div>
 </template>
 
-<script>
-import ChatWidnowHeader from './components/chat-widnow-header';
-
-export default {
-  name: 'ChatWindow',
-  components: {
-    ChatWidnowHeader
-  }
-};
-</script>
+<script src="./chat-window.module.js"></script>
 
 <style scoped src="./chat-window.styles.css"></style>
 <style scoped src="./chat-window.mobile.styles.css"></style>

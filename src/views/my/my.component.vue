@@ -22,39 +22,7 @@
   </div>
 </template>
 
-<script>
-import { useRoute } from '@/router';
-import { watchEffect } from 'vue';
-
-import { my } from './store';
-
-import NavbarMenu from './components/navbar-menu';
-
-export default {
-  name: 'My',
-  components: {
-    NavbarMenu
-  },
-  setup() {
-    const route = useRoute();
-    const { isChatSelected } = my.state;
-
-    watchEffect((onInvalidate) => {
-      if (route.params.id) {
-        my.actions.setChatSelection();
-      }
-
-      onInvalidate(() => {
-        my.actions.unsetChatSelection();
-      });
-    });
-
-    return {
-      isChatSelected
-    };
-  }
-};
-</script>
+<script src="./my.module.js"></script>
 
 <style scoped src="./my.styles.css"></style>
 <style scoped src="./my.moobile.styles.css"></style>

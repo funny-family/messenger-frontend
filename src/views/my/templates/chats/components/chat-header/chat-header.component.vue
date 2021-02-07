@@ -4,10 +4,6 @@
   </header>
 </template>
 
-<script>
-export default {
-  name: 'ChatHeader'
-};
-</script>
+<script src="./chat-header.module.js"></script>
 
 <style scoped src="./chat-header.styles.css"></style>

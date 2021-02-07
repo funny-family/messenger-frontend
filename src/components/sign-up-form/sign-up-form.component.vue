@@ -8,10 +8,6 @@
   </form>
 </template>
 
-<script>
-export default {
-  name: 'Sign-Up-Form'
-};
-</script>
+<script src="./sign-up-form.module.js"></script>
 
 <style scoped src="./sign-up-form.styles.css"></style>
