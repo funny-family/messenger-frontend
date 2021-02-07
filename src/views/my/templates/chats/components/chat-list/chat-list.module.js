@@ -1,5 +1,7 @@
 import { useStore, modules } from '@/store';
-import { computed, defineAsyncComponent } from 'vue';
+import {
+  computed, ref, onMounted, defineAsyncComponent
+} from 'vue';
 
 const Chat = defineAsyncComponent({
   loader: () => import('./components/chat')
@@ -18,7 +20,13 @@ export default {
     dispatch(`${chats.data.moduleName}/${chats.data.names.actions.fetchThem}`);
     const chatList = computed(() => state.chats.list);
 
+    const isChatListLoaded = ref(false);
+    onMounted(() => {
+      isChatListLoaded.value = true;
+    });
+
     return {
+      isChatListLoaded,
       chatList
     };
   }

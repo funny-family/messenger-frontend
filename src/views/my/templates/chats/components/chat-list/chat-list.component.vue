@@ -1,16 +1,24 @@
 <template>
   <section class="chat-list">
-    <Chat
-      v-for="chat in chatList"
-      :key="chat.id"
-      :id="`${chat.id}`"
-      :avatar="chat.name[0]"
-      :name="chat.username"
-      :nameOfTheMessageSender="chat.address.city"
-      :message="chat.company.catchPhrase"
-      :timeOfLastMeaasge="Math.floor(Math.random() * 100)"
-      :unreadMessages="Math.floor(Math.random() * 10)"
-    />
+    <template v-if="isChatListLoaded">
+      <Chat
+        v-for="chat in chatList"
+        :key="chat.id"
+        :id="`${chat.id}`"
+        :avatar="chat.name[0]"
+        :name="chat.username"
+        :nameOfTheMessageSender="chat.address.city"
+        :message="chat.company.catchPhrase"
+        :timeOfLastMeaasge="Math.floor(Math.random() * 100)"
+        :unreadMessages="Math.floor(Math.random() * 10)"
+      />
+    </template>
+
+    <template v-else>
+      <section class="chat-list__loading-container">
+        <h2>Loading...</h2>
+      </section>
+    </template>
   </section>
 </template>
 
