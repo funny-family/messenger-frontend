@@ -1,0 +1,14 @@
+.chat-window-input {
+  display: flex;
+
+  justify-content: content;
+  align-items: center;
+
+  padding: 0 12px;
+
+  background-color: thistle;
+}
+
+.chat-window-input input {
+  width: 100%;
+}

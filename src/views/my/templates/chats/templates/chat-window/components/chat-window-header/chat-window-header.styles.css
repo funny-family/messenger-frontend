@@ -1,5 +1,6 @@
 .chat-window-header {
   width: 100%;
+  height: var(--chat-window-header-height);
 
   display: flex;
   align-items: center;
