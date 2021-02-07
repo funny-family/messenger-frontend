@@ -48,15 +48,15 @@ class StoreModuleTemplateCreator {
 
     const processedIndexFileTemplate = new FileTemplateReplacer(indexFileTemplate)
       .replace(keyWordToReplace, this.name)
-      .getFile();
+      .getFileContent();
     const processedStateFileTemplate = new FileTemplateReplacer(stateFileTemplate)
-      .getFile();
+      .getFileContent();
     const processedMutationsFileTemplate = new FileTemplateReplacer(mutationsFileTemplate)
-      .getFile();
+      .getFileContent();
     const processedActionsFileTemplate = new FileTemplateReplacer(actionsFileTemplate)
-      .getFile();
+      .getFileContent();
     const processedGettersFileTemplate = new FileTemplateReplacer(gettersFileTemplate)
-      .getFile();
+      .getFileContent();
 
     createFolder(this.directory, this.name);
 

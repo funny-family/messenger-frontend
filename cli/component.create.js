@@ -44,18 +44,28 @@ class ComponentTemplateCreator {
     const styleFileTemplate = readFile(path.join(
       __dirname, './file-templates/component/template.styles.txt'
     ));
+    const layoutFileTemplate = readFile(path.join(
+      __dirname, './file-templates/component/template.layout.txt'
+    ));
+    const moduleFileTemplate = readFile(path.join(
+      __dirname, './file-templates/component/template.module.txt'
+    ));
 
     const processedIndexFileTemplate = new FileTemplateReplacer(indexFileTemplate)
       .replace('Example', convertFromKebabToPascalCase(this.name))
       .replace('example', this.name)
-      .getFile();
+      .getFileContent();
     const processedComponentFileTemplate = new FileTemplateReplacer(componentFileTemplate)
       .replace('Example', convertFromKebabToPascalCase(this.name))
       .replace('example', this.name)
-      .getFile();
-
+      .getFileContent();
     const processedStyleFileTemplate = new FileTemplateReplacer(styleFileTemplate)
-      .getFile();
+      .getFileContent();
+    const processedLayoutFileTemplate = new FileTemplateReplacer(layoutFileTemplate)
+      .getFileContent();
+    const processedModuleFileTemplate = new FileTemplateReplacer(moduleFileTemplate)
+      .replace('Example', convertFromKebabToPascalCase(this.name))
+      .getFileContent();
 
     createFolder(this.directory, this.name);
 
@@ -66,6 +76,12 @@ class ComponentTemplateCreator {
     );
     createFile(
       createdComponentDirectory, `${this.name}.component.vue`, processedComponentFileTemplate
+    );
+    createFile(
+      createdComponentDirectory, `${this.name}.layout.html`, processedLayoutFileTemplate
+    );
+    createFile(
+      createdComponentDirectory, `${this.name}.module.js`, processedModuleFileTemplate
     );
     createFile(
       createdComponentDirectory, `${this.name}.styles.css`, processedStyleFileTemplate

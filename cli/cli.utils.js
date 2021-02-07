@@ -66,7 +66,7 @@ class FileTemplateReplacer {
     return this;
   }
 
-  getFile() {
+  getFileContent() {
     return this.fileString;
   }
 }
