@@ -6,23 +6,6 @@
   height: 100%;
 }
 
-.chat-window__navbar {}
+.chat-window__main {}
 
-.chat-window__navbar {}
-
-.chat-window__redirect-link {}
-
-.chat-window__main {
-  width: 100%;
-  height: 100%;
-}
-
-.section {
-  overflow: auto;
-}
-
-.chat-window__input-block {
-  position: relative;
-
-  bottom: var(--chat-window-input-height);
-}
+.section {}

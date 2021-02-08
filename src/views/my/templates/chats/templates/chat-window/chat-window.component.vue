@@ -1,16 +1,24 @@
 <template>
   <div class="chat-window">
-    <ChatWindowNavbar class="chat-window__navbar" />
+    <ScrollableMainLayout>
+      <template v-slot:header>
+        <ChatWindowNavbar />
+      </template>
 
-    <main class="chat-window__main">
-      <section class="section">
-        <div v-for="i in 100" :key="i">
-          {{ i }}
-        </div>
-      </section>
-    </main>
+      <template v-slot:main>
+        <main class="chat-window__main">
+          <section class="section">
+            <div v-for="i in 100" :key="i">
+              {{ i }}
+            </div>
+          </section>
+        </main>
+      </template>
 
-    <ChatWindowInput class="chat-window__input-block"/>
+      <template v-slot:footer>
+        <ChatWindowInput />
+      </template>
+    </ScrollableMainLayout>
   </div>
 </template>
 

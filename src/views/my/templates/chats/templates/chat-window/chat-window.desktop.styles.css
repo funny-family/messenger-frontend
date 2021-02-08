@@ -1,28 +1,7 @@
 @media only screen and (min-width: 768px) {
-  .chat-window {
-    height: calc(100% - var(--chat-window-navbar-height));
-  }
-
-  .chat-window__navbar {
-    position: static;
-
-    top: auto;
-    right: auto;
-    left: auto;
-  }
-
-  .chat-window__redirect-link {}
+  .chat-window {}
 
   .chat-window__main {}
 
-  .section {
-    position: static;
-
-    top: auto;
-    right: auto;
-    left: auto;
-
-    height: calc(100% - var(--chat-window-navbar-height));
-  }
+  .section {}
 }
-

@@ -4,33 +4,6 @@
   }
 }
 
-.chats-page {}
-
-.chats-page__chats-navbar {
-  height: 100%;
-}
-
-.chats-page__chat-header {
-  position: absolute;
-
-  top: 0;
-  right: 0;
-  left: 0;
-}
-
-.chats-page__chat-list {
-  position: relative;
-
-  top: var(--chat-header-height);
-
-  width: 100%;
-
-  height: calc(100% - var(--chat-header-height));
-}
+.chats-page__chats-navbar {}
 
 .chats-page__chat-window {}
-
-/* hide info text if any chat is not selected  */
-.chats-page__chat-window-info {
-  display: none;
-}

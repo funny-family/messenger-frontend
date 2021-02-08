@@ -1,5 +1,5 @@
 @media only screen and (max-width: 768px) {
-  .hidden-navbar-menu {
+  .hidden-navbar-menu-on-mobile {
     display: none;
   }
 }
@@ -8,13 +8,21 @@
   display: flex;
 
   flex-direction: column;
-
-  height: 100%;
 }
 
-.my-page__main {
-  flex: 1;
+.my-page__main  {
+  display: flex;
+
+  order: 0;
+
   overflow: auto;
 }
 
 .my-page__menu {}
+
+.resz-container {
+  width: 100%;
+  height: 100%;
+
+  overflow: auto;
+}

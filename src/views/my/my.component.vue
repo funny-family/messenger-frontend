@@ -16,7 +16,7 @@
     <NavbarMenu
       class="my-page__menu"
       :class="{
-        'hidden-navbar-menu': isChatSelected
+        'hidden-navbar-menu-on-mobile': isChatSelected
       }"
     />
   </div>

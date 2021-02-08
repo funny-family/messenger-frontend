@@ -1,6 +1,8 @@
 import { defineAsyncComponent } from 'vue';
 import { my } from '../../store';
 
+import ScrollableMainLayout from '../../../../components/scrollable-main-layout';
+
 import ChatHeader from './components/chat-header';
 
 const ChatList = defineAsyncComponent({
@@ -10,6 +12,7 @@ const ChatList = defineAsyncComponent({
 export default {
   name: 'Chats',
   components: {
+    ScrollableMainLayout,
     ChatHeader,
     ChatList
   },

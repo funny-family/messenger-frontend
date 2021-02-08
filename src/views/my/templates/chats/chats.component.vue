@@ -1,16 +1,31 @@
 <template>
   <div class="chats-page">
-    <nav
-      class="chats-page__chats-navbar"
+    <!-- chats nav panal -->
+    <div
+      class="resz-container"
+      style="height: 100%;"
       :class="{
         'hidden-chat-page-block-on-mobile': isChatSelected
       }"
     >
-      <ChatHeader class="chats-page__chat-header" />
-      <ChatList class="chats-page__chat-list" />
-    </nav>
+      <div class="chats-navbar-wrapper">
+        <ScrollableMainLayout
+          class="chats-page__chats-navbar"
+        >
+          <template v-slot:header>
+            <ChatHeader />
+          </template>
 
-    <main
+          <template v-slot:main>
+            <ChatList />
+          </template>
+        </ScrollableMainLayout>
+      </div>
+    </div>
+    <!-- chats nav panal -->
+
+    <!-- chat window section etc -->
+    <div
       class="chats-page__chat-window"
       v-show="isChatSelected"
     >
@@ -20,12 +35,10 @@
           name=""
           mode="out-in"
         >
-          <!-- <keep-alive> -->
-            <component :is="Component" />
-          <!-- </keep-alive> -->
+          <component :is="Component" />
         </transition>
       </router-view>
-    </main>
+    </div>
 
     <section
       class="
@@ -36,6 +49,7 @@
     >
       <h2>Selete chat to start messaging.</h2>
     </section>
+    <!-- chat window section etc -->
   </div>
 </template>
 

@@ -5,19 +5,18 @@
   height: 100%;
 }
 
-.chats-page__chat-header {}
+/*
+  This class allows us to wrap ScrollableMainLayout component to other blocks or
+  provider/warper/container components without fear that ScrollableMainLayout will lost basis style structure.
+*/
+.chats-navbar-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.chats-page__chats-navbar {}
 
 .chats-page__chat-window {
   width: 100%;
   height: 100%;
-
-  background-color: aquamarine;
-}
-
-/* displaces block only on desktop version  */
-.chats-page__chat-window-info {
-  width: 100%;
-  height: 100%;
-
-  background-color: burlywood;
 }
