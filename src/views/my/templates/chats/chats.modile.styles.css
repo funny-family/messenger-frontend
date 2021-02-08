@@ -21,11 +21,11 @@
 .chats-page__chat-list {
   position: relative;
 
-  top: 60px;
+  top: var(--chat-header-height);
 
   width: 100%;
 
-  height: calc(100% - 60px);
+  height: calc(100% - var(--chat-header-height));
 }
 
 .chats-page__chat-window {}
