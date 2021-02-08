@@ -15,7 +15,7 @@
     </template>
 
     <template v-else>
-      <section class="chat-list__loading-container">
+      <section class="chat-list__loading-block">
         <h2>Loading...</h2>
       </section>
     </template>
