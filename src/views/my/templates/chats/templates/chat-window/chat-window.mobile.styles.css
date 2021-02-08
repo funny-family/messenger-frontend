@@ -2,14 +2,14 @@
 
 .chat-window {}
 
-.chat-window__header {
+.chat-window__navbar {
   position: absolute;
 
   top: 0;
   right: 0;
   left: 0;
 
-  height: 60px;
+  height: var(--chat-window-navbar-height);
 }
 
 .chat-window__redirect-link {}
@@ -19,10 +19,12 @@
 .section {
   position: absolute;
 
-  top: 60px;
+  top: var(--chat-window-navbar-height);
 
   width: 100%;
-  height: calc(100% - 2 * 60px);
+  height: calc(
+    100% - (
+      var(--chat-window-input-height) + var(--chat-window-navbar-height)
+    )
+  );
 }
-
-.chat-window__message-input-block {}

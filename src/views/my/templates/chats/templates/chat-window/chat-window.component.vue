@@ -1,6 +1,6 @@
 <template>
   <div class="chat-window">
-    <ChatWindowHeader class="chat-window__header" />
+    <ChatWindowNavbar class="chat-window__navbar" />
 
     <main class="chat-window__main">
       <section class="section">
@@ -10,9 +10,7 @@
       </section>
     </main>
 
-    <footer class="chat-window__message-input-block">
-      <input type="text" />
-    </footer>
+    <ChatWindowInput class="chat-window__input-block"/>
   </div>
 </template>
 

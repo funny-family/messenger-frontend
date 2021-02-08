@@ -1,8 +1,10 @@
-import ChatWindowHeader from './components/chat-window-header';
+import ChatWindowNavbar from './components/chat-window-navbar';
+import ChatWindowInput from './components/chat-window-input';
 
 export default {
   name: 'ChatWindow',
   components: {
-    ChatWindowHeader
+    ChatWindowNavbar,
+    ChatWindowInput
   }
 };

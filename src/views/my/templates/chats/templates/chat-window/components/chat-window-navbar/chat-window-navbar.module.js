@@ -1,7 +1,7 @@
 import { routes } from '@/router';
 
 export default {
-  name: 'ChatWindowHeader',
+  name: 'ChatWindowNavbar',
   setup() {
     const chatsRoute = routes.my.children[0].name;
 
@@ -10,3 +10,4 @@ export default {
     };
   }
 };
+

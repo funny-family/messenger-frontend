@@ -1,9 +1,9 @@
 @media only screen and (min-width: 768px) {
   .chat-window {
-    height: calc(100% - 60px);
+    height: calc(100% - var(--chat-window-navbar-height));
   }
 
-  .chat-window__header {
+  .chat-window__navbar {
     position: static;
 
     top: auto;
@@ -22,9 +22,7 @@
     right: auto;
     left: auto;
 
-    height: calc(100% - 60px);
+    height: calc(100% - var(--chat-window-navbar-height));
   }
-
-  .chat-window__message-input {}
 }
 

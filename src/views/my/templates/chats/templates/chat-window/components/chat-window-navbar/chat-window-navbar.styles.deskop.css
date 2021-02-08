@@ -5,10 +5,10 @@
   }
 }
 
-.chat-window-header {
+.chat-window-navbar {
   display: flex;
   justify-content: space-between;
 }
 
-.chat-window-header__redirect-link {}
+.chat-window-navbar__redirect-link {}
 

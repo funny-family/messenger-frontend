@@ -4,6 +4,9 @@
   justify-content: content;
   align-items: center;
 
+  width: 100%;
+  height: var(--chat-window-input-height);
+
   padding: 0 12px;
 
   background-color: thistle;
