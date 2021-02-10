@@ -17,7 +17,12 @@
           </template>
 
           <template v-slot:main>
-            <ChatList />
+            <transition
+              name="fade-in-down"
+              mode="out-in"
+            >
+              <ChatList />
+            </transition>
           </template>
         </ScrollableMainLayout>
       </div>
@@ -29,10 +34,9 @@
       class="chats-page__chat-window"
       v-show="isChatSelected"
     >
-
       <router-view v-slot="{ Component }">
         <transition
-          name=""
+          name="slide-right"
           mode="out-in"
         >
           <component :is="Component" />
@@ -58,3 +62,6 @@
 <style scoped src="./chats.styles.css"></style>
 <style scoped src="./chats.modile.styles.css"></style>
 <style scoped src="./chats.desktop.styles.css"></style>
+
+<style scoped src="../../../../assets/styles/transitions/slide-right.css"></style>
+<style scoped src="../../../../assets/styles/transitions/fade-in-down.css"></style>

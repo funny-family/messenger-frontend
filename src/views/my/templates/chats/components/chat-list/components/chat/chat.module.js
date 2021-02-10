@@ -1,5 +1,10 @@
+import ChatCard from '../chat-card';
+
 export default {
   name: 'Chat',
+  components: {
+    ChatCard
+  },
   props: {
     id: {
       type: String,
@@ -20,7 +25,7 @@ export default {
       type: String,
       required: true
     },
-    timeOfLastMeaasge: {
+    timeOfLastMessage: {
       type: Number,
       required: true
     },
