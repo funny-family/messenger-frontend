@@ -1,4 +1,4 @@
-function getArgFromCurrentDirectory() {
+exports.getArgFromScript = () => {
   const argvToArray = (
     JSON.parse(process.env.npm_config_argv).original[2] ||
     JSON.parse(process.env.npm_config_argv).cooked[2]
@@ -8,6 +8,4 @@ function getArgFromCurrentDirectory() {
   const argv = argvToArray.join('');
 
   return argv;
-}
-
-exports.getArgFromCurrentDirectory = getArgFromCurrentDirectory;
+};

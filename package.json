@@ -12,6 +12,7 @@
     "stylelint:fix": "stylelint '**/*{.css,.scss}' --fix",
     "module:create": "node ./cli/commands/create-store-module.js",
     "component:create": "node ./cli/commands/create-component.js",
+    "component:create:v2": "node ./cli/commands/create-component.v.2.js",
     "commit": "cz"
   },
   "dependencies": {
