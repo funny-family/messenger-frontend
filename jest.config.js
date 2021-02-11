@@ -1,5 +1,8 @@
 module.exports = {
   preset: '@vue/cli-plugin-unit-jest',
+  modulePathIgnorePatterns: [
+    '<rootDir>/cli/file-templates/**'
+  ],
   testMatch: [
     '**/tests/unit/**/*.spec.[jt]s?(x)',
     '**/__tests__/*.[jt]s?(x)',
