@@ -1,3 +1,6 @@
+import { setup } from './sign-up-form.setup';
+
 export default {
-  name: 'Sign-Up-Form'
+  name: 'SignUpForm',
+  setup
 };
