@@ -1,6 +1,7 @@
 {
   "cSpell.words": [
     "Scrollable",
+    "Smacss",
     "chatus",
     "commitlint",
     "destructure",
@@ -18,5 +19,4 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.stylelint": true
   },
-
 }
