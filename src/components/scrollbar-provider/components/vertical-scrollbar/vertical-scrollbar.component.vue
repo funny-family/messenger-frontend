@@ -121,6 +121,7 @@ export default {
 </script>
 
 <style>
+/* stylelint-disable */
 .nice-bar-rail-y {
   position: absolute;
 

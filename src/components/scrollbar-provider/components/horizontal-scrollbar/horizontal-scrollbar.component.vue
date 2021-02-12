@@ -8,8 +8,7 @@
       ref="scrollSliderX"
       @touchstart="startDrag"
       @mousedown="startDrag"
-    >
-    </div>
+    ></div>
   </div>
 </template>
 
@@ -126,23 +125,26 @@ export default {
 </script>
 
 <style>
+/* stylelint-disable */
 .nice-bar-rail-x {
   position: absolute;
+  z-index: 100000;
   bottom: 0;
   left: 0;
-  height: 6px;
   width: 100%;
-  z-index: 100000;
+  height: 6px;
 }
 
 .nice-bar-slider-x {
   position: absolute;
+  z-index: 100001;
   bottom: 0;
   left: 0;
   height: 6px;
-  z-index: 100001;
-  opacity: 0;
+
   animation-duration: 1s;
+
+  opacity: 0;
   animation-fill-mode: both;
 }
 

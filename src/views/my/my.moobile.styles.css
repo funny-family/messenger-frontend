@@ -10,7 +10,7 @@
   flex-direction: column;
 }
 
-.my-page__main  {
+.my-page__main {
   display: flex;
 
   order: 0;
@@ -18,7 +18,8 @@
   overflow: auto;
 }
 
-.my-page__menu {}
+.my-page__menu {
+}
 
 .resz-container {
   width: 100%;

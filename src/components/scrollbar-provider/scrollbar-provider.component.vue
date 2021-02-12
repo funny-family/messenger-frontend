@@ -194,6 +194,7 @@ export default {
 </script>
 
 <style>
+/* stylelint-disable */
 .nice-bar {
   overflow: hidden;
   position: relative;

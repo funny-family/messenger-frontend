@@ -1,13 +1,8 @@
 /* https://codepen.io/kevinpowell/pen/jxppmr */
 
 .nav-header {
-  position: relative;
-
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
   display: flex;
+  position: relative;
   align-items: center;
 
   /* width: 100%; */
@@ -16,12 +11,12 @@
   background-color: powderblue;
 }
 
-.nav-header__logo {}
+.nav-header__logo {
+}
 
 .nav-header__list-container {
-  position: absolute;
-
   display: none;
+  position: absolute;
 
   top: 100%;
 
@@ -36,30 +31,30 @@
 
 .nav-header__list {
   /* width of 100% will cause a layout problem! */
-
   display: block;
+
   list-style-type: none;
   padding-inline-start: 0;
 }
 
-.nav-header__item {}
+.nav-header__item {
+}
 
 .nav-header__burger-button {
-  position: absolute;
-
-  right: 0;
-
   display: -webkit-box;
   display: -moz-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  position: absolute;
+
+  right: 0;
 
   flex-direction: column;
+  align-items: center;
+  -webkit-box-align: center;
 
   box-align: center;
-  -webkit-box-align: center;
-  align-items: center;
 
   /* background-color: violet; */
 }

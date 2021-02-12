@@ -1,8 +1,7 @@
 .chat-window-input {
   display: flex;
-
-  justify-content: content;
   align-items: center;
+  justify-content: content;
 
   width: 100%;
   height: var(--chat-window-input-height);

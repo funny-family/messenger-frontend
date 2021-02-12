@@ -1,27 +1,36 @@
 @keyframes fade-in-down {
   from {
+    -webkit-transform: translate3d(0, -40px, 0);
     transform: translate3d(0, -40px, 0);
   }
 
   to {
+    -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
-    opacity: 1
+
+    opacity: 1;
   }
 }
 
 .fade-in-down-leave-to {
+  -webkit-transform: opacity 0.3s;
+  transition: opacity 0.3s;
+
   opacity: 0;
-  transition: opacity .3s;
 }
 
 .fade-in-down-enter-from {
-  opacity: 0;
+  -webkit-transform: translate3d(0, -40px, 0);
   transform: translate3d(0, -40px, 0);
+
+  opacity: 0;
 }
 
 .fade-in-down-enter-to {
-  opacity: 0;
-  animation-duration: .7s;
-  animation-fill-mode: both;
   animation-name: fade-in-down;
+
+  animation-duration: 0.7s;
+
+  opacity: 0;
+  animation-fill-mode: both;
 }

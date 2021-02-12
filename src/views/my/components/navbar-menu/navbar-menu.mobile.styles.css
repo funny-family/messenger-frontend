@@ -1,8 +1,8 @@
 /* @media only screen and (max-width: 768px) {} */
 
 .navbar-menu {
-  height: var(--navbar-menu-size);
   width: 100%;
+  height: var(--navbar-menu-size);
 }
 
 .navbar-menu__list {
@@ -31,4 +31,3 @@
   width: 100%;
   height: var(--navbar-menu-size);
 }
-

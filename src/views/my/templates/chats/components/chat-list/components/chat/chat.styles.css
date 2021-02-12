@@ -9,7 +9,6 @@
 
 /* set chat link non clickable */
 .chat-card__link.router-link-active {
-  pointer-events: none;
-
   cursor: default;
+  pointer-events: none;
 }

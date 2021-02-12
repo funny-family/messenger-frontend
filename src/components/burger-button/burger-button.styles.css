@@ -9,9 +9,10 @@
   --hamburger-menu-width: var(--hamburger-menu-size);
   --hamburger-menu-height: calc(var(--hamburger-menu-size) / 10);
 
-  --transition-time: .2s;
+  --transition-time: 0.2s;
 
   /* position: relative; */
+
   /* position: relative;
 
   left: 20px;
@@ -19,7 +20,10 @@
 }
 
 .burger-button {
+  box-sizing: content-box;
+
   /* position: absolute; */
+
   /* position: relative; */
 
   width: var(--hamburger-menu-width);
@@ -28,15 +32,14 @@
   padding-top: var(--hamburger-menu-padding);
   padding-bottom: var(--hamburger-menu-padding);
 
-  background-color: var(--hamburger-menu-color);
-  background-clip: content-box;
-
-  cursor: pointer;
-
   transition: padding-top var(--transition-time) ease;
   transition: padding-bottom var(--transition-time) ease;
 
-  box-sizing: content-box;
+  background-clip: content-box;
+
+  background-color: var(--hamburger-menu-color);
+
+  cursor: pointer;
 }
 
 .burger-button::before {
@@ -83,5 +86,5 @@
 
 .menu__opened::before,
 .menu__opened::after {
-  top: .6em;
+  top: 0.6em;
 }

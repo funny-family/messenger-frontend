@@ -1,13 +1,13 @@
 .sml-container {
-  width: 100%;
-  height: 100%;
-
   display: flex;
 
   flex-direction: column;
+  width: 100%;
+  height: 100%;
 }
 
-.sml-header {}
+.sml-header {
+}
 
 .sml-main {
   height: 100%;
@@ -15,4 +15,5 @@
   overflow: auto;
 }
 
-.sml-footer {}
+.sml-footer {
+}
