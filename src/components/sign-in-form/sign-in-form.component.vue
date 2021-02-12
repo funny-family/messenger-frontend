@@ -1,8 +1,11 @@
 <template>
-  <form class="sign-in-form">
-    <input type="text" placeholder="Email" />
-    <input type="password" placeholder="Password" />
-    <button>signin</button>
+  <form
+    class="sign-in-form"
+    @submit.prevent="submitSignInForm(signInFields)"
+  >
+    <input type="text" placeholder="Email" v-model="signInFields.username" />
+    <input type="password" placeholder="Password" v-model="signInFields.password" />
+    <button type="submit">signin</button>
   </form>
 </template>
 
