@@ -50,6 +50,7 @@
     "stylelint-config-airbnb": "0.0.0",
     "stylelint-config-idiomatic-order": "^8.1.0",
     "stylelint-config-prettier": "^8.0.2",
+    "stylelint-config-property-sort-order-smacss": "^7.0.0",
     "stylelint-config-rational-order": "^0.1.2",
     "stylelint-order": "^4.1.0",
     "stylelint-prettier": "^1.1.2",
