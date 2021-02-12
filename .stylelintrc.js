@@ -4,7 +4,10 @@ module.exports = {
     'stylelint-config-rational-order',
     'stylelint-prettier/recommended'
   ],
-  plugins: ['stylelint-order'],
+  plugins: [
+    'stylelint-order',
+    'stylelint-scss'
+  ],
   rules: {
     // additional options
   }
