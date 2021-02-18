@@ -63,5 +63,5 @@
 <style scoped src="./chats.modile.styles.css"></style>
 <style scoped src="./chats.desktop.styles.css"></style>
 
-<style scoped src="../../../../assets/styles/transitions/slide-right.css"></style>
-<style scoped src="../../../../assets/styles/transitions/fade-in-down.css"></style>
+<style scoped lang="scss" src="../../../../assets/styles/transitions/slide-right.scss"></style>
+<style scoped lang="scss" src="../../../../assets/styles/transitions/fade-in-down.scss"></style>
