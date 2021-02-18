@@ -1,0 +1,17 @@
+/* config */
+@import './config/config.scss';
+
+/* global variables */
+@import './variables/global.scss';
+
+/* elements styles */
+@import './elements/elements.scss';
+
+/* pseudo elements elements */
+@import './pseudo-elements/pseudo-elements.scss';
+
+/* all themes */
+@import './themes/themes.scss';
+
+/* all fonts */
+@import '../fonts/fonts.scss';

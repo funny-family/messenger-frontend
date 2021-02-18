@@ -11,5 +11,6 @@
 
 <script src="./app.module.js"></script>
 
-<style src="./app.styles.css"></style>
-<style scoped src="../assets/styles/transitions/fade-in-down.css"></style>
+<style lang="scss" src="./app.styles.scss"></style>
+
+<style scoped lang="scss" src="../assets/styles/transitions/fade-in-down.scss"></style>
