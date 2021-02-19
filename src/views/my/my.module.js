@@ -1,4 +1,4 @@
-import { useRoute } from '@/router';
+import { useRoute } from 'vue-router';
 import { watchEffect } from 'vue';
 
 import { my } from './store';
