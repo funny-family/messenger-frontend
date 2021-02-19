@@ -1,7 +1,7 @@
-import { useStore } from '@/store';
 import {
   computed, ref, onMounted
 } from 'vue';
+import { useStore } from 'vuex';
 
 import Chat from './components/chat';
 

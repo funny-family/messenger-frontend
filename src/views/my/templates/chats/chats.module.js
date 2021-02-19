@@ -1,6 +1,8 @@
 import { defineAsyncComponent, computed } from 'vue';
 
-import { modules, useStore } from '@/store';
+import { modules } from '@/store';
+import { useStore } from 'vuex';
+
 import { my } from '../../store';
 
 import ScrollableMainLayout from '../../../../components/scrollable-main-layout';

@@ -8,7 +8,6 @@ const store = createStore({
   plugins
 });
 
-export * from 'vuex';
 export {
   store,
   modules
