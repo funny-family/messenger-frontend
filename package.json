@@ -21,7 +21,7 @@
     "core-js": "^3.8.1",
     "vue": "^3.0.4",
     "vue-router": "^4.0.3",
-    "vuex": "^4.0.0-rc.2"
+    "vuex": "^4.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
