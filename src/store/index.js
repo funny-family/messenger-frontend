@@ -1,7 +1,7 @@
-import { createStore, createLogger } from 'vuex';
-import modules from './modules';
+import { createStore } from 'vuex';
 
-const plugins = [process.env.NODE_ENV === 'development' ? createLogger() : ''];
+import modules from './modules';
+import plugins from './plugins';
 
 const store = createStore({
   modules,
