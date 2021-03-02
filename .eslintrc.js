@@ -1,3 +1,5 @@
+const componentNaming = 'PascalCase';
+
 const vueFileRules = {
   'vue/no-deprecated-destroyed-lifecycle': 'error',
   'vue/no-deprecated-dollar-listeners-api': 'error',
@@ -9,14 +11,40 @@ const vueFileRules = {
       multiline: 'always'
     }
   ],
+  'vue/component-tags-order': [
+    'error',
+    {
+      order: ['template', 'script', 'style']
+    }
+  ],
   'vue/component-name-in-template-casing': [
     'error',
-    'PascalCase',
+    componentNaming,
     {
       registeredComponentsOnly: true,
       ignores: []
     }
-  ]
+  ],
+  'vue/name-property-casing': ['error', componentNaming]
+  // 'vue/attributes-order': [
+  //   'error',
+  //   {
+  //     order: [
+  //       'DEFINITION',
+  //       'LIST_RENDERING',
+  //       'CONDITIONALS',
+  //       'RENDER_MODIFIERS',
+  //       'GLOBAL',
+  //       ['UNIQUE', 'SLOT'],
+  //       'TWO_WAY_BINDING',
+  //       'OTHER_DIRECTIVES',
+  //       'OTHER_ATTR',
+  //       'EVENTS',
+  //       'CONTENT'
+  //     ],
+  //     alphabetical: false
+  //   }
+  // ]
 };
 
 const airbnbOverwrittenRules = {
@@ -29,9 +57,7 @@ const airbnbOverwrittenRules = {
     'error',
     {
       props: true,
-      ignorePropertyModificationsFor: [
-        'state'
-      ]
+      ignorePropertyModificationsFor: ['state']
     }
   ]
 };
@@ -44,8 +70,8 @@ module.exports = {
   },
   extends: [
     'plugin:vue/vue3-essential', // eslint-plugin-vue
-    'airbnb-base', // eslint-config-airbnb-base
-    'eslint:recommended' // eslint
+    'eslint:recommended', // eslint
+    'airbnb-base' // eslint-config-airbnb-base
   ],
   plugins: ['prettier'],
   parserOptions: {
@@ -59,8 +85,10 @@ module.exports = {
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off'
   },
   settings: {
-    'import/resolver': { // eslint-plugin-import
-      alias: { // eslint-import-resolver-alias to make alias work with eslint
+    // eslint-plugin-import
+    'import/resolver': {
+      // eslint-import-resolver-alias to make alias work with eslint
+      alias: {
         map: [['@', './src']],
         extensions: ['.js', '.ts', '.vue']
       }
