@@ -9,7 +9,11 @@ class PluginsDefiner {
     this.mode = mode;
     this.plugins = plugins;
 
-    if (mode === 'production') {
+    if (typeof this.mode !== 'string') {
+      throw new TypeError('Mode should be a string value!');
+    }
+
+    if (this.mode === 'production') {
       this.plugins = [];
     }
 
@@ -24,16 +28,12 @@ class PluginsDefiner {
 const constantlyUsedPlugins = new PluginsDefiner({
   plugins: []
 });
+
 const developmentPlugins = new PluginsDefiner({
   mode: process.env.NODE_ENV,
-  plugins: [
-    createLogger()
-  ]
+  plugins: [createLogger()]
 });
 
-const plugins = [
-  ...constantlyUsedPlugins,
-  ...developmentPlugins
-];
+const plugins = [...constantlyUsedPlugins, ...developmentPlugins];
 
 export default plugins;
