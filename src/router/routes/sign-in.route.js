@@ -1,13 +1,12 @@
 export default (() => {
-  const SignIn = () => import('../../views/sign-in');
-
-  return {
+  const signInRoute = {
     path: '/signin',
-    // name: SignIn.name,
     name: 'SignIn',
-    component: SignIn,
+    component: () => import('../../views/sign-in'),
     meta: {
       title: 'Sign in'
     }
   };
+
+  return signInRoute;
 })();

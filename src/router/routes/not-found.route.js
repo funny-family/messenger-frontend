@@ -1,13 +1,12 @@
 export default (() => {
-  const NotFound = () => import('../../views/not-found');
-
-  return {
+  const notFoundRoute = {
     path: '/404',
-    // name: NotFound.name,
     name: 'NotFound',
-    component: NotFound,
+    component: () => import('../../views/not-found'),
     meta: {
       title: 'Page not found!'
     }
   };
+
+  return notFoundRoute;
 })();

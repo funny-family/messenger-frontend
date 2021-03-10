@@ -1,13 +1,12 @@
 export default (() => {
-  const Home = () => import('../../views/home');
-
-  return {
+  const homeRoute = {
     path: '/',
-    // name: Home.name,
     name: 'Home',
-    component: Home,
+    component: () => import('../../views/home'),
     meta: {
       title: 'Home'
     }
   };
+
+  return homeRoute;
 })();

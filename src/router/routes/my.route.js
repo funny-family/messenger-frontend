@@ -1,25 +1,19 @@
 export default (() => {
-  const My = () => import('../../views/my');
-
   const chats = (() => {
-    const Chats = () => import('../../views/my/templates/chats');
-
     const chat = (() => {
-      const ChatWindow = () => import('../../views/my/templates/chats/templates/chat-window');
-
-      return {
+      const chatRoute = {
         path: 'chat/:id',
-        // name: ChatWindow.name,
         name: 'ChatWindow',
-        component: ChatWindow
+        component: () => import('../../views/my/templates/chats/templates/chat-window')
       };
+
+      return chatRoute;
     })();
 
-    return {
+    const chatsRoute = {
       path: 'chats',
-      // name: Chats.name,
       name: 'Chats',
-      component: Chats,
+      component: () => import('../../views/my/templates/chats'),
       meta: {
         title: 'Chats'
       },
@@ -27,27 +21,27 @@ export default (() => {
         chat
       ]
     };
+
+    return chatsRoute;
   })();
 
   const profile = (() => {
-    const Profile = () => import('../../views/my/templates/profile');
-
-    return {
+    const profileRoute = {
       path: 'profile',
-      // name: Profile.name,
       name: 'Profile',
-      component: Profile,
+      component: () => import('../../views/my/templates/profile'),
       meta: {
         title: 'Profile'
       }
     };
+
+    return profileRoute;
   })();
 
-  return {
+  const myRoute = {
     path: '/my',
-    // name: My.name,
     name: 'My',
-    component: My,
+    component: () => import('../../views/my'),
     redirect: {
       name: chats.name || profile.name
     },
@@ -56,4 +50,6 @@ export default (() => {
       profile
     ]
   };
+
+  return myRoute;
 })();

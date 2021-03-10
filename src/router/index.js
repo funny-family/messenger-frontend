@@ -1,10 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import { collectExportedRoutes } from './utils';
-import * as routes from './routes';
+import routes from './routes';
 
 const router = createRouter({
   history: createWebHistory(),
-  routes: collectExportedRoutes(routes)
+  routes: Object.values(routes)
 });
 
 router.beforeEach((to, from, next) => {
@@ -12,7 +11,4 @@ router.beforeEach((to, from, next) => {
   next();
 });
 
-export {
-  router,
-  routes
-};
+export { router, routes };
