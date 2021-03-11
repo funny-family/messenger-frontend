@@ -2,9 +2,7 @@
   <header class="chat-window-navbar">
     <router-link
       class="chat-window-navbar__redirect-link hidden-redirect-link"
-      :to="{
-        name: chatsRoute
-      }"
+      :to="{ name: router.getRoutes()[1].name }"
     >
       ⬅
     </router-link>

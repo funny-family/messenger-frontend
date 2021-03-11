@@ -1,12 +1,10 @@
-import { routes } from '@/router';
+import { router } from '@/router';
 
 export default {
   name: 'ChatWindowNavbar',
   setup() {
-    const chatsRoute = routes.my.children[0].name;
-
     return {
-      chatsRoute
+      router
     };
   }
 };

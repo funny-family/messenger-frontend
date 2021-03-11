@@ -1,10 +1,10 @@
-import { routes } from '@/router';
+import { router } from '@/router';
 
 export default {
   name: 'NavbarMenu',
   setup() {
     return {
-      routes
+      router
     };
   }
 };

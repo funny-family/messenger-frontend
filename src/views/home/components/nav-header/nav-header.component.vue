@@ -9,10 +9,10 @@
     >
       <ul class="nav-header__list">
         <li class="nav-header__item">
-          <router-link to="/signin"> Sign in </router-link>
+          <router-link :to="{ name: router.getRoutes()[6].name }">Sign in</router-link>
         </li>
         <li class="nav-header__item">
-          <router-link to="/signup"> Sign up </router-link>
+          <router-link :to="{ name: router.getRoutes()[7].name }">Sign up</router-link>
         </li>
       </ul>
     </nav>
@@ -23,6 +23,8 @@
 <script>
 import BurgerButton from '@/components/burger-button';
 import { isNavMenuOpen } from './nav-header.state';
+
+import { router } from '../../../../router';
 
 const emitEnum = {
   changeMenuState: 'changeMenuState'
@@ -40,6 +42,7 @@ export default {
     }
 
     return {
+      router,
       isNavMenuOpen,
       changeMenuState
     };

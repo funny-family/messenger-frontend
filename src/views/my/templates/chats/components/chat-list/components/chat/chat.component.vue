@@ -1,8 +1,10 @@
 <template>
   <router-link
     class="chat-card__link"
-    :to="{ name: 'ChatWindow',
-    params: { id: id } }"
+    :to="{
+      name: 'ChatWindow',
+      params: { id: id }
+    }"
   >
     <ChatCard>
       <template v-slot:avatar>

@@ -3,13 +3,13 @@
     <ul class="navbar-menu__list">
       <router-link
         class="navbar-menu__link"
-        :to="routes.my.children[0]"
+        :to="{ name: router.getRoutes()[1].name }"
       >
         <li class="navbar-menu__item">1</li>
       </router-link>
       <router-link
         class="navbar-menu__link"
-        :to="routes.my.children[1]"
+        :to="{ name: router.getRoutes()[2].name }"
       >
         <li class="navbar-menu__item">2</li>
       </router-link>
