@@ -6,7 +6,7 @@
       </h1>
       <router-link
         class="error-section__link"
-        :to="{ name: routes.home.name }"
+        :to="{ name: router.getRoutes()[3].name }"
       >
         Back to home page
       </router-link>
