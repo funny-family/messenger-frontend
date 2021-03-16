@@ -30,3 +30,7 @@
 .space-between {
   justify-content: space-between;
 }
+
+.chat-card__sender-name {
+  margin-right: 0.2em;
+}

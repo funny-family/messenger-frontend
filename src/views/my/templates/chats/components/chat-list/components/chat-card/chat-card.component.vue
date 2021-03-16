@@ -2,7 +2,7 @@
   <article class="chat-card-grid chat-card">
     <div
       class="chat-card__avatar"
-      v-if="isAvatarSlotEmpty"
+      v-if="usedSlots.isAvatarSlotUsed"
     >
       <slot name="avatar" />
     </div>
@@ -10,13 +10,13 @@
       <div class="chat-card-row space-between">
         <div
           class="chat-card__name text-ellipsis"
-          v-if="isNameSlotEmpty"
+          v-if="usedSlots.isNameSlotUsed"
         >
           <slot name="name" />
         </div>
         <div
           class="chat-card__time-of-last-message"
-          v-if="isTimeOfLastMessageSlotEmpty"
+          v-if="usedSlots.isTimeOfLastMessageSlotUsed"
         >
           <slot name="timeOfLastMessage" />
         </div>
@@ -25,22 +25,22 @@
         <div class="chat-card__message-container text-ellipsis">
           <span
             class="chat-card__sender-name"
-            v-if="isNameOfTheMessageSenderSlotEmpty"
+            v-if="usedSlots.isSenderNameSlotUsed"
           >
-            <slot name="nameOfTheMessageSender" />
+            <slot name="senderName" />
           </span>
           <span
             class="chat-card__message"
-            v-if="isMessageSlotEmpty"
+            v-if="usedSlots.isMessageSlotUsed"
           >
             <slot name="message" />
           </span>
         </div>
         <div
           class="chat-card__unread-message"
-          v-if="isUnreadMessagesSlotEmpty"
+          v-if="usedSlots.isNumberOfUnreadMessagesSlotUsed"
         >
-          <slot name="unreadMessages" />
+          <slot name="numberOfUnreadMessages" />
         </div>
       </div>
     </div>
