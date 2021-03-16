@@ -6,10 +6,10 @@
       :id="`${chat.id}`"
       :avatar="chat.name[0]"
       :name="chat.username"
-      :nameOfTheMessageSender="chat.address.city"
+      :senderName="chat.address.city"
       :message="chat.company.catchPhrase"
       :timeOfLastMessage="Math.floor(Math.random() * 100)"
-      :unreadMessages="Math.floor(Math.random() * 10)"
+      :numberOfUnreadMessages="Math.floor(Math.random() * 10)"
     />
   </section>
 </template>

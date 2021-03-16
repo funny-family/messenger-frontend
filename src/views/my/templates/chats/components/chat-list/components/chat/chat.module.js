@@ -18,7 +18,7 @@ export default {
       type: String,
       required: true
     },
-    nameOfTheMessageSender: {
+    senderName: {
       type: String
     },
     message: {
@@ -29,8 +29,13 @@ export default {
       type: Number,
       required: true
     },
-    unreadMessages: {
+    numberOfUnreadMessages: {
       type: Number
     }
+  },
+  setup() {
+    // console.log('ChatCard', ChatCard);
+
+    return {};
   }
 };
