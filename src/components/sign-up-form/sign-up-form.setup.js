@@ -9,6 +9,7 @@ export function setup() {
   });
 
   const submitSignUpForm = (formFields) => {
+    // eslint-disable-next-line
     console.log('Sign up form fields:', formFields);
   };
 
