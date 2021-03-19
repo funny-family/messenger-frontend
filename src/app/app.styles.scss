@@ -1,4 +1,1 @@
-@import '../assets/styles/main.scss';
-
-// all fonts contains in this file
-@import '../assets/fonts/fonts.css';
+@use '../assets/styles/main.scss' as *;

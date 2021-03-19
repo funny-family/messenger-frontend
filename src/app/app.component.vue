@@ -13,4 +13,6 @@
 
 <style lang="scss" src="./app.styles.scss"></style>
 
+<style src="../assets/fonts/fonts.css"></style>
+
 <style scoped lang="scss" src="../assets/styles/transitions/fade-in-down.scss"></style>
