@@ -5,6 +5,8 @@ import App from './app';
 
 const app = createApp(App);
 
+// console.log('app:', app);
+
 app.use(router);
 app.use(store);
 

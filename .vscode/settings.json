@@ -26,17 +26,9 @@
   },
   "editor.formatOnSave": true,
 
-  "[javascript]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
-  "[vue]": {
-    "editor.defaultFormatter": "octref.vetur"
-  },
-
   "editor.defaultFormatter": "octref.vetur",
 
   "prettier.requireConfig": false,
-  "prettier.disableLanguages": ["html"],
 
   "html.format.enable": true,
 

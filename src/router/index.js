@@ -11,4 +11,7 @@ router.beforeEach((to, from, next) => {
   next();
 });
 
+// eslint-disable-next-line
+console.log(router.getRoutes());
+
 export { router, routes };

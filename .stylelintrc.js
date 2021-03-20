@@ -12,6 +12,7 @@ module.exports = {
     'stylelint-scss'
   ],
   rules: {
+    'string-quotes': 'single',
     'selector-max-id': null,
     'order/properties-order': [
       sortOrderSmacss({ emptyLineBefore: 'always' })

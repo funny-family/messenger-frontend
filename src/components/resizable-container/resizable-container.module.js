@@ -6,7 +6,7 @@ export default {
     const resizableContainer = ref(null); // ref
 
     onMounted(() => {
-      console.log(resizableContainer.value);
+      // console.log(resizableContainer.value);
     });
 
     return {

@@ -1,4 +1,8 @@
-<template src="./resizable-container.layout.html"></template>
+<template>
+  <div class="res-cont" ref="resizableContainer">
+    <slot />
+  </div>
+</template>
 
 <script src="./resizable-container.module.js"></script>
 

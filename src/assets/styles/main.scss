@@ -1,14 +1,14 @@
 /* config */
-@import './config/config.scss';
+@use './config/config.scss' as *;
 
 /* global variables */
-@import './variables/global.scss';
+@use './variables/global.scss' as *;
 
 /* elements styles */
-@import './elements/elements.scss';
+@use './elements/elements.scss' as *;
 
 /* pseudo elements elements */
-@import './pseudo-elements/pseudo-elements.scss';
+@use './pseudo-elements/pseudo-elements.scss' as *;
 
 /* all themes */
-@import './themes/themes.scss';
+@use './themes/themes.scss' as *;

@@ -1,8 +1,16 @@
 const path = require('path');
+const sass = require('sass');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
 
 module.exports = {
   runtimeCompiler: true,
+  css: {
+    loaderOptions: {
+      sass: {
+        implementation: sass
+      }
+    }
+  },
   configureWebpack: {
     resolve: {
       alias: {
