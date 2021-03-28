@@ -1,17 +1,26 @@
 <template>
   <div class="sml-container">
-    <div class="sml-header" v-if="isHeaderSlotEmpty">
+    <div
+      v-if="isHeaderSlotEmpty"
+      class="sml-header"
+    >
       <slot name="header" />
     </div>
 
-    <div class="sml-main" v-if="isMainSlotEmpty">
+    <div
+      v-if="isMainSlotEmpty"
+      class="sml-main"
+    >
       <slot name="main" />
     </div>
 
     <!-- default slot (extra container) -->
     <slot />
 
-    <div class="sml-footer" v-if="isFooterSlotEmpty">
+    <div
+      v-if="isFooterSlotEmpty"
+      class="sml-footer"
+    >
       <slot name="footer" />
     </div>
   </div>

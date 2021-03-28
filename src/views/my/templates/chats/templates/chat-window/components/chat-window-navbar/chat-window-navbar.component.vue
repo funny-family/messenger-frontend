@@ -13,5 +13,7 @@
 <script src="./chat-window-navbar.module.js"></script>
 
 <style scoped src="./chat-window-navbar.styles.css"></style>
+
 <style scoped src="./chat-window-navbar.styles.modile.css"></style>
+
 <style scoped src="./chat-window-navbar.styles.deskop.css"></style>

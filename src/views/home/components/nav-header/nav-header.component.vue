@@ -1,6 +1,8 @@
 <template>
   <header class="nav-header">
-    <h2 class="nav-header__logo">Chatus</h2>
+    <h2 class="nav-header__logo">
+      Chatus
+    </h2>
     <nav
       class="nav-header__list-container"
       :class="{
@@ -9,14 +11,21 @@
     >
       <ul class="nav-header__list">
         <li class="nav-header__item">
-          <router-link :to="{ name: router.getRoutes()[6].name }">Sign in</router-link>
+          <router-link :to="{ name: router.getRoutes()[6].name }">
+            Sign in
+          </router-link>
         </li>
         <li class="nav-header__item">
-          <router-link :to="{ name: router.getRoutes()[7].name }">Sign up</router-link>
+          <router-link :to="{ name: router.getRoutes()[7].name }">
+            Sign up
+          </router-link>
         </li>
       </ul>
     </nav>
-    <BurgerButton class="nav-header__burger-button" @onClick="changeMenuState" />
+    <BurgerButton
+      class="nav-header__burger-button"
+      @onClick="changeMenuState"
+    />
   </header>
 </template>
 
@@ -35,6 +44,7 @@ export default {
   components: {
     BurgerButton
   },
+
   emits: [emitEnum.changeMenuState],
   setup() {
     function changeMenuState(state) {
@@ -51,4 +61,5 @@ export default {
 </script>
 
 <style scoped src="./nav-header.styles.css"></style>
+
 <style scoped src="./nav-header.media.styles.css"></style>

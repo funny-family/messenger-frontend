@@ -1,10 +1,13 @@
 @media only screen and (min-width: 768px) {
   .chat-window {
+    /* chat-window */
   }
 
   .chat-window__main {
+    /* main */
   }
 
   .section {
+    /* section */
   }
 }

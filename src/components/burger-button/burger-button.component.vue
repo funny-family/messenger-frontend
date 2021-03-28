@@ -11,8 +11,7 @@
         menu__opened: state
       }"
       for="button__trigger"
-    >
-    </label>
+    />
   </div>
 </template>
 

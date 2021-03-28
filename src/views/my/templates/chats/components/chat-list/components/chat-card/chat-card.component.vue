@@ -1,22 +1,22 @@
 <template>
   <article class="chat-card-grid chat-card">
     <div
-      class="chat-card__avatar"
       v-if="usedSlots.isAvatarSlotUsed"
+      class="chat-card__avatar"
     >
       <slot name="avatar" />
     </div>
     <div class="chat-card-column text-ellipsis">
       <div class="chat-card-row space-between">
         <div
-          class="chat-card__name text-ellipsis"
           v-if="usedSlots.isNameSlotUsed"
+          class="chat-card__name text-ellipsis"
         >
           <slot name="name" />
         </div>
         <div
-          class="chat-card__time-of-last-message"
           v-if="usedSlots.isTimeOfLastMessageSlotUsed"
+          class="chat-card__time-of-last-message"
         >
           <slot name="timeOfLastMessage" />
         </div>
@@ -24,21 +24,21 @@
       <div class="chat-card-row space-between">
         <div class="chat-card__message-container text-ellipsis">
           <span
-            class="chat-card__sender-name"
             v-if="usedSlots.isSenderNameSlotUsed"
+            class="chat-card__sender-name"
           >
             <slot name="senderName" />
           </span>
           <span
-            class="chat-card__message"
             v-if="usedSlots.isMessageSlotUsed"
+            class="chat-card__message"
           >
             <slot name="message" />
           </span>
         </div>
         <div
-          class="chat-card__unread-message"
           v-if="usedSlots.isNumberOfUnreadMessagesSlotUsed"
+          class="chat-card__unread-message"
         >
           <slot name="numberOfUnreadMessages" />
         </div>
@@ -50,4 +50,5 @@
 <script src="./chat-card.module.js"></script>
 
 <style scoped src="./chat-card.styles.css"></style>
+
 <style scoped src="./chat-card.styles.layout.css"></style>

@@ -14,9 +14,10 @@
 
 .fade-in-down-leave-to {
   -webkit-transform: opacity 0.3s;
-  transition: opacity 0.3s;
 
   opacity: 0;
+
+  transition: opacity 0.3s;
 }
 
 .fade-in-down-enter-from {
@@ -27,10 +28,11 @@
 }
 
 .fade-in-down-enter-to {
+
+  opacity: 0;
+
   animation-name: fade-in-down;
 
   animation-duration: 0.7s;
-
-  opacity: 0;
   animation-fill-mode: both;
 }

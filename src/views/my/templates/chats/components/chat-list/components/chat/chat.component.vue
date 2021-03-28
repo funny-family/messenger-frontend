@@ -27,7 +27,10 @@
         {{ message }}
       </template>
 
-      <template v-slot:numberOfUnreadMessages v-if="numberOfUnreadMessages > 0">
+      <template
+        v-if="numberOfUnreadMessages > 0"
+        v-slot:numberOfUnreadMessages
+      >
         {{ numberOfUnreadMessages }}
       </template>
     </ChatCard>

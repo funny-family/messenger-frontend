@@ -13,10 +13,11 @@
 
   padding: 0 18px 0 12px;
 
-  background-color: whitesmoke;
+  font-weight: 400;
 
   font-size: 16px;
-  font-weight: 400;
+
+  background-color: whitesmoke;
 }
 
 .chat-card__avatar {
@@ -53,9 +54,11 @@
 }
 
 .chat-card__sender-name {
+  /* sender-name */
 }
 
 .chat-card__message {
+  /* message */
 }
 
 .chat-card__unread-message {
@@ -69,8 +72,8 @@
 
   border-radius: var(--unread-message-size);
 
-  background-color: tomato;
-
   font-weight: 500;
   line-height: var(--unread-message-size);
+
+  background-color: tomato;
 }

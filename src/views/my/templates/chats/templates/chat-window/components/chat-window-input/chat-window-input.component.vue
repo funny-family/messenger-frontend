@@ -1,24 +1,29 @@
 <template>
-  <form class="chat-window-input" @submit.prevent="submitMessageForm(message)">
+  <form
+    class="chat-window-input"
+    @submit.prevent="submitMessageForm(message)"
+  >
     <!-- <label for="message-input"></label>
-    <textarea
+      <textarea
       id="message-input"
       name="message-input"
       placeholder="Type message here..."
-    >
-    </textarea>-->
+      >
+      </textarea> -->
     <!-- <div class="message-input" contenteditable="true" role="textbox"></div> -->
     <div class="message-container">
       <textarea
+        ref="messageInput"
+        v-model="message.text"
         class="message-input"
         placeholder="Type message here..."
         tabindex="0"
-        ref="messageInput"
-        v-model="message.text"
         @input="messageInputChange($event.target.value)"
-      ></textarea>
+      />
     </div>
-    <button type="submit">➤</button>
+    <button type="submit">
+      ➤
+    </button>
   </form>
 </template>
 

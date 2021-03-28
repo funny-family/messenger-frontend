@@ -77,7 +77,9 @@
       </section>
     </main>
 
-    <NavFooter class="home-page__footer">disigned by funny family</NavFooter>
+    <NavFooter class="home-page__footer">
+      disigned by funny family
+    </NavFooter>
   </div>
 </template>
 

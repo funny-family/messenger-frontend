@@ -2,14 +2,14 @@
   <section class="chat-list">
     <Chat
       v-for="chat in chatList"
-      :key="chat.id"
       :id="`${chat.id}`"
+      :key="chat.id"
       :avatar="chat.name[0]"
       :name="chat.username"
-      :senderName="chat.address.city"
+      :sender-name="chat.address.city"
       :message="chat.company.catchPhrase"
-      :timeOfLastMessage="Math.floor(Math.random() * 100)"
-      :numberOfUnreadMessages="Math.floor(Math.random() * 10)"
+      :time-of-last-message="Math.floor(Math.random() * 100)"
+      :number-of-unread-messages="Math.floor(Math.random() * 10)"
     />
   </section>
 </template>

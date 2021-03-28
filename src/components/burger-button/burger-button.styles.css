@@ -32,14 +32,13 @@
   padding-top: var(--hamburger-menu-padding);
   padding-bottom: var(--hamburger-menu-padding);
 
-  transition: padding-top var(--transition-time) ease;
-  transition: padding-bottom var(--transition-time) ease;
-
+  background-color: var(--hamburger-menu-color);
   background-clip: content-box;
 
-  background-color: var(--hamburger-menu-color);
-
   cursor: pointer;
+
+  transition: padding-top var(--transition-time) ease;
+  transition: padding-bottom var(--transition-time) ease;
 }
 
 .burger-button::before {
@@ -56,7 +55,6 @@
 
 .burger-button::before,
 .burger-button::after {
-  content: '';
 
   position: absolute;
 
@@ -64,6 +62,8 @@
   height: var(--hamburger-menu-height);
 
   background-color: var(--hamburger-menu-color);
+
+  content: '';
 
   /* transition: transform var(--transition-time) ease; */
 }

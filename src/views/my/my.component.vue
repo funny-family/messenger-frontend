@@ -25,7 +25,9 @@
 <script src="./my.module.js"></script>
 
 <style scoped src="./my.styles.css"></style>
+
 <style scoped src="./my.moobile.styles.css"></style>
+
 <style scoped src="./my.desktop.styles.css"></style>
 
 <style scoped lang="scss" src="../../assets/styles/transitions/fade-in-down.scss"></style>

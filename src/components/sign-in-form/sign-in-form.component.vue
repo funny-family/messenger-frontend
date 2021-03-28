@@ -3,9 +3,19 @@
     class="sign-in-form"
     @submit.prevent="submitSignInForm(signInFields)"
   >
-    <input type="text" placeholder="Email" v-model="signInFields.username" />
-    <input type="password" placeholder="Password" v-model="signInFields.password" />
-    <button type="submit">signin</button>
+    <input
+      v-model="signInFields.username"
+      type="text"
+      placeholder="Email"
+    />
+    <input
+      v-model="signInFields.password"
+      type="password"
+      placeholder="Password"
+    />
+    <button type="submit">
+      signin
+    </button>
   </form>
 </template>
 
