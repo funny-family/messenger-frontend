@@ -1,0 +1,37 @@
+.chat-card-grid {
+  display: flex;
+
+  align-items: center;
+
+  width: 100%;
+}
+
+.chat-card-row {
+  display: flex;
+
+  width: 100%;
+}
+
+.chat-card-column {
+  display: flex;
+
+  flex-direction: column;
+
+  width: 100%;
+}
+
+.text-ellipsis {
+  overflow: hidden;
+
+  white-space: nowrap;
+
+  text-overflow: ellipsis;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.chat-card__sender-name {
+  margin-right: 0.2em;
+}

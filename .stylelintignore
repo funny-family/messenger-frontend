@@ -1,0 +1,8 @@
+# styles config folder
+src/assets/styles/config*
+
+# fonts
+src/assets/fonts*
+
+# dist
+dist*

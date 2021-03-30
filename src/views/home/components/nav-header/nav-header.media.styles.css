@@ -1,0 +1,27 @@
+@media (min-width: 768px) {
+  .nav-header__list-container {
+    position: relative;
+    top: 0;
+    right: 0;
+
+    display: block;
+  }
+
+  .nav-header__list {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+
+  .nav-header__list-container__showed {
+    display: block;
+  }
+
+  .nav-header__burger-button {
+    display: none;
+  }
+
+  .nav-header__list .nav-header__item {
+    margin-left: 1rem;
+  }
+}

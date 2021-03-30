@@ -1,0 +1,25 @@
+.slide-left-enter-active,
+.slide-left-leave-active,
+.slide-right-enter-active,
+.slide-right-leave-active {
+  overflow: hidden;
+
+  transition-timing-function: cubic-bezier(0.55, 0, 0.1, 1);
+  transition-duration: 0.5s;
+
+  transition-property: height, opacity, transform;
+}
+
+.slide-left-enter-from,
+.slide-right-leave-active {
+  transform: translate(2em, 0);
+
+  opacity: 0;
+}
+
+.slide-left-leave-active,
+.slide-right-enter-from {
+  transform: translate(-2em, 0);
+
+  opacity: 0;
+}

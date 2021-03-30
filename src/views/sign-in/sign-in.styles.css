@@ -1,0 +1,15 @@
+.sign-in-page {
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* getting access to this class form imported SignInFrom component */
+.sign-in-form {
+  display: flex;
+
+  flex-direction: column;
+}

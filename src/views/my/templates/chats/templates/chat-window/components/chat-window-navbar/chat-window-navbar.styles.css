@@ -1,0 +1,11 @@
+.chat-window-navbar {
+  display: flex;
+  align-items: center;
+
+  width: 100%;
+  height: var(--chat-window-navbar-height);
+
+  padding: 0 12px;
+
+  background-color: cornflowerblue;
+}

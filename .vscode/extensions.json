@@ -1,0 +1,16 @@
+{
+  "recommendations": [
+    // ESLint - Integrates ESLint JavaScript into VS Code.
+    "dbaeumer.vscode-eslint",
+    // Vue - Syntax highlight for Vue.js
+    "jcbuisson.vue",
+    // stylelint - Modern CSS/SCSS/Less linter
+    "stylelint.vscode-stylelint",
+    // EditorConfig for VS Code - EditorConfig Support for Visual Studio Code
+    // Not sure if this is needed or recommended,
+    // but .editorconfig file is still included in the scaffolded project...
+    "editorconfig.editorconfig",
+    // DotENV - Support for dotenv file syntax.
+    "mikestead.dotenv",
+  ]
+}

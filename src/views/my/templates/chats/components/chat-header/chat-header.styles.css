@@ -1,0 +1,14 @@
+.chat-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: var(--chat-header-height);
+
+  padding: 0 12px;
+
+  background-color: brown;
+}
+
+.chat-header input {
+  width: 100%;
+}

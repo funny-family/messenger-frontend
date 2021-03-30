@@ -1,0 +1,17 @@
+.chat-list {
+  width: 100%;
+  height: 100%;
+
+  overflow: auto;
+
+  background-color: darkgoldenrod;
+}
+
+.chat-list__loading-block {
+  display: flex;
+  align-items: center;
+
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}

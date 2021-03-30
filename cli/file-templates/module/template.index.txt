@@ -1,0 +1,11 @@
+import state from './example.state';
+import mutations from './example.mutations';
+import actions from './example.actions';
+import getters from './example.getters';
+
+export default {
+  state,
+  mutations,
+  actions,
+  getters
+};

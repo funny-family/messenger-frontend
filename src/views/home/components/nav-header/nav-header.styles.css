@@ -1,0 +1,60 @@
+/* https://codepen.io/kevinpowell/pen/jxppmr */
+
+.nav-header {
+  position: relative;
+
+  display: flex;
+  align-items: center;
+
+  /* width: 100%; */
+  height: 64px;
+
+  background-color: powderblue;
+}
+
+.nav-header__logo {
+  /* logo */
+}
+
+.nav-header__list-container {
+  position: absolute;
+
+  top: 100%;
+
+  display: none;
+
+  width: 100%;
+
+  background-color: brown;
+}
+
+.nav-header__list-container__showed {
+  display: block;
+}
+
+.nav-header__list {
+  /* width of 100% will cause a layout problem! */
+  display: block;
+
+  list-style-type: none;
+  padding-inline-start: 0;
+}
+
+.nav-header__item {
+  /* item */
+}
+
+.nav-header__burger-button {
+  position: absolute;
+
+  right: 0;
+
+  display: flex;
+
+  flex-direction: column;
+  align-items: center;
+  -webkit-box-align: center;
+
+  /* box-align: center; */
+  /* background-color: violet; */
+}

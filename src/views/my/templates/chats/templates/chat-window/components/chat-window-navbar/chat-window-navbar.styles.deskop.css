@@ -1,0 +1,15 @@
+@media only screen and (min-width: 768px) {
+  /* hide redirect link if user doesn't use mobile layout */
+  .hidden-redirect-link {
+    display: none;
+  }
+}
+
+.chat-window-navbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.chat-window-navbar__redirect-link {
+  /* redirect-link */
+}

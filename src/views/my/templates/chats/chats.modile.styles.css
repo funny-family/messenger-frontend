@@ -1,0 +1,13 @@
+@media only screen and (max-width: 768px) {
+  .hidden-chat-page-block-on-mobile {
+    display: none;
+  }
+}
+
+.chats-page__chats-navbar {
+  /* chats-navbar */
+}
+
+.chats-page__chat-window {
+  /* chat-window */
+}

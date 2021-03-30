@@ -1,0 +1,15 @@
+.chat-card:hover {
+  background-color: pink;
+}
+
+/* change background color of chat if active */
+.router-link-active > .chat-card {
+  background-color: thistle;
+}
+
+/* set chat link non clickable */
+.chat-card__link.router-link-active {
+  cursor: default;
+
+  pointer-events: none;
+}

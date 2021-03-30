@@ -1,0 +1,35 @@
+.navbar-menu {
+  --navbar-menu-size: 60px;
+
+  background-color: #9c6beb;
+}
+
+.navbar-menu ul {
+  margin-block-start: 0;
+  margin-block-end: 0;
+
+  list-style-type: none;
+
+  padding-inline-start: 0;
+}
+
+.navbar-menu__list {
+  /* list */
+}
+
+.navbar-menu__link {
+  outline: 2px solid red;
+}
+
+/* link is non clickable if link is active */
+.navbar-menu__list > .router-link-active {
+  cursor: default;
+  /* need to remove it later */
+  opacity: 0.4;
+
+  pointer-events: none;
+}
+
+.navbar-menu__item {
+  /* item */
+}

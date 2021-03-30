@@ -1,0 +1,15 @@
+.chat-window {
+  --chat-window-navbar-height: 60px;
+  --chat-window-input-height: 60px;
+
+  width: 100%;
+  height: 100%;
+}
+
+.chat-window__main {
+  /* main */
+}
+
+.section {
+  /* section */
+}
