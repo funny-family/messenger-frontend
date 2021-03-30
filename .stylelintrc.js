@@ -1,4 +1,3 @@
-// todo install cz and commitizen
 module.exports = {
   extends: [
     'stylelint-config-rational-order',

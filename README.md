@@ -1,4 +1,4 @@
-# ttt2
+# chatus-frontend
 
 ## Project setup
 ```

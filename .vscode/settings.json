@@ -84,6 +84,7 @@
     "linebreaks",
     "longform",
     "scrollable",
+    "smacss",
     "stylelint",
     "vuex"
   ],
