@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "serve": "vue-cli-service serve",
+    "serve": "vue-cli-service serve && npm run editorconfig:check",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
     "module:create": "node ./cli/commands/create-store-module.js",
@@ -11,7 +11,8 @@
     "component:create:v2": "node ./cli/commands/create-component.v.2.js",
     "commit": "cz",
     "test": "jest",
-    "test:unit": "npm run test --no-cache"
+    "test:unit": "npm run test --no-cache",
+    "editorconfig:check": "editorconfig-checker"
   },
   "dependencies": {
     "core-js": "^3.8.1",
@@ -31,6 +32,7 @@
     "@vue/test-utils": "^2.0.0-rc.4",
     "babel-eslint": "^10.1.0",
     "commitizen": "^4.2.3",
+    "editorconfig-checker": "^4.0.2",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-jest": "^24.3.2",
