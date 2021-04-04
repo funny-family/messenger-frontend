@@ -81,6 +81,7 @@
     "blockless",
     "chatus",
     "commitlint",
+    "editorconfig",
     "linebreaks",
     "longform",
     "scrollable",
