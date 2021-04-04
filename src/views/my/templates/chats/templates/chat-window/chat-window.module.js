@@ -1,13 +1,13 @@
-import ScrollableMainLayout from '../../../../../../components/scrollable-main-layout';
+import ScrollableMainLayout from '@/components/scrollable-main-layout';
 
 import ChatWindowNavbar from './components/chat-window-navbar';
-import ChatWindowInput from './components/chat-window-input';
+import MessageSendingForm from './components/message-sending-form';
 
 export default {
   name: 'ChatWindow',
   components: {
     ScrollableMainLayout,
-    ChatWindowNavbar,
-    ChatWindowInput
+    MessageSendingForm,
+    ChatWindowNavbar
   }
 };

@@ -19,7 +19,7 @@
       </template>
 
       <template v-slot:footer>
-        <ChatWindowInput />
+        <MessageSendingForm />
       </template>
     </ScrollableMainLayout>
   </div>
