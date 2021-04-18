@@ -79,11 +79,14 @@
   // ----------------------------------------
   "cSpell.words": [
     "blockless",
+    "builtins",
     "chatus",
     "commitlint",
     "editorconfig",
+    "linebreak",
     "linebreaks",
     "longform",
+    "plusplus",
     "scrollable",
     "smacss",
     "stylelint",
