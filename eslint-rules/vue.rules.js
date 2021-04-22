@@ -39,6 +39,9 @@ module.exports = {
     endTag: 'never',
     selfClosingTag: 'always'
   }],
+  'vue/attribute-hyphenation': ['error', 'never', {
+    ignore: []
+  }],
   'vue/new-line-between-multi-line-property': ['error', {
     minLineOfMultilineProperty: tabSize
   }],

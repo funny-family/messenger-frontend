@@ -10,5 +10,6 @@ module.exports = {
       props: true,
       ignorePropertyModificationsFor: ['state']
     }
-  ]
+  ],
+  'no-restricted-syntax': ['error', 'LabeledStatement', 'WithStatement']
 };
