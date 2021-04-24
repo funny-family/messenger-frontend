@@ -8,11 +8,17 @@
   /* need to replace this class on resize provider component latter */
   .resz-container {
     width: 500px;
+    min-width: 98px;
     height: 100%;
+
+    overflow: auto;
+
+    /* remove it late? because is doesn't in Safari browser! */
+    resize: horizontal;
   }
 
   /* displaces block only on desktop version  */
-  .chats-page__chat-window-info {
+  .chats-page__no-chat-selected {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -20,5 +26,9 @@
     height: 100%;
 
     background-color: burlywood;
+  }
+
+  .chats-page__no-chat-heading {
+    margin: 0.6em;
   }
 }
