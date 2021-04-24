@@ -2,6 +2,10 @@
   .hidden-chat-page-block-on-mobile {
     display: none;
   }
+
+  .resz-container {
+    width: 100% !important;
+  }
 }
 
 .chats-page__chats-navbar {
