@@ -5,12 +5,10 @@ import App from './app';
 
 const app = createApp(App);
 
-// console.log('app:', app);
-
 app.use(router);
 app.use(store);
 
 // router.app = app;
-// router.isReady().then(() => app.mount('#app'));
+// router.isReady().then(() => app.mount('#app'))
 
 app.mount('#app');
