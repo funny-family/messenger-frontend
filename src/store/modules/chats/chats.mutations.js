@@ -7,7 +7,21 @@ export default {
     state.isLoading = isLoading;
   },
 
-  PUT_FETCHED_CONTACTS_IN_LIST(state, fetchedContacts) {
-    state.list = fetchedContacts;
+  /**
+   * @param {*} state
+   * @param {Object[]} fetchedChatList
+   */
+  FILL_LIST(state, fetchedChatList) {
+    const formattedChatList = [];
+    fetchedChatList.map((chat) => {
+      const formattedChat = formattedChatList.push({
+        ...chat,
+        id: chat.id.toString()
+      });
+
+      return formattedChat;
+    });
+
+    state.list = formattedChatList;
   }
 };
