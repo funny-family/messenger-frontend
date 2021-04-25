@@ -5,63 +5,109 @@
 //   'input'
 // ]);
 
+import { reactive } from 'vue';
+
+import Textarea from '@/components/textarea';
+
 export default {
   name: 'MessageSendingForm',
+  components: {
+    Textarea
+  },
   // emits: emitConstructor.getEmitNames(),
   // emits: [
   //   'input'
   // ],
-  setup(_, { emit }) {
+  setup() {
     // https://stackoverflow.com/questions/47221119/vuejs-how-to-prevent-textarea-default-behavior
-    const message = {
-      text: '',
-      images: [],
-      audio: null,
-      video: null
-    };
+    // https://stackoverflow.com/questions/8440357/how-to-reset-this-js-object
+    function getMessage() {
+      const message = {
+        text: '',
+        images: [],
+        audios: [],
+        videos: [],
 
-    // // eslint-disable-next-line
-    // const isMessageValueEmpty = (value) => {
-    //   if (
-    //     value === '' ||
-    //     value === null ||
-    //     value === undefined ||
-    //     value.length === 0
-    //   ) {
-    //     return false;
-    //   }
+        reset() {
+          Object.assign(this, getMessage());
+        }
+      };
 
-    //   return true;
-    // };
+      return message;
+    }
+    const message = reactive(getMessage());
 
-    // const emitObject = emitConstructor.getEmitObject();
+    function checkIfFormFieldValueEmpty(value) {
+      let isValueEmpty = false;
+      if (typeof value === 'string') {
+        if (value === '') {
+          isValueEmpty = true;
+        }
+      }
 
-    const updateTextareaValue = (value) => {
-      message.text = value;
-      emit('input', value);
-    };
+      if (Array.isArray(value)) {
+        if (value.length === 0) {
+          isValueEmpty = true;
+        }
+      }
 
-    // eslint-disable-next-line
-    const resetTextareaValue = () => {
-      emit('input', '');
-    };
+      // ignore built-in "reset" function
+      if (typeof value === 'function') {
+        isValueEmpty = typeof value;
+      }
 
-    const createNewLine = (value) => `${value}\n`;
+      return isValueEmpty;
+    }
 
-    const submitMessageForm = (formFields) => {
+    function submitMessageForm(formFields) {
+      /**
+       * formattedMessage will be send to server!
+       */
+      // ========= test values! =========
+      // formFields.images.push(1, 2, 3, 4);
+      // formFields.audios.push(1, 2, 3);
+      // formFields.videos.push(1, 2);
+      // ========= test values! =========
+
       const formattedMessage = {
         ...formFields,
         text: formFields.text.trim()
       };
 
-      console.log(formattedMessage);
-    };
+      let numberOfFields = 0;
+      let numberOfEmptyFields = 0;
+      let numberOfFilledFields = 0;
+      for (const formField of Object.entries(formattedMessage)) {
+        numberOfFields += 1;
+        const formFieldValue = formField[1];
+        const isFormFieldValueEmpty = checkIfFormFieldValueEmpty(formFieldValue);
+
+        if (isFormFieldValueEmpty) {
+          numberOfEmptyFields += 1;
+        }
+      }
+      numberOfFilledFields = numberOfFields - numberOfEmptyFields;
+      // eslint-disable-next-line
+      console.log('numberOfFilledFields:', numberOfFilledFields)
+
+      if (numberOfFilledFields < 1) {
+        return;
+      }
+
+      // eslint-disable-next-line
+      console.log('result:', { ...formattedMessage });
+
+      // reset data for server.
+      formattedMessage.reset();
+      message.reset();
+
+      // console.log('after:', { ...formattedMessage });
+      // console.log('after:', message);
+    }
 
     return {
       message,
-      submitMessageForm,
-      updateTextareaValue,
-      createNewLine
+      submitMessageForm
     };
   }
 };

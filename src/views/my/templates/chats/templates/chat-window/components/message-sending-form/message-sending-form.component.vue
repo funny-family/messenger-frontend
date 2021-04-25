@@ -7,28 +7,45 @@
     class="msf"
     @submit.prevent="submitMessageForm(message)"
   >
-    <div>
-      <!-- <textarea
-        :value="message.text"
+    <div class="message-input__container">
+      <!-- <pre>{{ message }}</pre> -->
+      <Textarea
+        v-model.trim="message.text"
+        class="message-input"
+        :autoResize="true"
+        :initialHeight="22"
+        placeholder="Type here..."
+        tabindex="0"
         @keydown.enter.exact.prevent
-        @keydown.enter.shift.exact="createNewLine"
-        @input="updateTextareaValue($event)"
-        /> -->
-      <textarea
-        :value="message.text"
-        @keyup.enter.exact.prevent="submitMessageForm(message)"
-        @input="updateTextareaValue($event.target.value)"
+        @keyup.enter.exact="submitMessageForm(message)"
       />
     </div>
-    <pre>
-      {{ message }}
-    </pre>
-    <button type="submit">
-      ➤
-    </button>
+    <div class="button-container">
+      <div>
+        <button type="button">
+          @
+        </button>
+        <button type="button">
+          ★
+        </button>
+        <button type="button">
+          ✅
+        </button>
+      </div>
+      <button
+        class="subm"
+        type="submit"
+      >
+        Send
+      </button>
+    </div>
   </form>
 </template>
 
 <script src="./message-sending-form.module.js"></script>
 
 <style lang="scss" scoped src="./message-sending-form.styles.scss"></style>
+
+<style lang="scss" scoped src="./message-sending-form.styles.modile.scss"></style>
+
+<style lang="scss" scoped src="./message-sending-form.styles.desktop.scss"></style>

@@ -1,14 +1,42 @@
 .msf {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 0.4em;
+  border: 1px solid black;
+}
+
+.message-input__container {
   width: 100%;
 }
 
-div textarea {
-  width: 100%;
-  height: 60px;
+.message-input {
+  // height: 20px !important;
+  // padding: 0.6rem;
+  // border: none;
+
+  // min-height: 32px;
+  max-height: 200px;
+  border: 1px solid red;
+  border-style: none;
+
+  font-size: 1rem;
+
+  // background-color: #b6b6b6;
 
   resize: none;
 }
 
-form button {
-  width: 100%;
+.button-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 0.2em;
+}
+
+.subm {
+  display: block;
+  padding: 0.4em;
+
+  text-align: center;
 }
