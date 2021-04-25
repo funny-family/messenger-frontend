@@ -8,34 +8,57 @@ export default {
   props: {
     id: {
       type: String,
-      required: true
+      required: false
     },
     avatar: {
       type: String,
-      required: true
+      required: false
     },
     name: {
       type: String,
-      required: true
+      required: false
     },
-    senderName: {
-      type: String
+    messageSenderName: {
+      type: String,
+      required: false
     },
     message: {
       type: String,
-      required: true
+      required: false
     },
-    timeOfLastMessage: {
-      type: Number,
-      required: true
+    timeOfTheLastMessageSent: {
+      type: Date,
+      required: false
     },
     numberOfUnreadMessages: {
-      type: Number
+      type: Number,
+      required: false
     }
   },
-  setup() {
-    // console.log('ChatCard', ChatCard);
+  setup(props) {
+    const formattedTimeOfTheLastMessageSent = (
+      'at' +
+      ' ' +
+      `${props.timeOfTheLastMessageSent.toLocaleString(
+        'en-US', { hour: 'numeric', minute: 'numeric', hour12: true }
+      )}`
+    );
 
-    return {};
+    function convertThousandToShort(number) {
+      const shortNumberAsAString = (
+        Math.abs(number) > 999 ?
+          `${Math.sign(number) * ((Math.abs(number) / 1000).toFixed(1))}k` :
+          `${Math.sign(number) * Math.abs(number)}`
+      );
+
+      return shortNumberAsAString;
+    }
+
+    const formattedNumberOfUnreadMessages = convertThousandToShort(props.numberOfUnreadMessages);
+
+    return {
+      formattedTimeOfTheLastMessageSent,
+      formattedNumberOfUnreadMessages
+    };
   }
 };

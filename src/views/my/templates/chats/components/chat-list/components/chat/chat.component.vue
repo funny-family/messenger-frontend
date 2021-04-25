@@ -15,12 +15,15 @@
         {{ name }}
       </template>
 
-      <template v-slot:timeOfLastMessage>
-        time: {{ timeOfLastMessage }}
+      <template
+        v-if="timeOfTheLastMessageSent"
+        v-slot:timeOfTheLastMessageSent
+      >
+        {{ formattedTimeOfTheLastMessageSent }}
       </template>
 
-      <template v-slot:senderName>
-        {{ senderName }}:
+      <template v-slot:messageSenderName>
+        {{ messageSenderName }}:
       </template>
 
       <template v-slot:message>
@@ -31,7 +34,7 @@
         v-if="numberOfUnreadMessages > 0"
         v-slot:numberOfUnreadMessages
       >
-        {{ numberOfUnreadMessages }}
+        {{ formattedNumberOfUnreadMessages }}
       </template>
     </ChatCard>
   </router-link>
