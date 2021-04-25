@@ -10,7 +10,6 @@ function useEmptySlotsChecker(slots) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  // eslint-disable-next-line
   for (const slot of Object.entries({ ...slots })) {
     /**
      * example:
@@ -34,19 +33,18 @@ export default {
   name: 'ChatCard',
   slots: availableSlots,
   setup(_, { slots }) {
-    const usedSlots = useEmptySlotsChecker(slots);
+    const slotChecker = useEmptySlotsChecker(slots);
 
     /**
      * export new "slots" object witch contain all slot names of ChatCard
      */
-    // eslint-disable-next-line
     for (const slot of Object.entries({ ...slots })) {
       const slotName = slot[0];
       availableSlots[slotName] = slotName;
     }
 
     return {
-      usedSlots
+      slotChecker
     };
   }
 };
