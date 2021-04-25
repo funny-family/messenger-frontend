@@ -1,6 +1,5 @@
 <template>
   <div class="chats-page">
-    <!-- chats nav panal -->
     <div
       class="resz-container"
       style="height: 100%;"
@@ -9,9 +8,7 @@
       }"
     >
       <div class="chats-navbar-wrapper">
-        <ScrollableMainLayout
-          class="chats-page__chats-navbar"
-        >
+        <ScrollableMainLayout class="chats-page__chats-navbar">
           <template v-slot:header>
             <ChatHeader />
           </template>
@@ -27,9 +24,7 @@
         </ScrollableMainLayout>
       </div>
     </div>
-    <!-- chats nav panal -->
 
-    <!-- chat window section etc -->
     <div
       v-show="isChatSelected"
       class="chats-page__chat-window"
@@ -47,13 +42,12 @@
     <section
       v-show="!isChatSelected"
       class="
-        chats-page__chat-window-info
+        chats-page__no-chat-selected
         hidden-chat-page-block-on-mobile
       "
     >
-      <h2>Selete chat to start messaging.</h2>
+      <h2 class="chats-page__no-chat-heading">Select chat to start messaging.</h2>
     </section>
-    <!-- chat window section etc -->
   </div>
 </template>
 
