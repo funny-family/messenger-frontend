@@ -1,6 +1,6 @@
 <template>
   <div class="chat-window">
-    <ScrollableMainLayout>
+    <ScrollableMainLayout class="chat-window">
       <template v-slot:header>
         <ChatWindowNavbar />
       </template>
@@ -8,12 +8,7 @@
       <template v-slot:main>
         <main class="chat-window__main">
           <section class="section">
-            <div
-              v-for="i in 100"
-              :key="i"
-            >
-              {{ i }}
-            </div>
+            <ChatHistory class="chat-window__history" />
           </section>
         </main>
       </template>
