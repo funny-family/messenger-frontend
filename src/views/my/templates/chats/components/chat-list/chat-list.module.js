@@ -1,6 +1,5 @@
-import {
-  computed, ref, onMounted
-} from 'vue';
+import { computed } from 'vue';
+
 import { useStore } from 'vuex';
 
 import Chat from './components/chat';
@@ -14,14 +13,15 @@ export default {
     const { state } = useStore();
 
     const chatList = computed(() => state.chats.list);
+    const isChatListLoading = computed(() => state.chats.isLoading);
 
-    const isAllChatsLoaded = ref(false);
-    onMounted(() => {
-      isAllChatsLoaded.value = true;
-    });
+    function createRandomDate(start, end) {
+      return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+    }
 
     return {
-      isAllChatsLoaded,
+      createRandomDate,
+      isChatListLoading,
       chatList
     };
   }
