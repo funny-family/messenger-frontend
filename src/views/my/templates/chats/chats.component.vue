@@ -46,7 +46,9 @@
         hidden-chat-page-block-on-mobile
       "
     >
-      <h2 class="chats-page__no-chat-heading">Select chat to start messaging.</h2>
+      <h2 class="chats-page__no-chat-heading">
+        Select chat to start messaging.
+      </h2>
     </section>
   </div>
 </template>
@@ -55,9 +57,9 @@
 
 <style scoped src="./chats.styles.css"></style>
 
-<style scoped src="./chats.modile.styles.css"></style>
+<style scoped src="./chats.styles.modile.css"></style>
 
-<style scoped src="./chats.desktop.styles.css"></style>
+<style scoped src="./chats.styles.desktop.css"></style>
 
 <style scoped lang="scss" src="../../../../assets/styles/transitions/slide-right.scss"></style>
 
