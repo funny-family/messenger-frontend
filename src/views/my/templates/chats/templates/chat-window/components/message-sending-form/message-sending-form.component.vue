@@ -12,7 +12,7 @@
       <Textarea
         v-model.trim="message.text"
         class="message-input"
-        :autoResize="true"
+        autoResize
         :initialHeight="22"
         placeholder="Type here..."
         tabindex="0"
