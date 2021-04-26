@@ -7,22 +7,20 @@
         'hidden-chat-page-block-on-mobile': isChatSelected
       }"
     >
-      <div class="chats-navbar-wrapper">
-        <ScrollableMainLayout class="chats-page__chats-navbar">
-          <template v-slot:header>
-            <ChatHeader />
-          </template>
+      <ScrollableMainLayout class="chats-page__chats-navbar">
+        <template v-slot:header>
+          <ChatHeader />
+        </template>
 
-          <template v-slot:main>
-            <transition
-              name="fade-in-down"
-              mode="out-in"
-            >
-              <ChatList />
-            </transition>
-          </template>
-        </ScrollableMainLayout>
-      </div>
+        <template v-slot:main>
+          <transition
+            name="fade-in-down"
+            mode="out-in"
+          >
+            <ChatList />
+          </transition>
+        </template>
+      </ScrollableMainLayout>
     </ResizableContainer>
 
     <div
