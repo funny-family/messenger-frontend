@@ -1,8 +1,8 @@
 <template>
   <div class="chats-page">
-    <div
-      class="resz-container"
-      style="height: 100%;"
+    <ResizableContainer
+      class="chats-page__resizable-container"
+      resizeX
       :class="{
         'hidden-chat-page-block-on-mobile': isChatSelected
       }"
@@ -23,7 +23,7 @@
           </template>
         </ScrollableMainLayout>
       </div>
-    </div>
+    </ResizableContainer>
 
     <div
       v-show="isChatSelected"
@@ -57,7 +57,7 @@
 
 <style scoped src="./chats.styles.css"></style>
 
-<style scoped src="./chats.styles.modile.css"></style>
+<style scoped src="./chats.styles.mobile.css"></style>
 
 <style scoped src="./chats.styles.desktop.css"></style>
 

@@ -6,15 +6,12 @@
   }
 
   /* need to replace this class on resize provider component latter */
-  .resz-container {
+  .chats-page__resizable-container {
     width: 500px;
     min-width: 98px;
     height: 100%;
 
     overflow: auto;
-
-    /* remove it late? because is doesn't in Safari browser! */
-    resize: horizontal;
   }
 
   /* displaces block only on desktop version  */

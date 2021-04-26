@@ -40,7 +40,7 @@ export function setup() {
   });
 
   const { isChatSelected } = my.state;
-  // console.log(12123, navigator);
+
   return {
     isChatSelected
   };
