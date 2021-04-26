@@ -1,14 +1,14 @@
 <template>
   <div class="sml-container">
     <div
-      v-if="isHeaderSlotEmpty"
+      v-if="slotChecker.isHeaderSlotUsed"
       class="sml-header"
     >
       <slot name="header" />
     </div>
 
     <div
-      v-if="isMainSlotEmpty"
+      v-if="slotChecker.isMainSlotUsed"
       class="sml-main"
     >
       <slot name="main" />
@@ -18,7 +18,7 @@
     <slot />
 
     <div
-      v-if="isFooterSlotEmpty"
+      v-if="slotChecker.isFooterSlotUsed"
       class="sml-footer"
     >
       <slot name="footer" />
