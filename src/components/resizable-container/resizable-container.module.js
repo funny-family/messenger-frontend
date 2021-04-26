@@ -1,16 +1,8 @@
-import { ref, onMounted } from 'vue';
+import { setup } from './resizable-container.setup';
+import { props } from './resizable-container.props';
 
 export default {
   name: 'ResizableContainer',
-  setup() {
-    const resizableContainer = ref(null); // ref
-
-    onMounted(() => {
-      // console.log(resizableContainer.value);
-    });
-
-    return {
-      resizableContainer
-    };
-  }
+  props,
+  setup
 };

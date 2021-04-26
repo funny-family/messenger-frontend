@@ -1,8 +1,12 @@
-.res-cont {
-  /* position: relative; */
+.resizable-container {
+  width: 100%;
+  height: 100%;
+}
 
-  /* width: 100%;
-  height: 100%; */
+.resize-x {
+  resize: horizontal;
+}
 
-  border: 1px solid green;
+.resize-y {
+  resize: vertical;
 }

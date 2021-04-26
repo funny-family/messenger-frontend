@@ -1,5 +1,8 @@
 <template>
-  <div class="res-cont" ref="resizableContainer">
+  <div
+    class="resizable-container"
+    :class="{ 'resize-x': resizeX, 'resize-y': resizeY }"
+  >
     <slot />
   </div>
 </template>
