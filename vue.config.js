@@ -1,5 +1,6 @@
 const path = require('path');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 module.exports = {
   runtimeCompiler: true,
@@ -13,7 +14,8 @@ module.exports = {
     plugins: [
       new StyleLintPlugin({
         files: ['**/*.{vue,htm,html,css,sss,less,scss,sass}']
-      })
+      }),
+      new BundleAnalyzerPlugin()
     ]
   }
 };
