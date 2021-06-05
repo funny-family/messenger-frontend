@@ -90,6 +90,7 @@
     "scrollable",
     "smacss",
     "stylelint",
+    "vueuse",
     "vuex"
   ],
 }
