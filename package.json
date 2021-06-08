@@ -15,7 +15,7 @@
     "editorconfig:check": "editorconfig-checker"
   },
   "dependencies": {
-    "@vueuse/core": "^4.11.2",
+    "@vueuse/core": "^5.0.1",
     "core-js": "^3.8.1",
     "element-plus": "^1.0.2-beta.44",
     "vue": "^3.0.11",
