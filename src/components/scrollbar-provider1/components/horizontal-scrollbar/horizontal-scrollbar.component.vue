@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable -->
   <div>
     <div class="nice-bar-rail-x" v-if="width < 100" @click="jump" ref="scrollRailX"></div>
     <div
@@ -13,6 +14,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 export default {
   name: 'HorizontalScrollbar',
   props: {

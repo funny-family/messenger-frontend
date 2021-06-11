@@ -1,23 +1,23 @@
-/* stylelint-disable selector-pseudo-element-no-unknown */
+/* stylelint-disable selector-pseudo-element-no-unknown, selector-pseudo-class-no-unknown */
 
 /* =============== overwritten styles for "el-scrollbar.css" =============== */
-::v-deep .el-scrollbar__bar {
+:deep .el-scrollbar__bar {
   --thumb-width: 6px;
 }
 
-::v-deep .el-scrollbar__thumb {
+:deep .el-scrollbar__thumb {
   background-color: rgba(144, 147, 153, 0.4);
 }
 
-::v-deep .el-scrollbar__thumb:hover {
+:deep .el-scrollbar__thumb:hover {
   background-color: rgba(144, 147, 153, 0.6);
 }
 
-::v-deep .el-scrollbar__bar.is-vertical:hover {
+:deep .el-scrollbar__bar.is-vertical:hover {
   width: calc(var(--thumb-width) + 4px);
 }
 
-::v-deep .el-scrollbar__bar.is-horizontal:hover {
+:deep .el-scrollbar__bar.is-horizontal:hover {
   height: calc(var(--thumb-width) + 4px);
 }
 /* ======================================================================= */

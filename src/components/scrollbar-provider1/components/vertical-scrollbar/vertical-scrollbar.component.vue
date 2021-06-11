@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable -->
   <div class="nice-bar-rail-y" v-if="height < 100" @click="jump" ref="scrollRail">
     <div
       class="nice-bar-slider-y"
@@ -12,6 +13,8 @@
 </template>
 
 <script>
+/* eslint-disable */
+
 export default {
   name: 'VerticalScrollbar',
   props: {

@@ -1,4 +1,5 @@
 <template>
+  <!-- eslint-disable -->
   <div
     class="nice-bar"
     :class="[theme === 'dark' ? 'theme-dark' : 'theme-light', classes ? ' ' + classes : '']"
@@ -40,6 +41,7 @@
 </template>
 
 <script>
+/* eslint-disable */
 import VerticalScrollbar from './components/vertical-scrollbar';
 import HorizontalScrollbar from './components/horizontal-scrollbar';
 
