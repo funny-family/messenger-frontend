@@ -1,9 +1,18 @@
+import { ref } from 'vue';
+
 import { useEmptySlotsChecker } from '@/utils/hooks/use-empty-slots-checker.hook';
 
-export function setup(_, { slots }) {
+export const setup = (_, { slots }) => {
   const slotChecker = useEmptySlotsChecker(slots);
 
-  return {
-    slotChecker
+  const refs = {
+    header: ref(null),
+    main: ref(null),
+    footer: ref(null)
   };
-}
+
+  return {
+    slotChecker,
+    refs
+  };
+};
