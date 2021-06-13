@@ -1,5 +1,5 @@
-const vueRules = require('./eslint-rules/vue.rules');
-const airbnbRules = require('./eslint-rules/airbnb.rules');
+const { vueRules } = require('./eslint-rules/vue.rules');
+const { airbnbRules } = require('./eslint-rules/airbnb.rules');
 
 module.exports = {
   root: true,

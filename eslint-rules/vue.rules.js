@@ -1,7 +1,7 @@
 const componentNamingStyle = 'PascalCase';
 const tabSize = 2;
 
-module.exports = {
+exports.vueRules = {
   'vue/v-slot-style': ['error', {
     atComponent: 'v-slot',
     default: 'v-slot',

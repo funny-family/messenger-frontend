@@ -1,4 +1,4 @@
-module.exports = {
+exports.airbnbRules = {
   'comma-dangle': ['error', 'never'],
   'operator-linebreak': ['error', 'after'],
   'no-useless-return': 'off',
