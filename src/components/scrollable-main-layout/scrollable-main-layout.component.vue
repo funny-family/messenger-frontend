@@ -1,7 +1,7 @@
 <template>
   <div class="sml-container">
     <div
-      v-if="slotChecker.isHeaderSlotUsed"
+      v-if="slotChecker.header"
       :ref="refs.header"
       class="sml-header"
     >
@@ -9,7 +9,7 @@
     </div>
 
     <div
-      v-if="slotChecker.isMainSlotUsed"
+      v-if="slotChecker.main"
       :ref="refs.main"
       class="sml-main"
     >
@@ -20,7 +20,7 @@
     <slot />
 
     <div
-      v-if="slotChecker.isFooterSlotUsed"
+      v-if="slotChecker.footer"
       :ref="refs.footer"
       class="sml-footer"
     >
