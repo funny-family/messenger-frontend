@@ -15,7 +15,7 @@ module.exports = {
       new StyleLintPlugin({
         files: ['**/*.{vue,htm,html,css,sss,less,scss,sass}']
       }),
-      new BundleAnalyzerPlugin()
+      process.env.NODE_ENV === 'production' ? new BundleAnalyzerPlugin() : () => {}
     ]
   }
 };
