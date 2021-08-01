@@ -1,9 +1,14 @@
-{
-  "compilerOptions": {
-    "baseUrl": "./",
-    "paths": {}
-  },
-  "include": [
-    "./src/**/*"
-  ]
-}
+// {
+//   "compilerOptions": {
+//     "checkJs": true,
+//     "target": "es6",
+//     "module": "commonjs",
+//     "moduleResolution": "classic",
+//     "baseUrl": ".",
+//     "paths": {
+//       "@/*": ["./src/*"]
+//     }
+//   },
+//   "include": ["./src/**/*"],
+//   "exclude": ["node_modules", "dist", "tests", "__tests__"]
+// }
