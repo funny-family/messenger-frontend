@@ -34,6 +34,4 @@ const developmentPlugins = new PluginsDefiner({
   plugins: [createLogger()]
 });
 
-const plugins = [...constantlyUsedPlugins, ...developmentPlugins];
-
-export default plugins;
+export const plugins = [...constantlyUsedPlugins, ...developmentPlugins];
