@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import routes from './routes';
+/* replace it later with './routes' */
+import routes from './routes/index';
 
 const router = createRouter({
   history: createWebHistory(),
@@ -12,6 +13,6 @@ router.beforeEach((to, from, next) => {
 });
 
 // eslint-disable-next-line
-console.log(router.getRoutes());
+console.table(router.getRoutes());
 
 export { router, routes };
