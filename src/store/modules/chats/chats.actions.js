@@ -9,10 +9,10 @@ export default {
       // throw new Error('bal bla!');
 
       commit(mutations.FILL_LIST.name, fetchedChatList);
-      commit(mutations.SET_LOADING_STATE.name, false);
+      commit(mutations.SET_LOADING_TO_LIST.name, false);
     } catch {
-      commit(mutations.FILL_LIST.name, []);
-      commit(mutations.SET_LOADING_STATE.name, false);
+      commit(mutations.FILL.name, []);
+      commit(mutations.SET_LOADING_TO_LIST.name, false);
     }
   }
 };

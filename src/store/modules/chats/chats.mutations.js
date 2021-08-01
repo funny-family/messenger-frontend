@@ -3,7 +3,7 @@ export default {
    * @param {*} state
    * @param {boolean} isLoading
    */
-  SET_LOADING_STATE(state, isLoading) {
+  SET_LOADING_TO_LIST(state, isLoading) {
     state.isLoading = isLoading;
   },
 
@@ -13,6 +13,7 @@ export default {
    */
   FILL_LIST(state, fetchedChatList) {
     const formattedChatList = [];
+
     fetchedChatList.map((chat) => {
       const formattedChat = formattedChatList.push({
         ...chat,
