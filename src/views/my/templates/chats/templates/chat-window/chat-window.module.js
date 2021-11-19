@@ -1,6 +1,8 @@
 import { defineAsyncComponent } from 'vue';
 
 import ScrollableMainLayout from '@/components/scrollable-main-layout';
+import ScrollbarContainer from '@/components/scrollbar-container';
+import LoadingBackground from '../../../../../../components/loading-background';
 
 import ChatWindowNavbar from './components/chat-window-navbar';
 // import ChatHistory from './components/chat-history';
@@ -10,7 +12,7 @@ import { setup } from './chat-window.setup';
 
 const ChatHistory = defineAsyncComponent({
   loader: () => import('./components/chat-history'),
-  loadingComponent: null
+  loadingComponent: LoadingBackground
 });
 
 export default {
@@ -18,6 +20,7 @@ export default {
   components: {
     ChatHistory,
     ScrollableMainLayout,
+    ScrollbarContainer,
     MessageSendingForm,
     ChatWindowNavbar
   },

@@ -10,10 +10,10 @@ export default {
     Chat
   },
   setup() {
-    const { state } = useStore();
+    const store = useStore();
 
-    const chatList = computed(() => state.chats.list);
-    const isChatListLoading = computed(() => state.chats.isLoading);
+    const chatList = computed(() => store.state.user.chat.list);
+    const isChatListLoading = computed(() => store.state.user.chat.isLoading);
 
     function createRandomDate(start, end) {
       return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));

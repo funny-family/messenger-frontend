@@ -17,7 +17,9 @@
             name="fade-in-down"
             mode="out-in"
           >
-            <ChatList />
+            <ScrollbarContainer class="chats-page__scrollbar-container">
+              <ChatList />
+            </ScrollbarContainer>
           </transition>
         </template>
       </ScrollableMainLayout>

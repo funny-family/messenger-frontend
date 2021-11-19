@@ -1,31 +1,24 @@
-import { computed } from 'vue';
+// TODO: need to make FULL refactor of this hook!!!!
+import { reactive } from 'vue';
 
 /**
  * @param {object} slots
  */
 export function useEmptySlotsChecker(slots) {
-  const usedSlots = {};
+  const usedSlots = reactive({});
 
   // function capitalizeFirstLetter(string) {
   //   return string.charAt(0).toUpperCase() + string.slice(1);
   // }
 
   for (const [slotName, slotValue] of Object.entries({ ...slots })) {
-    // /**
-    //  * example:
-    //  * capitalizeFirstLetter(senderName) return SenderName
-
-    //  * [`is${capitalizeFirstLetter(slot[0])}SlotUsed`] ->
-    //  *  is + SenderName + SlotUsed= isSenderNameSlotUsed
-
-    //  * computed(() => !!slot[1]) -> convert to slot to Boolean true/false
-    //  */
-    // const nameOfUsedSlot = `is${capitalizeFirstLetter(slot[0])}SlotUsed`;
-    // usedSlots[nameOfUsedSlot] = computed(() => !!slot[1]);
-
-    const nameOfUsedSlot = `${slotName}`;
-    const doesSlotHasChildren = !!slotValue;
-    usedSlots[nameOfUsedSlot] = computed(() => doesSlotHasChildren);
+    const slotChildren = slotValue()[0].children;
+    slotValue().forEach(() => {
+      // console.log(2342, c);
+    });
+    // eslint-disable-next-line
+    const isSlotChildrenEmpty = !!(Array.isArray(slotChildren) && slotChildren.length > 0);
+    usedSlots[slotName] = true;
   }
 
   return usedSlots;

@@ -29,7 +29,7 @@ class StoreModuleTemplateCreator {
     });
 
     const indexFileTemplate = readFile(path.join(
-      __dirname, './file-templates/module/template.index.txt'
+      __dirname, './file-templates/module/template.module.txt'
     ));
     const stateFileTemplate = readFile(path.join(
       __dirname, './file-templates/module/template.state.txt'
@@ -63,7 +63,7 @@ class StoreModuleTemplateCreator {
     const createdModuleDirectory = path.join(this.directory, this.name);
 
     createFile(
-      createdModuleDirectory, 'index.js', processedIndexFileTemplate
+      createdModuleDirectory, `${this.name}.module.js`, processedIndexFileTemplate
     );
     createFile(
       createdModuleDirectory, `${this.name}.state.js`, processedStateFileTemplate

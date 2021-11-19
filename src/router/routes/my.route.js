@@ -2,7 +2,8 @@ export default (() => {
   const chats = (() => {
     const chat = (() => {
       const chatRoute = {
-        path: 'chat/:id',
+        // path: 'chat/:id',
+        path: ':id',
         name: 'ChatWindow',
         component: () => import('../../views/my/templates/chats/templates/chat-window')
       };

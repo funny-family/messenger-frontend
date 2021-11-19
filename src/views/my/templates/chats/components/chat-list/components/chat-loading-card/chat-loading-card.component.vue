@@ -6,8 +6,7 @@
           clc__avatar
           chat-is-loading
         "
-      >
-      </div>
+      />
     </template>
 
     <template v-slot:name>
@@ -17,8 +16,7 @@
           chat-is-loading
           clc-border-radius
         "
-      >
-      </div>
+      />
     </template>
 
     <template v-slot:timeOfLastMessage>
@@ -28,8 +26,7 @@
           chat-is-loading
           clc-border-radius
         "
-      >
-      </div>
+      />
     </template>
 
     <template v-slot:message>
@@ -39,8 +36,7 @@
           chat-is-loading
           clc-border-radius
         "
-      >
-      </div>
+      />
     </template>
   </ChatCard>
 </template>

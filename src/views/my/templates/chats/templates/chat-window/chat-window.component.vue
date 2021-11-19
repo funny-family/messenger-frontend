@@ -6,11 +6,17 @@
       </template>
 
       <template v-slot:main>
-        <main class="chat-window__main">
-          <section class="section">
+        <ScrollbarContainer>
+          <main class="chat-window__main">
             <ChatHistory class="chat-window__history" />
-          </section>
-        </main>
+            <div
+              ref="scrollToRef"
+              class="scroll-to"
+            >
+              <b>хуй</b>
+            </div>
+          </main>
+        </ScrollbarContainer>
       </template>
 
       <template v-slot:footer>

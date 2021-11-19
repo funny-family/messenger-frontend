@@ -1,36 +1,36 @@
 import {
-  watchEffect, computed
+  watchEffect, computed, watch
 } from 'vue';
+
+import { useTitle } from '@vueuse/core';
 
 import { useRouter } from 'vue-router';
 import { router as r } from '@/router';
 
 import { useStore } from 'vuex';
-import { modules } from '@/store';
+// import { modules } from '../../../../store';
 
 import { my } from '../../store';
 
-const { chats } = modules;
-
-export function setup() {
+export const setup = () => {
   const router = useRouter();
+  const store = useStore();
 
-  const { state, dispatch } = useStore();
+  store.dispatch('user/chat/fetchThem');
+  // store.dispatch();
 
-  dispatch(`${chats.data.moduleName}/${chats.data.names.actions.fetchThem}`);
-
-  const currentChatRouteId = computed(() => router.currentRoute.value.params.id);
-  const chatRouteIdList = computed(() => state.chats.list.map((chat) => chat.id));
+  // console.log(1111, store.state.user.chat.list);
   const chatsRouteName = r.getRoutes()[1].name;
+  const currentRouteId = computed(() => router.currentRoute.value.params.id);
+  const availableRouteIds = computed(() => store.state.user.chat.list.map((chat) => chat.id));
 
   watchEffect((onInvalidate) => {
-    const isCurrentChatRouteValid = chatRouteIdList.value.includes(currentChatRouteId.value);
-
-    if (!isCurrentChatRouteValid && currentChatRouteId.value) {
+    const doesCurrentRouteExist = availableRouteIds.value.includes(currentRouteId.value);
+    if (!doesCurrentRouteExist && currentRouteId.value) {
       router.push({ name: chatsRouteName });
     }
 
-    if (currentChatRouteId.value) {
+    if (currentRouteId.value) {
       my.actions.setChatSelection();
     }
 
@@ -39,9 +39,18 @@ export function setup() {
     });
   });
 
+  const currentChatData = computed(
+    () => store.state.user.chat.list.find((chat) => chat.id === currentRouteId.value)
+  );
+
+  watch(
+    currentRouteId,
+    () => useTitle(currentChatData.value?.name)
+  );
+
   const { isChatSelected } = my.state;
 
   return {
     isChatSelected
   };
-}
+};

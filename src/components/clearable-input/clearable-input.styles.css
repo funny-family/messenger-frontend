@@ -1,0 +1,15 @@
+.clearable-container {
+  display: flex;
+  width: 100%;
+}
+
+.clearable-container__input {
+  width: 100%;
+  padding: 0.2em;
+}
+
+.clearable-container__button {
+  padding: 0.2em;
+
+  background-color: transparent;
+}

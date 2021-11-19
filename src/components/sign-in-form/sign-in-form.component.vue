@@ -4,7 +4,7 @@
     @submit.prevent="submitSignInForm(signInFields)"
   >
     <input
-      v-model="signInFields.username"
+      v-model="signInFields.email"
       type="text"
       placeholder="Email"
     />
@@ -15,6 +15,12 @@
     />
     <button type="submit">
       signin
+    </button>
+    <button
+      type="button"
+      @click="resetSignInform"
+    >
+      reset
     </button>
   </form>
 </template>

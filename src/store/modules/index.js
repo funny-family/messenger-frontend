@@ -1,62 +1,98 @@
+/* eslint-disable no-unused-vars */
+
+const path = require('path');
+
+const { fromCabeToCamelCase } = require('../../utils/from-cabe-to-camel-case.util');
+const { assignToObject } = require('../../utils/assign-to-object.util');
+
 /*
   https://webpack.js.org/guides/dependency-management/#requirecontext
   match only index.js or index.ts files
 */
 
 // eslint-disable-next-line
-const requiredModules = require.context('.', true, /\b[a-z]+(-[a-z]+)*\b.\module\.(js|ts)/);
-const modules = {};
+// const requiredModule = require.context('.', true, /\b[a-z]+(-[a-z]+)*\b.\module\.(js|ts)/);
+// eslint-disable-next-line
+const requiredModule = require.context('.', true, /\b[a-z]+(-[a-z]+)*\b.\module\.(js|ts)/);
+// // eslint-disable-next-line
+// const requiredModule = require.context('.', true, /index\.(js|ts)/);
 
-function fromCabeToCamelCase(str) {
-  const arr = str.split('-');
-  const capital = arr.map((item, index) => (index ?
-    item.charAt(0).toUpperCase() + item.slice(1).toLowerCase() : item.toLowerCase()));
-  const capitalString = capital.join('');
+const separator = '/';
 
-  return capitalString;
-}
+const foundModules = {};
 
-requiredModules.keys().forEach((pathToFile) => {
-  // Don't register this file as a Vuex module!
-  if (pathToFile === './index.js') return;
+requiredModule.keys().forEach((pathToModuleFile) => {
+  const currentFileName = `./${path.basename(__filename)}`;
+  if (pathToModuleFile === currentFileName) return;
 
   /**
-   * example:
-   * './some-else/index.js' -> fromCabeToCamelCase(pathToFile.split('/')[1]) -> 'someElse'
+   * @type {string}
    */
-  const moduleName = fromCabeToCamelCase(pathToFile.split('/')[1]);
+  const moduleName = pathToModuleFile
+    .split(separator)
+    .filter((objectKey) => !(/\./g).test(objectKey))
+    .map((objectKey) => fromCabeToCamelCase(objectKey))
+    .join(separator);
+  const moduleValue = requiredModule(pathToModuleFile).default;
 
-  modules[moduleName] = requiredModules(pathToFile).default;
+  // console.log(1231312, moduleName.split(separator).filter((name) => name !== 'modules'));
+  // console.log(moduleName, moduleValue);
 
-  // add namespaced filed to make module
-  modules[moduleName].namespaced = true;
+  foundModules[moduleName] = moduleValue;
 
-  const additionalField = 'data';
-  // add additional "data" value to "moduleName" object
-  modules[moduleName][additionalField] = {};
-  modules[moduleName][additionalField].moduleName = moduleName;
-
-  // create "names" object inside "data"
-  modules[moduleName][additionalField].names = {};
-  modules[moduleName][additionalField].names.actions = {};
-  modules[moduleName][additionalField].names.mutations = {};
-
-  // "names" object contain "actions" and "mutations"
-  const actionsNames = modules[moduleName][additionalField].names.actions;
-  const mutationsNames = modules[moduleName][additionalField].names.mutations;
-
-  // extract all actions and mutations functions from module object
-  const { actions } = modules[moduleName];
-  const { mutations } = modules[moduleName];
-
-  // fill in "names.actions" and "name.mutations" objects
-  for (const action of Object.values(actions)) {
-    actionsNames[action.name] = action.name;
-  }
-
-  for (const mutation of Object.values(mutations)) {
-    mutationsNames[mutation.name] = mutation.name;
-  }
+  /**
+   * Namespacing.
+   * @see https://vuex.vuejs.org/guide/modules.html#namespacing
+   */
+  foundModules[moduleName].namespaced = true;
 });
 
-export default modules;
+const sortedModulesFromShortToLongKey = Object.fromEntries(
+  Object
+    .entries(foundModules)
+    .sort((a, b) => {
+      const sortFromShortModuleNameToLong =
+      a[0].split(separator).length - b[0].split(separator).length;
+
+      return sortFromShortModuleNameToLong;
+    })
+);
+
+console.log('foundModules:', foundModules);
+console.log('sortedModulesFromShortToLongKey:', sortedModulesFromShortToLongKey);
+
+const filteredModulesWithShortKey = Object.fromEntries(
+  Object
+    .entries(sortedModulesFromShortToLongKey)
+    .filter(([moduleKey, moduleValue]) => {
+      const allSortedModulesWithShortKey = moduleKey.split(separator).length === 1;
+
+      return allSortedModulesWithShortKey;
+    })
+);
+
+const filteredModulesWithLongKey = Object.fromEntries(
+  Object
+    .entries(sortedModulesFromShortToLongKey)
+    .filter(([moduleKey, moduleValue]) => {
+      const allSortedModulesWithLongKey = moduleKey.split(separator).length !== 1;
+
+      return allSortedModulesWithLongKey;
+    })
+);
+
+export const modules = { ...filteredModulesWithShortKey };
+
+// eslint-disable-next-line
+for (const moduleKey in filteredModulesWithLongKey) {
+  // eslint-disable-next-line
+  if (!filteredModulesWithLongKey.hasOwnProperty(moduleKey)) {
+    // eslint-disable-next-line
+    continue;
+  }
+
+  const moduleValue = filteredModulesWithLongKey[moduleKey];
+  // console.log('moduleValue:', moduleValue);
+  // console.log(moduleKey, moduleValue);
+  assignToObject(modules, moduleKey.split(separator), moduleValue);
+}

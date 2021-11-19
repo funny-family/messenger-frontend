@@ -1,4 +1,4 @@
-export default {
+export const state = {
   isLoading: true,
   list: []
 };

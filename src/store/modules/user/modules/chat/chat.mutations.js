@@ -1,4 +1,4 @@
-export default {
+export const mutations = {
   /**
    * @param {*} state
    * @param {boolean} isLoading

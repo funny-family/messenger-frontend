@@ -1,6 +1,7 @@
-import mutations from './chats.mutations';
+// eslint-disable-next-line
+import { mutations } from './chat.mutations';
 
-export default {
+export const actions = {
   async fetchThem({ commit }) {
     try {
       const response = await fetch('https://jsonplaceholder.typicode.com/users');
